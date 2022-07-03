@@ -1,6 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
+
 const Signup = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [msg, setMsg] = useState("");
+  const history = useHistory();
+  const Register = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:5000/users", {
+        name: name,
+        email: email,
+        password: password,
+      });
+      history.push("/auth/signin");
+    } catch (error) {
+      if (error.response) {
+        setMsg(error.response.data.msg);
+      }
+    }
+  };
+
   return (
     <div className="sc-ShXmqw XjkQw">
       <div className="auth-box auth-signup">
@@ -20,13 +43,21 @@ const Signup = () => {
             Make your app management easy and fun!
           </p>
         </header>
-        <form
-          noValidate
-          autoComplete="off"
-          className="auth-form"
-          id="form-validation"
-          // onSubmit={login}
-        >
+        {msg && (
+          <div
+            className="alert alert-danger d-flex align-items-center"
+            style={{ fontSize: "14px", fontWeight: "500" }}
+          >
+            <div className="icon-flex">
+              <i
+                className="fa-regular fa-circle-xmark me-2"
+                style={{ fontSize: "15px", top: "1px", position: "relative" }}
+              ></i>
+            </div>
+            {msg}
+          </div>
+        )}
+        <form onSubmit={Register} className="auth-form" id="form-validation">
           <div className="row">
             <div className="col-sm-6">
               <div className="input-field">
@@ -40,6 +71,8 @@ const Signup = () => {
                   placeholder="username"
                   className="input-action"
                   required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
             </div>
@@ -55,10 +88,12 @@ const Signup = () => {
                   placeholder="email.example@gmail.com"
                   className="input-action"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
-            <div className="col-sm-6">
+            {/* <div className="col-sm-6">
               <div className="input-field">
                 <label className="all-label" htmlFor="phone">
                   Phone Number
@@ -72,7 +107,7 @@ const Signup = () => {
                   required
                 />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="input-field">
             <label className="all-label" htmlFor="password">
@@ -85,6 +120,8 @@ const Signup = () => {
               placeholder="Your password"
               className="input-action"
               required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="row mb-3">

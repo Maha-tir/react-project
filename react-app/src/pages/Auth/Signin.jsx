@@ -1,8 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 import "../../style/auth.css";
 
 const Signin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [msg, setMsg] = useState("");
+  const history = useHistory();
+
+  const Login = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:5000/login", {
+        email: email,
+        password: password,
+      });
+      history.push("/admin/dashboard");
+    } catch (error) {
+      if (error.response) {
+        setMsg(error.response.data.msg);
+      }
+    }
+  };
   return (
     <div className="sc-ShXmqw XjkQw">
       <div className="auth-box auth-signin">
@@ -22,37 +42,32 @@ const Signin = () => {
             Please sign-in to your account and start the adventure
           </p>
         </header>
-        <form
-          noValidate
-          autoComplete="off"
-          className="auth-form"
-          id="form-validation"
-          // onSubmit={login}
-        >
-          {/* {error && (
+        <form className="auth-form" id="form-validation" onSubmit={Login}>
+          {msg && (
             <div
-              className="alert alert-danger"
+              className="alert alert-danger d-flex align-items-center"
               style={{ fontSize: "14px", fontWeight: "500" }}
             >
-              <i
-                class="fa-regular fa-circle-xmark me-2"
-                style={{ fontSize: "15px", top: "1px", position: "relative" }}
-              ></i>
-              {error}
+              <div className="icon-flex">
+                <i
+                  className="fa-regular fa-circle-xmark me-2"
+                  style={{ fontSize: "15px", top: "1px", position: "relative" }}
+                ></i>
+              </div>
+              {msg}
             </div>
-          )} */}
+          )}
           <div className="input-field">
             <label className="all-label" htmlFor="email">
               Email Address
             </label>
             <input
               type="text"
-              name="email"
               id="email"
               placeholder="email.example@gmail.com"
               className="input-action"
-              // value={email}
-              // onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -62,12 +77,11 @@ const Signin = () => {
             </label>
             <input
               type="password"
-              name="password"
               id="password"
               placeholder="Your password"
               className="input-action"
-              // value={password}
-              // onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
@@ -81,9 +95,7 @@ const Signin = () => {
             </a>
           </div>
 
-          <button type="submit" className="sc-SignFx XamWr">
-            Sign In
-          </button>
+          <button className="sc-SignFx XamWr">Sign In</button>
         </form>
         <p
           className="my-2 text-center pb-4"
