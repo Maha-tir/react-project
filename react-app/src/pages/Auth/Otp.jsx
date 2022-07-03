@@ -11,7 +11,7 @@ const Otp = () => {
         <div className="sc-content">
           <h2>Enter verification code</h2>
           <p>We have just sent a verification code to mahatir@gmail.com</p>
-          <form action="">
+          <form action="" className="otp-form">
             <div className="otp-group">
               <input type="text" maxLength="1" className="otp-input" />
               <input type="text" maxLength="1" className="otp-input" />
