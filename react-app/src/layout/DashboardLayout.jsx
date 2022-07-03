@@ -45,55 +45,55 @@ export class DashboardLayout extends Component {
     this.toggleButton = this.toggleButton.bind(this);
   }
 
-  refreshToken = async () => {
-    try {
-      const response = await axios.get("http://localhost:5000/token");
-      this.setState({ token: response.data.accessToken });
-      const decoded = jwtDecode(response.data.accessToken);
-      this.setState({ name: decoded.name });
-      this.setState({ email: decoded.email });
-      this.setState({ expire: decoded.exp });
-    } catch (error) {
-      if (error.response) {
-        this.props.history.push("/auth/sigin");
-      }
-    }
-  };
+  // refreshToken = async () => {
+  //   try {
+  //     const response = await axios.get("http://localhost:5000/token");
+  //     this.setState({ token: response.data.accessToken });
+  //     const decoded = jwtDecode(response.data.accessToken);
+  //     this.setState({ name: decoded.name });
+  //     this.setState({ email: decoded.email });
+  //     this.setState({ expire: decoded.exp });
+  //   } catch (error) {
+  //     if (error.response) {
+  //       this.props.history.push("/auth/sigin");
+  //     }
+  //   }
+  // };
 
-  componentDidMount() {
-    this.refreshToken();
-    axiosJWT.interceptors.request.use(
-      async (config) => {
-        const currentDate = new Date();
-        if (this.state.expire * 1000 < currentDate.getTime()) {
-          const response = await axios.get("http://localhost:5000/token");
-          config.headers.Authorization = `Bearer ${response.data.accessToken}`;
-          this.setState({ token: response.data.accessToken });
-          const decoded = jwtDecode(response.data.accessToken);
-          this.setState({ name: decoded.name });
-          this.setState({ email: decoded.email });
-          this.setState({ expire: decoded.exp });
-        }
-        return config;
-      },
-      (error) => {
-        return Promise.reject(error);
-      }
-    );
-  }
+  // componentDidMount() {
+  //   this.refreshToken();
+  //   axiosJWT.interceptors.request.use(
+  //     async (config) => {
+  //       const currentDate = new Date();
+  //       if (this.state.expire * 1000 < currentDate.getTime()) {
+  //         const response = await axios.get("http://localhost:5000/token");
+  //         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
+  //         this.setState({ token: response.data.accessToken });
+  //         const decoded = jwtDecode(response.data.accessToken);
+  //         this.setState({ name: decoded.name });
+  //         this.setState({ email: decoded.email });
+  //         this.setState({ expire: decoded.exp });
+  //       }
+  //       return config;
+  //     },
+  //     (error) => {
+  //       return Promise.reject(error);
+  //     }
+  //   );
+  // }
 
   toggleButton() {
     this.setState({ sidebar: !this.state.sidebar });
   }
 
-  getUsers = async () => {
-    const response = await axiosJWT.get("http://localhost:5000/users", {
-      headers: {
-        Authorization: `Bearer ${this.state.token}`,
-      },
-    });
-    console.log(response.data);
-  };
+  // getUsers = async () => {
+  //   const response = await axiosJWT.get("http://localhost:5000/users", {
+  //     headers: {
+  //       Authorization: `Bearer ${this.state.token}`,
+  //     },
+  //   });
+  //   console.log(response.data);
+  // };
 
   render() {
     return (

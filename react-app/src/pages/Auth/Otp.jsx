@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import OTPImage from "../../assets/img/Enter-OTP.svg";
+import "../../style/auth.css";
 
 const Otp = () => {
   const PARENTAL_PIN_LENGTH = 4;
-
   return (
     <div className="full-width">
       <div className="sc-HxVwr">
         <div className="sc-content">
           <h2>Enter verification code</h2>
-          <p>
-            We have just sent a verification code to mahatir@gmail.com and +62
-            891-2345-6789
-          </p>
+          <p>We have just sent a verification code to mahatir@gmail.com</p>
           <form action="">
             <div className="otp-group">
               <input type="text" maxLength="1" className="otp-input" />
@@ -27,7 +25,11 @@ const Otp = () => {
           </form>
         </div>
       </div>
-      <div className="sc-HxVxr"></div>
+      <div className="sc-HxVxr">
+        <div className="sc-image">
+          <img src={OTPImage} alt="_otp-image" />
+        </div>
+      </div>
     </div>
   );
 };
