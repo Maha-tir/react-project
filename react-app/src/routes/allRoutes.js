@@ -9,6 +9,7 @@ import ProfitTrading from "../pages/Admin/ProfitTrading";
 import WithdrawProfit from "../pages/Admin/WithdrawProfit";
 import JadwalShift from "../pages/Admin/JadwalShift";
 import SopTrader from "../pages/Admin/SopTrader";
+import Profile from "../pages/Admin/Profile";
 import MetaproAiTrader from "../pages/Admin/MetaproAiTrader";
 
 // Auth Routes Components
@@ -25,6 +26,7 @@ const adminRoutes = [
   { path: "/admin/withdraw-profit-trader", component: WithdrawProfit },
   { path: "/admin/jadwal-shift", component: JadwalShift },
   { path: "/admin/sop-trader", component: SopTrader },
+  { path: "/admin/profile", component: Profile },
   { path: "/admin/metapro-ai-trader", component: MetaproAiTrader },
 ];
 
