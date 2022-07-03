@@ -8,10 +8,5 @@
     "icon": "bx bx-cog",
     "content": "Settings",
     "url": "/admin/settings"
-  },
-  {
-    "icon": "bx bx-power-off",
-    "content": "Logout",
-    "url": "/auth/logout"
   }
 ]

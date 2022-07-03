@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, useHistory } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import axios from "axios";
+import jwtDecode from "jwt-decode";
 
 import menuOutline from "../assets/plugins/ionicons/menu-outline.svg";
 import searchOutline from "../assets/plugins/ionicons/search-outline.svg";
@@ -28,18 +30,71 @@ const renderUserMenu = (item, index) => (
   </Link>
 );
 
+const axiosJWT = axios.create();
+
 export class DashboardLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {
       sidebar: false,
+      name: "",
+      email: "",
+      token: "",
+      expire: "",
     };
     this.toggleButton = this.toggleButton.bind(this);
+  }
+
+  refreshToken = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/token");
+      this.setState({ token: response.data.accessToken });
+      const decoded = jwtDecode(response.data.accessToken);
+      this.setState({ name: decoded.name });
+      this.setState({ email: decoded.email });
+      this.setState({ expire: decoded.exp });
+    } catch (error) {
+      if (error.response) {
+        this.props.history.push("/auth/sigin");
+      }
+    }
+  };
+
+  componentDidMount() {
+    this.refreshToken();
+    axiosJWT.interceptors.request.use(
+      async (config) => {
+        const currentDate = new Date();
+        if (this.state.expire * 1000 < currentDate.getTime()) {
+          const response = await axios.get("http://localhost:5000/token");
+          config.headers.Authorization = `Bearer ${response.data.accessToken}`;
+          this.setState({ token: response.data.accessToken });
+          const decoded = jwtDecode(response.data.accessToken);
+          this.setState({ name: decoded.name });
+          this.setState({ email: decoded.email });
+          this.setState({ expire: decoded.exp });
+        }
+        return config;
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
   }
 
   toggleButton() {
     this.setState({ sidebar: !this.state.sidebar });
   }
+
+  getUsers = async () => {
+    const response = await axiosJWT.get("http://localhost:5000/users", {
+      headers: {
+        Authorization: `Bearer ${this.state.token}`,
+      },
+    });
+    console.log(response.data);
+  };
+
   render() {
     return (
       <div className="sc-HxWqlk SfaqS">
@@ -75,7 +130,7 @@ export class DashboardLayout extends Component {
             </div>
             <Dropdown
               className="dropdown-button-topnav"
-              title="Administrator"
+              title={this.state.name}
               contentData={userMenu}
               renderItems={(item, index) => renderUserMenu(item, index)}
               renderHeader={() => (
@@ -88,17 +143,22 @@ export class DashboardLayout extends Component {
                       className="sttr-text"
                       style={{ color: "#000", fontSize: "14px" }}
                     >
-                      Administrator
+                      {this.state.name}
                     </p>
                     <p
                       className="sttr-text"
                       style={{ color: "#000", fontSize: "14px" }}
                     >
-                      email.example@email.com
+                      {this.state.email}
                     </p>
                   </div>
                 </div>
               )}
+              // renderFooter={() => (
+              //   <button className="sch-outBn" onClick={this.Logout}>
+              //     Logout
+              //   </button>
+              // )}
             />
           </div>
         </header>

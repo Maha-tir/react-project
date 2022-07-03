@@ -88,6 +88,10 @@
   border-radius: 5px;
   transition: transform 0.2s, box-shadow 0.3s;
 }
+.sidebar-list-menu .sidebar-list-link.link-btn {
+  background: transparent;
+  border: none;
+}
 .sidebar-list-menu .sidebar-list-link.is_active {
   background: #fc902a;
   color: #ffffff;

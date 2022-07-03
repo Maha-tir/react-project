@@ -33,10 +33,5 @@
     "display_name": "Sop Trader",
     "route": "/admin/sop-trader",
     "icon": "bx bx-bell"
-  },
-  {
-    "display_name": "Metapro AI Trader",
-    "route": "/admin/metapro-ai-trader",
-    "icon": "bx bx-store-alt"
   }
 ]

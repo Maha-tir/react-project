@@ -1,5 +1,7 @@
-import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
+import jwt_decode from "jwt-decode";
 import "../../style/dashboard.css";
 
 import Modal from "../../components/Modal/Modal";
@@ -29,6 +31,7 @@ const Dashboard = () => {
     message: "",
     isLoading: false,
   });
+
   const idCoinsRef = useRef();
   const handleModal = (message, isLoading) => {
     setModal({
