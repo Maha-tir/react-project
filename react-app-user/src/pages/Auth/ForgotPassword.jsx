@@ -1,18 +1,26 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import sendImage from "../../assets/img/send-email.svg";
+import "../../styles/auth.css";
+
 const ForgotPassword = () => {
   const history = useHistory();
 
   const backToLogin = () => {
     history.push("/signin");
   };
+
+  const SetPassword = () => {
+    history.push("/set-new-password");
+  };
+
   return (
     <div className="sc-forgot-with-header">
       <header className="or-header">
-        <button className="back-button" onClick={backToLogin}>
-          <i class="fa-solid fa-angle-left back-icon"></i>
+        <button className="back-button me-auto" onClick={backToLogin}>
+          <i className="fa-solid fa-angle-left back-icon"></i>
         </button>
+        <span className=" me-auto">Verify your Email</span>
       </header>
       <div className="d-flex align-items-center justify-content-center flex-column mt-4">
         <h2 className="sttr-text fz:20 mb-2 text-center w:text-center">
@@ -36,10 +44,20 @@ const ForgotPassword = () => {
               className="input-control"
               required
             />
-            <i class="fa-regular fa-user input-icon"></i>
+            <i className="fa-regular fa-user input-icon"></i>
           </div>
         </div>
-        <button className="sc-sign-btn">Reset Password</button>
+        <button className="sc-sign-btn" onClick={SetPassword}>
+          Send Email Verification
+        </button>
+        <div className="my-2 text-center">
+          <p className="fz:15 text-mute fw-500">
+            Remember password?
+            <Link to="/signin" className="text-link fz:14 ms-1">
+              Sign In
+            </Link>
+          </p>
+        </div>
       </form>
     </div>
   );

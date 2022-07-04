@@ -98,7 +98,7 @@ const Signup = () => {
               />
               <label
                 className="form-check-label fz:14 text-mute cursor:pointer"
-                for="termcondition"
+                htmlFor="termcondition"
               >
                 I Have Read Term & Condition
               </label>

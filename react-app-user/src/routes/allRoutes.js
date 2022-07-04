@@ -3,6 +3,7 @@ import React from "react";
 import Signin from "../pages/Auth/Signin";
 import Signup from "../pages/Auth/Signup";
 import ForgotPassword from "../pages/Auth/ForgotPassword";
+import SetNewPassword from "../pages/Auth/SetNewPassword";
 
 import Dashboard from "../pages/User/Dashboard";
 import Profile from "../pages/User/Profile";
@@ -16,6 +17,7 @@ const authRoutes = [
   { path: "/signin", component: Signin },
   { path: "/signup", component: Signup },
   { path: "/forgot-password", component: ForgotPassword },
+  { path: "/set-new-password", component: SetNewPassword },
 ];
 
 const userRoutes = [

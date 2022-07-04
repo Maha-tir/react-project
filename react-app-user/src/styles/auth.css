@@ -43,7 +43,12 @@
   margin: 0 auto;
   width: 468px;
   transition: width 0.4s;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  z-index: 100;
 }
 @media screen and (max-width: 880px) {
   .or-header {
@@ -52,6 +57,27 @@
     left: 0;
     width: 100%;
   }
+}
+.icon-lg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f9ff;
+}
+.icon-lg .fa-lock {
+  font-size: 3.5rem;
+  color: #1b76df;
+}
+.icon-lg .fa-circle-check {
+  position: absolute;
+  font-size: 1.7rem;
+  bottom: 35px;
+  right: 35px;
+  color: #0ecf07;
 }
 /* =======================================
   Form & Input Style
@@ -145,6 +171,7 @@
   align-items: center;
   border: none;
   background: transparent;
+  text-decoration: none;
   color: #191a1b;
 }
 .back-button .back-icon {
