@@ -1,0 +1,20 @@
+.sch-Vxwmb {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fbfdff;
+}
+.sch-mobile {
+  width: 468px;
+  min-height: 100vh;
+  background: #fefeff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: all 0.4s;
+}
+@media screen and (max-width: 880px) {
+  .sch-mobile {
+    width: 100%;
+  }
+}

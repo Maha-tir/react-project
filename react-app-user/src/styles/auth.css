@@ -1,0 +1,185 @@
+.sc-sign-in,
+.sc-sign-up,
+.sc-forgot-with-header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.sc-content-img {
+  width: 100%;
+  height: 30%;
+  display: grid;
+  place-content: center;
+}
+.sc-content-img img {
+  width: 200px;
+}
+.sc-content {
+  padding: 1.5rem 0;
+}
+.sc-content-all {
+  width: 100%;
+  position: relative;
+}
+.sc-forgot-img {
+  width: 100%;
+  display: grid;
+  place-content: center;
+}
+.sc-forgot-img img {
+  width: 100%;
+}
+/* =======================================
+  Header Auth Style
+====================================== */
+.or-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 468px;
+  transition: width 0.4s;
+  padding: 0.5rem 1rem;
+}
+@media screen and (max-width: 880px) {
+  .or-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+/* =======================================
+  Form & Input Style
+====================================== */
+.form-validation {
+  width: 100%;
+  padding: 1.5rem 0;
+}
+.flex-input-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-input-group .input-group {
+  width: 60%;
+  padding-right: 0.4rem;
+}
+.flex-input-group .input-group-2 {
+  width: 40%;
+  padding-left: 0.4rem;
+}
+.input-group {
+  width: 100%;
+  display: block;
+}
+.input-group:not(:last-child) {
+  margin-bottom: 10px;
+}
+.input-group .input-label {
+  font-size: 14px;
+  color: #727272;
+}
+.input-field {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  margin-top: 5px;
+}
+.input-field .input-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+  color: #a09f9f;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+.bx-lock-alt {
+  font-size: 1.2rem !important;
+}
+.input-field .input-control {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  color: #042a55;
+  font-size: 15px;
+  padding-left: 35px;
+  padding-right: 10px;
+  font-weight: 400;
+  outline: none;
+  transition: box-shadow 0.4s, border 0.1s;
+}
+.input-field.not-icon .input-control {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.input-field .input-control:active,
+.input-field .input-control:focus,
+.input-field .input-control:valid {
+  border: 2px solid #2789f8;
+}
+.input-field .input-control:active ~ .input-icon,
+.input-field .input-control:focus ~ .input-icon,
+.input-field .input-control:valid ~ .input-icon {
+  color: #2789f8;
+}
+.input-control::placeholder {
+  color: #a09f9f;
+  transition: transform 0.2s;
+}
+.input-control:active::placeholder,
+.input-control:focus::placeholder {
+  transform: translateX(5px);
+}
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  color: #191a1b;
+}
+.back-button .back-icon {
+  margin-right: 5px;
+  font-size: 1rem;
+}
+.sc-get-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1.3rem;
+  border: none;
+  background: #232527;
+  color: #fbfdff;
+  border-radius: 5px;
+}
+.sc-get-btn:hover {
+  background: #060607;
+}
+.sc-get-btn:active {
+  background: #424244;
+}
+.sc-sign-btn {
+  display: block;
+  width: 100%;
+  padding: 0.4rem 1.4rem;
+  border-radius: 5px;
+  border: none;
+  background: #1e80f0;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sc-sign-btn:hover {
+  background: #1b76df;
+}
+.sc-sign-btn:active {
+  background: #2f8cf7;
+}

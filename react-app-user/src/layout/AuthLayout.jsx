@@ -2,9 +2,8 @@ import React from "react";
 
 const AuthLayout = (props) => {
   return (
-    <div>
-      AuthLayout
-      {props.children}
+    <div className="sch-Vxwmb _mobile">
+      <div className="sch-mobile">{props.children}</div>
     </div>
   );
 };
