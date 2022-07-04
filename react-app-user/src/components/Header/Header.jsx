@@ -2,25 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/img/BIDBOX-LOGO-NEW.png";
 import "../../styles/app.css";
-import "../../styles/sidebar.css";
 const Header = () => {
   const [slideNavbar, setSlideNavbar] = useState(false);
   const [header, setheader] = useState(false);
-
-  const SidebarItem = (props) => {
-    return (
-      <div className={`slide-navbar ${props.className}`}>
-        <button
-          className="nvcs-btn"
-          onClick={() => setSlideNavbar(!slideNavbar)}
-        >
-          <i className="fa-regular fa-bell"></i>
-        </button>
-        <h1>nav menu</h1>
-      </div>
-    );
-  };
-
   const changeHeader = () => {
     if (window.scrollY >= 14) {
       setheader(true);
@@ -46,19 +30,13 @@ const Header = () => {
               </button>
             </li>
             <li className="list-menu">
-              <button
-                className="nvcs-btn"
-                onClick={() => setSlideNavbar(!slideNavbar)}
-              >
+              <button className="nvcs-btn">
                 <i className="fa-regular fa-bell"></i>
               </button>
             </li>
           </ul>
         </nav>
       </header>
-      {slideNavbar ? (
-        <SidebarItem className={slideNavbar ? "show" : "hide"} />
-      ) : null}
     </React.Fragment>
   );
 };

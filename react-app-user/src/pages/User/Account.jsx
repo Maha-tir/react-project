@@ -25,63 +25,63 @@ const Account = () => {
         </div>
       </div>
       <div className="profile-content">
-        <ul class="list-group">
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+        <ul className="list-group">
+          <li className="list-item">
+            <Link to="/user/member-centre" className="list-link">
               <i className="fa-solid fa-users-rectangle list-icon"></i>
               <span className="list-name">Member Centre</span>
             </Link>
           </li>
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+          <li className="list-item">
+            <Link to="/user/asset" className="list-link">
               <i className="fa-solid fa-wallet list-icon"></i>
               <span className="list-name">Asset</span>
             </Link>
           </li>
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+          <li className="list-item">
+            <Link to="/user/api-binding" className="list-link">
               <i className="fa-solid fa-link list-icon"></i>
               <span className="list-name">API Binding</span>
             </Link>
           </li>
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+          <li className="list-item">
+            <Link to="/user/affiliate" className="list-link">
               <i className="fa-solid fa-users list-icon"></i>
               <span className="list-name">Affiliate</span>
             </Link>
           </li>
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+          <li className="list-item">
+            <Link to="/user/reward-detail" className="list-link">
               <i className="fa-solid fa-sack-dollar list-icon"></i>
               <span className="list-name">Reward Detail</span>
             </Link>
           </li>
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+          <li className="list-item">
+            <Link to="/user/profit-trading" className="list-link">
               <i className="fa-solid fa-chart-simple list-icon"></i>
               <span className="list-name">Profit Trading</span>
             </Link>
           </li>
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+          <li className="list-item">
+            <Link to="/user/help-support" className="list-link">
               <i className="fa-solid fa-headset list-icon"></i>
               <span className="list-name">Help/Support</span>
             </Link>
           </li>
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+          <li className="list-item">
+            <Link to="/user/settings" className="list-link">
               <i className="fa-solid fa-gear list-icon"></i>
               <span className="list-name">Settings</span>
             </Link>
           </li>
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+          <li className="list-item">
+            <Link to="/user/security" className="list-link">
               <i className="fa-solid fa-lock list-icon"></i>
               <span className="list-name">Security</span>
             </Link>
           </li>
-          <li class="list-item">
-            <Link to="/user/dashboard" className="list-link">
+          <li className="list-item">
+            <Link to="/user/user-guide" className="list-link">
               <i className="fa-solid fa-clipboard-list list-icon"></i>
               <span className="list-name">User Guide</span>
             </Link>

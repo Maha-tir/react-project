@@ -618,6 +618,18 @@ progress {
   margin-bottom: 0;
   list-style: none;
 }
+.nav-column {
+  flex-direction: column;
+  justify-content: center;
+}
+.nav-column-icon {
+  text-decoration: none;
+  align-items: center;
+}
+.nav-column-icon i {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
 /* =======================================
   Cursor Style
 ====================================== */

@@ -170,7 +170,16 @@
   display: grid;
   grid-template-columns: repeat(4, auto);
 }
-
+.box-grid\:5 {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+}
+.gap\:1 {
+  gap: 5px;
+}
+.gap\:2 {
+  gap: 10px;
+}
 .header-profile {
   position: fixed;
   top: 0;
@@ -229,4 +238,42 @@
 .profile-content {
   padding-top: calc(180px + 3rem);
   padding-bottom: 4rem;
+}
+
+.qr-square {
+  width: 150px;
+  height: 150px;
+  border-radius: 7px;
+  border: 1px solid #73b2fa;
+  margin-bottom: 10px;
+}
+.qr-square .qr-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.wallet-address {
+  position: relative;
+  width: 100%;
+  padding: 0.4rem 0.4rem;
+  padding-right: 45px;
+  border: 1px solid #73b2fa;
+  border-radius: 6px;
+}
+.wallet-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  background: transparent;
+  border: none;
+  color: #1581fd;
+}
+.wallet-btn:hover {
+  color: #5498e6;
 }

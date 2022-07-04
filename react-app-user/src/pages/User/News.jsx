@@ -12,11 +12,11 @@ const News = () => {
               <div className="card-height-lg"></div>
             </div>
           </div>
-          <ul class="list-group">
-            <li class="list-news-item">
+          <ul className="list-group">
+            <li className="list-news-item">
               <Link to="/user/dashboard" className="list-link">
                 <div className="list-link-icon">
-                  <i class="fa-solid fa-envelope-open-text list-icon"></i>
+                  <i className="fa-solid fa-envelope-open-text list-icon"></i>
                 </div>
                 <div className="notification-details">
                   <h2 className="sttr-text mb-1 fz:17 fw-500 text-dark">
@@ -29,10 +29,10 @@ const News = () => {
                 </div>
               </Link>
             </li>
-            <li class="list-news-item">
+            <li className="list-news-item">
               <Link to="/user/dashboard" className="list-link">
                 <div className="list-link-icon">
-                  <i class="fa-solid fa-bullhorn list-icon"></i>
+                  <i className="fa-solid fa-bullhorn list-icon"></i>
                 </div>
                 <div className="notification-details">
                   <h2 className="sttr-text mb-1 fz:17 fw-500 text-dark">
