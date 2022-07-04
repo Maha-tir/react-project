@@ -6,7 +6,8 @@ import ForgotPassword from "../pages/Auth/ForgotPassword";
 import SetNewPassword from "../pages/Auth/SetNewPassword";
 
 import Dashboard from "../pages/User/Dashboard";
-import Profile from "../pages/User/Profile";
+import News from "../pages/User/News";
+import Account from "../pages/User/Account";
 import Deposit from "../pages/User/Deposit";
 import Affiliate from "../pages/User/Affiliate";
 import Asset from "../pages/User/Asset";
@@ -22,7 +23,8 @@ const authRoutes = [
 
 const userRoutes = [
   { path: "/user/dashboard", component: Dashboard },
-  { path: "/user/profile", component: Profile },
+  { path: "/user/news", component: News },
+  { path: "/user/account", component: Account },
   { path: "/user/deposit", component: Deposit },
   { path: "/user/affiliate", component: Affiliate },
   { path: "/user/asset", component: Asset },

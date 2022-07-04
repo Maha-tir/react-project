@@ -25,7 +25,7 @@ const Signin = () => {
                 className="input-control"
                 required
               />
-              <i class="fa-regular fa-user input-icon"></i>
+              <i className="fa-regular fa-user input-icon"></i>
             </div>
           </div>
           <div className="input-group">
@@ -38,7 +38,7 @@ const Signin = () => {
                 className="input-control"
                 required
               />
-              <i class="bx bx-lock-alt input-icon"></i>
+              <i className="bx bx-lock-alt input-icon"></i>
             </div>
           </div>
           <div className="d-flex justify-content-end my-3">

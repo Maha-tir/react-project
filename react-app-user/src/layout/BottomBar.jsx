@@ -1,39 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const BottomBar = () => {
+
+import navBar from "../assets/json/navigation_bar.json";
+
+const BottomBar = (props) => {
+  const NavbarItem = (props) => {
+    const active = props.active ? "active" : "";
+
+    return (
+      <Link to={props.route} className={`navbar-link ${active}`}>
+        <i className={props.icon}></i>
+        <span>{props.display_name}</span>
+      </Link>
+    );
+  };
+  const activeItem = navBar.findIndex(
+    (item) => item.route === props.location.pathname
+  );
   return (
     <nav className="bottom-bar">
       <ul className="navbar-menu">
-        <li className="navbar-list">
-          <Link to="/user/dashboard" className="navbar-link">
-            <i className="bx bx-home-alt"></i>
-            <span>Home</span>
-          </Link>
-        </li>
-        <li className="navbar-list">
-          <Link to="/user/dashboard" className="navbar-link">
-            <i className="bx bx-line-chart"></i>
-            <span>Trades</span>
-          </Link>
-        </li>
-        <li className="navbar-list">
-          <Link to="/user/dashboard" className="navbar-link">
-            <i className="bx bx-home-alt"></i>
-            <span>Bot Setting</span>
-          </Link>
-        </li>
-        <li className="navbar-list">
-          <Link to="/user/dashboard" className="navbar-link">
-            <i className="bx bx-news"></i>
-            <span>News</span>
-          </Link>
-        </li>
-        <li className="navbar-list">
-          <Link to="/user/dashboard" className="navbar-link">
-            <i className="bx bx-wallet"></i>
-            <span>Account</span>
-          </Link>
-        </li>
+        {navBar.map((item, index) => (
+          <li className="navbar-list" key={index}>
+            <NavbarItem
+              route={item.route}
+              icon={item.icon}
+              display_name={item.display_name}
+              active={index === activeItem}
+            />
+          </li>
+        ))}
       </ul>
     </nav>
   );

@@ -1,0 +1,27 @@
+[
+  {
+    "display_name": "Home",
+    "route": "/user/dashboard",
+    "icon": "bx bx-home-alt"
+  },
+  {
+    "display_name": "Trades",
+    "route": "/user/trades",
+    "icon": "bx bx-line-chart"
+  },
+  {
+    "display_name": "Bot setting",
+    "route": "/user/bot-setting",
+    "icon": "bx bx-time"
+  },
+  {
+    "display_name": "News",
+    "route": "/user/news",
+    "icon": "bx bx-news"
+  },
+  {
+    "display_name": "Account",
+    "route": "/user/account",
+    "icon": "bx bx-user"
+  }
+]
