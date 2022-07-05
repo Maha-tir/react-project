@@ -1157,13 +1157,16 @@
 .justify-content-start {
   justify-content: flex-start !important;
 }
-.justify-content-end {
+.justify-content-end,
+.jce {
   justify-content: flex-end !important;
 }
-.justify-content-center {
+.justify-content-center,
+.jcc {
   justify-content: center !important;
 }
-.justify-content-between {
+.justify-content-between,
+.jcb {
   justify-content: space-between !important;
 }
 .justify-content-around {
@@ -1178,7 +1181,8 @@
 .align-items-end {
   align-items: flex-end !important;
 }
-.align-items-center {
+.align-items-center,
+.aic {
   align-items: center !important;
 }
 .align-items-baseline {
@@ -1222,6 +1226,13 @@
 }
 .align-self-stretch {
   align-self: stretch !important;
+}
+.place-content-center,
+.pcc {
+  place-content: center !important;
+}
+.place-content-start-end {
+  place-content: end !important;
 }
 .order-first {
   order: -1 !important;

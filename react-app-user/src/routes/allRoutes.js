@@ -13,6 +13,7 @@ import Affiliate from "../pages/User/Affiliate";
 import Asset from "../pages/User/Asset";
 import RewardDetail from "../pages/User/RewardDetail";
 import Withdraw from "../pages/User/Withdraw";
+import Transfer from "../pages/User/Transfer";
 
 const authRoutes = [
   { path: "/signin", component: Signin },
@@ -30,6 +31,7 @@ const userRoutes = [
   { path: "/user/asset", component: Asset },
   { path: "/user/reward-detail", component: RewardDetail },
   { path: "/user/withdraw", component: Withdraw },
+  { path: "/user/transfer", component: Transfer },
 ];
 
 export { authRoutes, userRoutes };

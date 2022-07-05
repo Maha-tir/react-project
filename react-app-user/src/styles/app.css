@@ -27,8 +27,20 @@
   padding: 2rem 1rem;
   padding-bottom: 4rem;
 }
+.sc-dbhs-p {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 2rem 0;
+  padding-bottom: 4rem;
+}
 .dbhs-content {
   padding-top: 2rem;
+}
+.dbhs-p {
+  padding: 0 1rem;
 }
 /* =======================================
   Header Style

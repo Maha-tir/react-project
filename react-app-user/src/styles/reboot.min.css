@@ -947,6 +947,9 @@ progress {
 .bg-primary {
   background-color: #26a1e9 !important;
 }
+.bg-primary\:50 {
+  background-color: #edf7fd !important;
+}
 .bg-secondary {
   background-color: #6c757d !important;
 }
