@@ -27,7 +27,10 @@ const Trades = () => {
               </div>
               <div className="nav gap:2 jce">
                 <button className="btn-control btn-control-sm">On/Off</button>
-                <Link className="nav flex-column aic jcc text-dark tdn">
+                <Link
+                  to="/user/transaction"
+                  className="nav flex-column aic jcc text-dark tdn"
+                >
                   <i className="bx bx-book-reader fz:24"></i>
                   <span className="fz:11 fw-600">Transaction</span>
                 </Link>

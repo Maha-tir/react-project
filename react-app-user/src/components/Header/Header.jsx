@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/img/BIDBOX-LOGO-NEW.png";
 import "../../styles/app.css";
+import Sidebar from "../Sidebar/Sidebar";
 const Header = () => {
-  const [slideNavbar, setSlideNavbar] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
   const [header, setheader] = useState(false);
   const changeHeader = () => {
     if (window.scrollY >= 14) {
@@ -13,6 +14,14 @@ const Header = () => {
     }
   };
   window.addEventListener("scroll", changeHeader);
+
+  const toggleSidebar = () => {
+    setSidebar(!sidebar);
+  };
+
+  const hideSidebar = () => {
+    setSidebar(false);
+  };
 
   return (
     <React.Fragment>
@@ -30,13 +39,17 @@ const Header = () => {
               </button>
             </li>
             <li className="list-menu">
-              <button className="nvcs-btn">
+              <button className="nvcs-btn" onClick={toggleSidebar}>
                 <i className="fa-regular fa-bell"></i>
               </button>
             </li>
           </ul>
         </nav>
       </header>
+      <Sidebar
+        onSidebar={hideSidebar}
+        className={sidebar ? "show-sidebar" : "hide-sidebar"}
+      />
     </React.Fragment>
   );
 };
