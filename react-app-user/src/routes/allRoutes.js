@@ -14,6 +14,8 @@ import Asset from "../pages/User/Asset";
 import RewardDetail from "../pages/User/RewardDetail";
 import Withdraw from "../pages/User/Withdraw";
 import Transfer from "../pages/User/Transfer";
+import Trades from "../pages/User/Trades";
+import BotSetting from "../pages/User/BotSetting";
 
 const authRoutes = [
   { path: "/signin", component: Signin },
@@ -32,6 +34,8 @@ const userRoutes = [
   { path: "/user/reward-detail", component: RewardDetail },
   { path: "/user/withdraw", component: Withdraw },
   { path: "/user/transfer", component: Transfer },
+  { path: "/user/trades", component: Trades },
+  { path: "/user/bot-setting", component: BotSetting },
 ];
 
 export { authRoutes, userRoutes };
