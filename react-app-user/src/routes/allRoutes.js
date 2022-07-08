@@ -18,12 +18,13 @@ import Trades from "../pages/User/Trades";
 import BotSetting from "../pages/User/BotSetting";
 
 import NotFound from "../pages/Error/NotFound";
+import { Redirect } from "react-router-dom";
 
 const authRoutes = [
-  { path: "/signin", component: Signin },
-  { path: "/signup", component: Signup },
-  { path: "/forgot-password", component: ForgotPassword },
-  { path: "/set-new-password", component: SetNewPassword },
+  { path: "/auth/signin", component: Signin },
+  { path: "/auth/signup", component: Signup },
+  { path: "/auth/forgot-password", component: ForgotPassword },
+  { path: "/auth/set-new-password", component: SetNewPassword },
 ];
 
 const userRoutes = [
@@ -40,6 +41,9 @@ const userRoutes = [
   { path: "/user/bot-setting", component: BotSetting },
 ];
 
-const errorRoutes = [{ path: "*", component: NotFound }];
+const errorRoutes = [
+  { path: "/user/*", component: NotFound },
+  { path: "/auth/*", component: NotFound },
+];
 
 export { authRoutes, userRoutes, errorRoutes };

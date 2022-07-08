@@ -46,7 +46,7 @@ function App() {
           />
         ))}
 
-        <Redirect from="/" to="/signin" />
+        <Redirect strict from="/" to="/auth/signin" />
       </Switch>
     </BrowserRouter>
   );

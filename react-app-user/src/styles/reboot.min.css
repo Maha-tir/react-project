@@ -840,6 +840,10 @@ progress {
   margin-bottom: 0;
   list-style: none;
 }
+.nav-hr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.2rem;
+}
 .nav-column {
   flex-direction: column;
   justify-content: center;
@@ -911,7 +915,19 @@ progress {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 0.3rem;
+}
+.card-elm {
+  border: none;
+  background-color: #f0f5ff;
+}
+.card-trades {
+  border: none;
+  border-radius: 0.6rem;
+}
+.card-shadow\:1 {
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
 }
 .card-overflow {
   overflow-x: auto;

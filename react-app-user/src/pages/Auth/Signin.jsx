@@ -42,7 +42,7 @@ const Signin = () => {
             </div>
           </div>
           <div className="d-flex justify-content-end my-3">
-            <Link to="/forgot-password" className="text-link">
+            <Link to="/auth/forgot-password" className="text-link">
               Forgot Passowrd ?
             </Link>
           </div>
@@ -50,7 +50,7 @@ const Signin = () => {
           <div className="my-2 text-center">
             <p className="fz:15 text-mute fw-500">
               Dont have an account?{" "}
-              <Link to="/signup" className="text-link fz:14">
+              <Link to="/auth/signup" className="text-link fz:14">
                 Sign Up
               </Link>
             </p>

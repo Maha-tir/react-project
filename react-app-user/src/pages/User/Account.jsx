@@ -13,6 +13,7 @@ const Account = () => {
               ID : example@gmail.com
             </p>
           </div>
+          <button className="ms-auto btn-logout">Logout</button>
         </div>
         <div className="card card-absolute">
           <div className="nav align-items-center justify-content-between">

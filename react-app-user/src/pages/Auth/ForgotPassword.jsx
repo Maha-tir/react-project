@@ -7,11 +7,11 @@ const ForgotPassword = () => {
   const history = useHistory();
 
   const backToLogin = () => {
-    history.push("/signin");
+    history.push("/auth/signin");
   };
 
   const SetPassword = () => {
-    history.push("/set-new-password");
+    history.push("/auth/set-new-password");
   };
 
   return (
@@ -53,7 +53,7 @@ const ForgotPassword = () => {
         <div className="my-2 text-center">
           <p className="fz:15 text-mute fw-500">
             Remember password?
-            <Link to="/signin" className="text-link fz:14 ms-1">
+            <Link to="/auth/signin" className="text-link fz:14 ms-1">
               Sign In
             </Link>
           </p>

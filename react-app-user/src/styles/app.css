@@ -246,6 +246,25 @@
   background: #3998f7;
   color: #ffffff;
 }
+.btn-logout {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  height: 30px;
+  padding: 0 1.4rem;
+  line-height: 24px;
+  border-radius: 9px;
+  border: none;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+.btn-logout:hover {
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  color: #287eff;
+}
 
 .profile-content {
   padding-top: calc(180px + 3rem);
@@ -288,6 +307,22 @@
 }
 .wallet-btn:hover {
   color: #5498e6;
+}
+.text-range {
+  background: #b4b4b4;
+  color: #ffffff;
+  padding: 0.2rem;
+  border-radius: 6px;
+  text-align: center;
+}
+.text-range-mute {
+  background: #a3a3a3;
+}
+.text-range-red {
+  background: #e20b0b;
+}
+.text-range-green {
+  background: #20a031;
 }
 .err-img {
   width: 250px;
