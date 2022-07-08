@@ -33,5 +33,10 @@
     "display_name": "Sop Trader",
     "route": "/admin/sop-trader",
     "icon": "bx bx-bell"
+  },
+  {
+    "display_name": "News",
+    "route": "/admin/news",
+    "icon": "bx bxs-megaphone"
   }
 ]

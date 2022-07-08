@@ -9,20 +9,20 @@ const Signin = () => {
   const [msg, setMsg] = useState("");
   const history = useHistory();
 
-  const Login = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post("http://localhost:5000/login", {
-        email: email,
-        password: password,
-      });
-      history.push("/admin/dashboard");
-    } catch (error) {
-      if (error.response) {
-        setMsg(error.response.data.msg);
-      }
-    }
-  };
+  // const Login = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axios.post("http://localhost:5000/login", {
+  //       email: email,
+  //       password: password,
+  //     });
+  //     history.push("/admin/dashboard");
+  //   } catch (error) {
+  //     if (error.response) {
+  //       setMsg(error.response.data.msg);
+  //     }
+  //   }
+  // };
   return (
     <div className="sc-ShXmqw XjkQw">
       <div className="auth-box auth-signin">
@@ -42,8 +42,8 @@ const Signin = () => {
             Please sign-in to your account and start the adventure
           </p>
         </header>
-        <form className="auth-form" id="form-validation" onSubmit={Login}>
-          {msg && (
+        <form className="auth-form" id="form-validation">
+          {/* {msg && (
             <div
               className="alert alert-danger d-flex align-items-center"
               style={{ fontSize: "14px", fontWeight: "500" }}
@@ -56,7 +56,7 @@ const Signin = () => {
               </div>
               {msg}
             </div>
-          )}
+          )} */}
           <div className="input-field">
             <label className="all-label" htmlFor="email">
               Email Address
@@ -66,8 +66,8 @@ const Signin = () => {
               id="email"
               placeholder="email.example@gmail.com"
               className="input-action"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              // value={email}
+              // onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -80,19 +80,19 @@ const Signin = () => {
               id="password"
               placeholder="Your password"
               className="input-action"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              // value={password}
+              // onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
           <div className="d-flex align-items-center mb-3">
-            <a
-              href="/forgot-password"
+            <Link
+              to="/auth/forgot-password"
               className="text-link-first"
               style={{ fontSize: "14px" }}
             >
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           <button className="sc-SignFx XamWr">Sign In</button>

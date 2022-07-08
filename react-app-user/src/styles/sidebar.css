@@ -61,7 +61,13 @@
   background: #ececec;
 }
 .close-btn:hover {
-  color: #474747;
+  color: #3b3b3b;
+}
+.close-btn span {
+  transition: all 0.2s;
+}
+.close-btn:hover span {
+  transform: translateX(-5px);
 }
 .sidebar-content {
   max-height: calc(100vh - 4rem);

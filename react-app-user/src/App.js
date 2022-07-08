@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import { authRoutes, userRoutes } from "./routes/allRoutes";
+import { authRoutes, userRoutes, errorRoutes } from "./routes/allRoutes";
 import AuthLayout from "./layout/AuthLayout";
 import DashboardLayout from "./layout/DashboardLayout";
+import ErrorLayout from "./layout/ErrorLayout";
 
 const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
@@ -36,8 +37,16 @@ function App() {
             layout={DashboardLayout}
           />
         ))}
+        {errorRoutes.map((route, index) => (
+          <AppRoute
+            key={index}
+            path={route.path}
+            component={route.component}
+            layout={ErrorLayout}
+          />
+        ))}
+
         <Redirect strict from="/" to="/signin" />
-        <Redirect strict from="/user/" to="/user/dashboard" />
       </Switch>
     </BrowserRouter>
   );

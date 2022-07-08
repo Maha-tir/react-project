@@ -17,6 +17,8 @@ import Transfer from "../pages/User/Transfer";
 import Trades from "../pages/User/Trades";
 import BotSetting from "../pages/User/BotSetting";
 
+import NotFound from "../pages/Error/NotFound";
+
 const authRoutes = [
   { path: "/signin", component: Signin },
   { path: "/signup", component: Signup },
@@ -38,4 +40,6 @@ const userRoutes = [
   { path: "/user/bot-setting", component: BotSetting },
 ];
 
-export { authRoutes, userRoutes };
+const errorRoutes = [{ path: "*", component: NotFound }];
+
+export { authRoutes, userRoutes, errorRoutes };

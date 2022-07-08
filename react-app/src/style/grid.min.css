@@ -1154,16 +1154,20 @@
 .flex-wrap-reverse {
   flex-wrap: wrap-reverse !important;
 }
-.justify-content-start {
+.justify-content-start,
+.jcs {
   justify-content: flex-start !important;
 }
-.justify-content-end {
+.justify-content-end,
+.jce {
   justify-content: flex-end !important;
 }
-.justify-content-center {
+.justify-content-center,
+.jcc {
   justify-content: center !important;
 }
-.justify-content-between {
+.justify-content-between,
+.jcb {
   justify-content: space-between !important;
 }
 .justify-content-around {

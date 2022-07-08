@@ -9,19 +9,33 @@ import Modal from "../../components/Modal/Modal";
 const data = [
   {
     id: 1,
-    name: "BTC/USDT",
+    waktu: "01-01-2021",
+    mode: "Professional",
+    pair: "BTC/USDT",
+    exchange: "Binance",
+    hargaBeli: "1.000",
+    hargaJual: "1.015",
+    profit: "+1,2%",
   },
   {
     id: 2,
-    name: "ETH/USDT",
+    waktu: "02-01-2021",
+    mode: "Professional",
+    pair: "BTC/USDT",
+    exchange: "Binance",
+    hargaBeli: "1.000",
+    hargaJual: "1.035",
+    profit: "+1,3%",
   },
   {
     id: 3,
-    name: "LIT/USDT",
-  },
-  {
-    id: 4,
-    name: "BNB/USDT",
+    waktu: "02-01-2021",
+    mode: "Standart",
+    pair: "BTC/USDT",
+    exchange: "Tokocrypto",
+    hargaBeli: "1.000",
+    hargaJual: "1.035",
+    profit: "+1,3%",
   },
 ];
 
@@ -197,8 +211,119 @@ const Dashboard = () => {
         </div>
         <div className="col-md-7 col-lg-8 mt-2 mt-lg-0">
           <div className="card card-minwidth">
-            <div className="card-body">
-              <div className="list-group-item-flex">
+            <div className="card-body row">
+              <div className="col-sm-4">
+                <div className="list-group-item-flex">
+                  <div className="icon-item me-2">
+                    <i className="bx bx-star"></i>
+                  </div>
+                  <div className="item-info-md">
+                    <p className="item-mix-sm">
+                      BTC/ <span id="usdt">USDT</span>
+                    </p>
+                    <p className="price">Price : 000.00</p>
+                    <p className="chg">
+                      Chg: <span id="prcnt">00.00%</span>
+                    </p>
+                    <button className="sch-view">View chart</button>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-3">
+                <div className="item-block ms-3">
+                  <div className="input-field">
+                    <label htmlFor="limit-price" className="fz:14 fw-500">
+                      Buy limit price
+                    </label>
+                    <input
+                      type="text"
+                      name="limit-price"
+                      id="limit-price"
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="input-field">
+                    <label htmlFor="profit-target" className="fz:14 fw-500">
+                      Profit Target
+                    </label>
+                    <input
+                      type="text"
+                      name="profit-target"
+                      id="profit-target"
+                      className="input-profit"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-4">
+                <div className="item-block mb-3">
+                  <h2 className="m-0 fz:14 fw-500">Exchange</h2>
+                  <div className="nav gap:2">
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="Binance"
+                      />
+                      <label
+                        className="m-0 fz:14 fw-500 cursor:pointer"
+                        for="Binance"
+                      >
+                        Binance
+                      </label>
+                    </div>
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="Tokocrypto"
+                      />
+                      <label
+                        className="m-0 fz:14 fw-500 cursor:pointer"
+                        for="Tokocrypto"
+                      >
+                        Tokocrypto
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div className="item-block">
+                  <h2 className="m-0 fz:14 fw-500">Mode</h2>
+                  <div className="nav gap:2">
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="Standart"
+                      />
+                      <label
+                        className="m-0 fz:14 fw-500 cursor:pointer"
+                        for="Standart"
+                      >
+                        Standart
+                      </label>
+                    </div>
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="Professional"
+                      />
+                      <label
+                        className="m-0 fz:14 fw-500 cursor:pointer"
+                        for="Professional"
+                      >
+                        Professional
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* <div className="list-group-item-flex">
                 <div className="icon-item me-2">
                   <i className="bx bx-star"></i>
                 </div>
@@ -232,7 +357,7 @@ const Dashboard = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -249,24 +374,58 @@ const Dashboard = () => {
           <div className="card">
             <div className="table-responsive">
               <table className="table p-3">
+                <thead>
+                  <tr>
+                    <th scope="col" className="fz:15">
+                      Waktu
+                    </th>
+                    <th scope="col" className="fz:15">
+                      Mode
+                    </th>
+                    <th scope="col" className="fz:15">
+                      Pair
+                    </th>
+                    <th scope="col" className="fz:15">
+                      Exchange
+                    </th>
+                    <th scope="col" className="fz:15">
+                      Harga Beli
+                    </th>
+                    <th scope="col" className="fz:15">
+                      Harga Jual
+                    </th>
+                    <th scope="col" className="fz:15">
+                      Profit
+                    </th>
+                    <th scope="col" className="fz:15">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
                 <tbody>
                   {coins.map((coin, index) => (
                     <tr key={index}>
-                      <th scope="row">{index + 1}</th>
-                      <td>{coin.name}</td>
+                      <td>{coin.waktu}</td>
+                      <td>{coin.mode}</td>
+                      <td>{coin.pair}</td>
+                      <td>{coin.exchange}</td>
+                      <td>{coin.hargaBeli}</td>
+                      <td>{coin.hargaJual}</td>
+                      <td>{coin.profit}</td>
                       <td>
-                        <button
-                          className="sch-danger-btn"
-                          onClick={() => handleDelete(coin.id)}
-                        >
-                          Cut Loss
-                        </button>
+                        <div className="nav flex-column">
+                          <button className="sch-warning-btn">
+                            Cancel Buy
+                          </button>
+                          <button
+                            className="sch-danger-btn"
+                            onClick={() => handleDelete(coin.id)}
+                          >
+                            Cut Loss
+                          </button>
+                        </div>
                       </td>
-                      <td>
-                        <button className="sch-first-btn">
-                          %Floating / Profit
-                        </button>
-                      </td>
+                      <td className="fw-600 text-green">{coin.profit}</td>
                     </tr>
                   ))}
                 </tbody>

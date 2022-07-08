@@ -26,10 +26,10 @@ const ProfitTrading = () => {
         </div>
         <div className="col-md-6"></div>
 
-        <div className="card" style={{ overflowX: "auto" }}>
+        <div className="card">
           <div className="card-header">
             <div className="row my-3">
-              <div className="col-lg-7">
+              <div className="col-md-7">
                 <div className="row">
                   <div className="col-lg-4">
                     <div className="input-field">
@@ -54,11 +54,19 @@ const ProfitTrading = () => {
                       <label>Status</label>
                       <select name="" id="" className="form-select">
                         <option value="">Semua</option>
-                        <option value="">Active</option>
-                        <option value="">Disactive</option>
+                        <option value="">Succes</option>
+                        <option value="">Pending</option>
+                        <option value="">Cut Loss</option>
+                        <option value="">Buy</option>
                       </select>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div className="col-md-5">
+                <div className="d-inline-flex align-items-center h:100 w:100 jce gap:2">
+                  <button className="btn">Reset</button>
+                  <button className="btn btn-warning">Cari</button>
                 </div>
               </div>
             </div>
