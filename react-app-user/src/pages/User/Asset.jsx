@@ -65,10 +65,99 @@ const Asset = () => {
             <h2 className="m-0 fz:12 fw-600 text-dark">History Record</h2>
             <p className="m-0 fz:12 fw-600 text-dark">Today</p>
           </div>
-          <div className="box-grid:3 gap:2">
+          <div className="box-grid:3 gap:2 mb-2">
             <button className="btn-navs-tabs">Deposit</button>
-            <button className="btn-navs-tabs">Withdrawal</button>
+            <button className="btn-navs-tabs active">Withdrawal</button>
             <button className="btn-navs-tabs">Transfer</button>
+          </div>
+        </div>
+        <div className="card mb-2">
+          <div className="card-body">
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Withdrawal</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">2022-07-01 | 11:11</p>
+            </div>
+            <h2 className="mb-1 fz:17 text-dark">888 USDT</h2>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Chain</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">TRC20</p>
+            </div>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Withdrawl Address</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">
+                ip7SGwwagZWyfrNh6soP3h3M53o
+              </p>
+            </div>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Hash</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">
+                3J9D2fAhX4DjRQ7ycqDH4d8h33i7RjfbrXUw
+              </p>
+            </div>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Fee Withdrawl</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">2 USDT</p>
+            </div>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Status</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">
+                PENDING/APPROVED/SUCCES
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="card mb-2">
+          <div className="card-body">
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">
+                Transfer / Internal
+              </h2>
+              <p className="m-0 fz:11 fw-600 text-mute">2022-07-01 | 11:11</p>
+            </div>
+            <h2 className="mb-1 fz:17 text-dark">222 USDT</h2>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Chain</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">TRC20</p>
+            </div>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Withdrawl Address</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">
+                ip7SGwwagZWyfrNh6soP3h3M53o
+              </p>
+            </div>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Status</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">
+                PENDING/APPROVED/SUCCES
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="card ">
+          <div className="card-body">
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Deposit</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">2022-07-01 | 11:11</p>
+            </div>
+            <h2 className="mb-1 fz:17 text-dark">444 USDT</h2>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Chain</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">TRC20</p>
+            </div>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Deposit Address</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">
+                ip7SGwwagZWyfrNh6soP3h3M53o
+              </p>
+            </div>
+            <div className="nav justify-content-between mb-1">
+              <h2 className="m-0 fz:11 fw-600 text-mute">Status</h2>
+              <p className="m-0 fz:11 fw-600 text-mute">
+                PENDING/APPROVED/SUCCES
+              </p>
+            </div>
           </div>
         </div>
       </div>

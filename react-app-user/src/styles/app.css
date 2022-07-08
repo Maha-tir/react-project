@@ -289,3 +289,28 @@
 .wallet-btn:hover {
   color: #5498e6;
 }
+.err-img {
+  width: 250px;
+}
+.btn-back {
+  display: inline-block;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #4496f5;
+  border: 1px solid transparent;
+  padding: 0.4rem 1.4rem;
+  font-size: 0.9rem;
+  border-radius: 0.25rem;
+}
+.btn-back:hover {
+  background-color: #247de2;
+}
+.btn-back:active {
+  background-color: #4092f0;
+}

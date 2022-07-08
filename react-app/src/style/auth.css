@@ -263,3 +263,21 @@
     justify-content: flex-end;
   }
 }
+
+.sc-forgot-password {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sc-forgot-content {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.img-forgot {
+  width: 300px;
+}

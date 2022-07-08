@@ -777,7 +777,36 @@ progress {
   background: #0f72e2;
   color: #ffffff;
 }
-
+.btn-navs-tabs {
+  display: inline-block;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #c2c2c2;
+  border: 1px solid transparent;
+  padding: 0.2rem 0.75rem;
+  border-radius: 0.3rem;
+}
+.btn-navs-tabs:hover {
+  background-color: #acacac;
+}
+.btn-navs-tabs:active {
+  background-color: #dadada;
+}
+.btn-navs-tabs.active {
+  background-color: #5c9dff;
+}
+.btn-navs-tabs.active:hover {
+  background-color: #3d81e7;
+}
+.btn-navs-tabs.active:active {
+  background-color: #6da7ff;
+}
 /* =======================================
   Link Button Style
 ====================================== */
