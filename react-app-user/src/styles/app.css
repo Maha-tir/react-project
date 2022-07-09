@@ -200,7 +200,7 @@
   margin: 0 auto;
   width: 468px;
   height: 180px;
-  padding: 2rem;
+  padding: 2rem 1rem;
   background: linear-gradient(
     180deg,
     rgba(5, 164, 230, 1) 17%,
@@ -247,6 +247,8 @@
   color: #ffffff;
 }
 .btn-logout {
+  position: absolute;
+  right: 15px;
   display: inline-block;
   font-size: 13px;
   font-weight: 500;

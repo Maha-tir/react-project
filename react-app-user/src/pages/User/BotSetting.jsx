@@ -56,8 +56,8 @@ const BotSetting = () => {
           <div className="card-body">
             <h2 className="mb-2 fz:14 fw-600 text-dark">Upgrade Bot Signal</h2>
             <div className="box-grid:2 gap:2">
-              <select className="form-select form-select-sm">
-                <option selected disabled className="selected">
+              <select defaultValue="0" className="form-select form-select-sm">
+                <option value="0" selected disabled className="selected">
                   Upgrade
                 </option>
                 <option value="1">Standart</option>
