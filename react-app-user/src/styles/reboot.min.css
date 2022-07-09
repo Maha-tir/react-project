@@ -505,6 +505,16 @@ progress {
 .text-red {
   color: #db0505;
 }
+.text-card-absolute {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1769e4;
+  color: #ffffff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
 /* =======================================
   Form Select Style
 ====================================== */
@@ -921,9 +931,20 @@ progress {
   border: none;
   background-color: #f0f5ff;
 }
+.card-elm-bordered {
+  border: 1px solid rgba(32, 92, 255, 0.363);
+  background-color: #f0f5ff;
+}
 .card-trades {
   border: none;
   border-radius: 0.6rem;
+}
+.card-mute {
+  background: #dddddd;
+}
+.card-active {
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.25) 0px 2px 8px 0px;
 }
 .card-shadow\:1 {
   border: none;
@@ -1008,6 +1029,24 @@ progress {
 }
 .card-footer:last-child {
   border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+}
+.badge-active {
+  position: absolute;
+  top: 19px;
+  left: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0cc58d;
+}
+.badge-not-active {
+  position: absolute;
+  top: 19px;
+  left: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #414141;
 }
 .list-group {
   display: flex;
@@ -1229,7 +1268,7 @@ progress {
   background-color: #dc3545 !important;
 }
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #ffffff !important;
 }
 .bg-dark {
   background-color: #212529 !important;
