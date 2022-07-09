@@ -16,7 +16,7 @@ const NotFound = () => {
           <h2 className="mb-2 fz:24">404</h2>
           <h2 className="mb-2 fz:20">Page Not Found</h2>
           <img src={E404} alt="_NotFound" className="err-img" />
-          <p className="mb-2 fz:14">
+          <p className="mb-2 fz:14 text-center">
             This page is missing or you assembled the link incorrectly
           </p>
           <button className="btn-back" onClick={backHistory}>
