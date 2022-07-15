@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import QREXAMPLE from "../../assets/img/chart-example.png";
 const Deposit = () => {
   const backHistory = () => {
     window.history.back();
+  };
+
+  const copyText = () => {
+    var text = document.getElementById("wallet-address").textContent;
+    // text.select();
+    // text.setSelcetionRange(0, 99999);
+
+    navigator.clipboard.writeText(text);
+
+    alert("Wallet Address Copied");
   };
   return (
     <div className="sc-dbhs">
@@ -10,11 +20,11 @@ const Deposit = () => {
         <button className="back-button me-auto" onClick={backHistory}>
           <i className="fa-solid fa-angle-left back-icon"></i>
         </button>
-        <span className=" me-auto">Deposit</span>
+        <span className="text-uppercase fw-500 me-auto">Deposit</span>
       </header>
       <div className="dbhs-content">
         <div className="nav nav-column">
-          <h2 className="mb-2 fz:15 fw-600 text-dark text-center">
+          <h2 className="mb-2 fz:15 fw-600 text-dark text-center text-uppercase">
             USDT-TRC20 ONLY
           </h2>
           <div className="nav justify-content-center">
@@ -24,10 +34,13 @@ const Deposit = () => {
           </div>
           <div className="wallet-address mb-3">
             <p className="mb-1 fz:11 text-mute sttr-text">Wallet Address</p>
-            <h2 className="m-0 fz:15 fw-600 sttr-text text-dark">
-              h01S93ymAEupBHuapOo1EgwCDTrTsvSqgeZNEXXQ
+            <h2
+              className="m-0 fz:15 fw-600 sttr-text text-dark"
+              id="wallet-address"
+            >
+              e6OO9reBJTMdpZtA3f5x41yNvm1U33W8Wi2qkiUW
             </h2>
-            <button className="cpy-btn wallet-btn">
+            <button className="cpy-btn wallet-btn" onClick={copyText}>
               <i className="bx bx-copy"></i>
             </button>
           </div>

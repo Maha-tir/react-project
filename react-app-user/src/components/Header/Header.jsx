@@ -47,12 +47,12 @@ const Header = () => {
           <ul className="nav-menu m-0 p-0">
             <li className="list-menu">
               <button className="nvcs-btn" onClick={toggleSearch}>
-                <i className="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass text-dark"></i>
               </button>
             </li>
             <li className="list-menu">
               <button className="nvcs-btn" onClick={toggleSidebar}>
-                <i className="fa-regular fa-bell"></i>
+                <i className="fa-regular fa-bell text-dark"></i>
               </button>
             </li>
           </ul>

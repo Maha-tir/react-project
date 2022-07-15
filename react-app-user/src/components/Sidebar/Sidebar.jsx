@@ -7,7 +7,12 @@ const Sidebar = ({ className, onSidebar }) => {
       <div className="sidebar-header">
         <p className="m-0 fz:14 fw-600 text-dark">Notifications</p>
         <button className="close-btn" onClick={onSidebar}>
-          <span className="fz:13 fw-600 me-2">Close</span>
+          <span
+            className="fz:13 fw-600 me-2 text-dark"
+            style={{ marginBottom: "1px" }}
+          >
+            Close
+          </span>
           <i className="fa-solid fa-angle-right"></i>
         </button>
       </div>
@@ -26,6 +31,7 @@ const Sidebar = ({ className, onSidebar }) => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Impedit, aliquam nostrum maiores placeat eum repellendus.
                 </p>
+                <p className="date-news">2022-05-26</p>
               </div>
             </Link>
           </li>
@@ -42,6 +48,7 @@ const Sidebar = ({ className, onSidebar }) => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Impedit, aliquam nostrum maiores placeat eum repellendus.
                 </p>
+                <p className="date-news">2022-05-30</p>
               </div>
             </Link>
           </li>

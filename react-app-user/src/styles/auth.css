@@ -70,7 +70,7 @@
 }
 .icon-lg .fa-lock {
   font-size: 3.5rem;
-  color: #1b76df;
+  color: var(--first-color);
 }
 .icon-lg .fa-circle-check {
   position: absolute;
@@ -148,15 +148,18 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+.input-field.w-btn .input-control {
+  padding-right: 85px;
+}
 .input-field .input-control:active,
 .input-field .input-control:focus,
 .input-field .input-control:valid {
-  border: 2px solid #2789f8;
+  border: 2px solid var(--first-color);
 }
 .input-field .input-control:active ~ .input-icon,
 .input-field .input-control:focus ~ .input-icon,
 .input-field .input-control:valid ~ .input-icon {
-  color: #2789f8;
+  color: var(--first-color);
 }
 .input-control::placeholder {
   color: #a09f9f;
@@ -182,16 +185,18 @@
   display: block;
   width: 100%;
   padding: 0.5rem 1.3rem;
+  height: 38px;
+  margin-bottom: 7px;
   border: none;
-  background: #232527;
+  background: var(--first-color);
   color: #fbfdff;
   border-radius: 5px;
 }
 .sc-get-btn:hover {
-  background: #060607;
+  background: var(--first-color-hover);
 }
 .sc-get-btn:active {
-  background: #424244;
+  background: var(--first-color-active);
 }
 .sc-sign-btn {
   display: block;
@@ -199,14 +204,14 @@
   padding: 0.4rem 1.4rem;
   border-radius: 5px;
   border: none;
-  background: #1e80f0;
+  background: var(--first-color);
   color: #ffffff;
   cursor: pointer;
   text-decoration: none;
 }
 .sc-sign-btn:hover {
-  background: #1b76df;
+  background: var(--first-color-hover);
 }
 .sc-sign-btn:active {
-  background: #2f8cf7;
+  background: var(--first-color-active);
 }

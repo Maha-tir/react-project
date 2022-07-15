@@ -7,8 +7,8 @@ const News = () => {
       <div>
         <Header />
         <div className="dbhs-content">
-          <div className="pb-0" style={{ padding: "2rem 1rem" }}>
-            <div className="card mb-2">
+          <div className="pb-0" style={{ padding: "1rem 0.5rem" }}>
+            <div className="card mb-2 border-none">
               <div className="card-height-lg"></div>
             </div>
           </div>
@@ -26,6 +26,7 @@ const News = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Impedit, aliquam nostrum maiores placeat eum repellendus.
                   </p>
+                  <p className="date-news">2022-05-26</p>
                 </div>
               </Link>
             </li>
@@ -42,6 +43,7 @@ const News = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Impedit, aliquam nostrum maiores placeat eum repellendus.
                   </p>
+                  <p className="date-news">2022-05-30</p>
                 </div>
               </Link>
             </li>

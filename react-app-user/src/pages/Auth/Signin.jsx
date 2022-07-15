@@ -41,9 +41,9 @@ const Signin = () => {
               <i className="bx bx-lock-alt input-icon"></i>
             </div>
           </div>
-          <div className="d-flex justify-content-end my-3">
+          <div className="d-flex justify-content-end mb-3 mt-2">
             <Link to="/auth/forgot-password" className="text-link">
-              Forgot Passowrd ?
+              Forgot Password?
             </Link>
           </div>
           <button className="sc-sign-btn">Sign In</button>

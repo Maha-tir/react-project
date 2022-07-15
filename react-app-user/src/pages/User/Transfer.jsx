@@ -10,7 +10,7 @@ const Transfer = () => {
         <button className="back-button me-auto" onClick={backHistory}>
           <i className="fa-solid fa-angle-left back-icon"></i>
         </button>
-        <span className=" me-auto">Transfer</span>
+        <span className="text-uppercase fw-500 me-auto">Transfer</span>
       </header>
       <div className="dbhs-content">
         <form action="">
@@ -63,7 +63,7 @@ const Transfer = () => {
           <div className="dbhs-p py-3">
             <div className="input-group">
               <label className="input-label">OTP Email</label>
-              <div className="input-field not-icon">
+              <div className="input-field not-icon w-btn">
                 <input
                   type="text"
                   id="otp-email"
@@ -71,15 +71,18 @@ const Transfer = () => {
                   className="input-control"
                   required
                 />
+                <button className="input-btn-absolute get-otp text-uppercase">
+                  Get OTP
+                </button>
               </div>
             </div>
             <div className="input-group">
-              <label className="input-label">Transaction Password</label>
+              <label className="input-label">Security PIN</label>
               <div className="input-field not-icon">
                 <input
                   type="text"
                   id="transaction-password"
-                  placeholder="Transaction Password"
+                  placeholder="Security PIN"
                   className="input-control"
                   required
                 />
@@ -91,7 +94,9 @@ const Transfer = () => {
               </div>
             </div>
 
-            <button className="sc-sign-btn">Confirm Transfer</button>
+            <button className="sc-sign-btn text-uppercase">
+              Confirm Transfer
+            </button>
           </div>
         </form>
       </div>

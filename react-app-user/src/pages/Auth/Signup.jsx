@@ -1,7 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/auth.css";
+
+import Indonesia from "../../assets/img/flag/indonesia.png";
+
 const Signup = () => {
+  const country = [
+    {
+      id: 1,
+      name_country: "indonesia",
+      flag: Indonesia,
+    },
+  ];
   return (
     <div className="sc-sign-up">
       <div className="sc-content-all">
@@ -13,9 +23,18 @@ const Signup = () => {
               <option selected disabled className="selected">
                 Select your country
               </option>
-              <option value="1">Indonesia</option>
-              <option value="2">United States</option>
-              <option value="3">Arabic</option>
+              {country.map((country, index) => (
+                // <option value={index}>
+                //   <div className="icon">
+                //     <img src={country.flag} alt="" />
+                //   </div>
+                //   {country.name_country}
+                // </option>
+                <option className="option">
+                  <img src={country.flag} alt="" />
+                  {country.name_country}
+                </option>
+              ))}
             </select>
           </div>
           <div className="input-group">
@@ -100,7 +119,7 @@ const Signup = () => {
                 className="form-check-label fz:14 text-mute cursor:pointer"
                 htmlFor="termcondition"
               >
-                I Have Read Term & Condition
+                I Have Read Term & Conditions
               </label>
             </div>
           </div>

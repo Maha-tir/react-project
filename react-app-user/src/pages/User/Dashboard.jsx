@@ -6,11 +6,11 @@ const Dashboard = () => {
     <div className="sc-dbhs">
       <Header />
       <div className="dbhs-content">
-        <div className="card mb-2">
+        <div className="card mb-2 border-none">
           <div className="card-height-lg"></div>
         </div>
-        <div className="card">
-          <div className="card-height-md bg-primary">
+        <div className="card border-none">
+          <div className="card-height-md bg-first">
             <div className="card-body row h:100">
               <div className="box-grid:4">
                 <div className="nav flex-column justify-content-center">
@@ -34,10 +34,9 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="card-overflow">
-          <table className="table table-responsive mt-3">
+          <table className="table mb-0 mt-3">
             <thead>
               <tr>
-                <th scope="col"></th>
                 <th scope="col" className="fw-400 fz:13">
                   Rank/Coin
                 </th>
@@ -49,6 +48,8 @@ const Dashboard = () => {
                 </th>
               </tr>
             </thead>
+          </table>
+          <table className="table table-responsive mt-0">
             <tbody>
               <tr>
                 <th scope="row">1</th>
@@ -56,20 +57,20 @@ const Dashboard = () => {
                   <div className="coin-group-flex">
                     <div className="coin-icon"></div>
                     <div className="d-block">
-                      <h2 className="m-0 fz:14 fw-600 text-dark">BTC</h2>
+                      <h2 className="m-0 fz:13 fw-600 text-dark">BTC</h2>
                       <p className="m-0 fz:12 text-mute">Bitcoin</p>
                     </div>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-dark">398,35B</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-dark">398,35B</h2>
                     <p className="m-0 fz:12 text-mute">41,35%</p>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-green">20.892,56</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-green">20.892,56</h2>
                     <p className="m-0 fz:12 text-green">+2.09%</p>
                   </div>
                 </td>
@@ -79,19 +80,21 @@ const Dashboard = () => {
                 <td>
                   <div className="coin-group-flex">
                     <div className="coin-icon"></div>
-                    <h2 className="m-0 fz:14 fw-600 text-dark">ETH</h2>
-                    <p className="m-0 fz:12 text-mute">Ethereum</p>
+                    <div className="d-block">
+                      <h2 className="m-0 fz:13 fw-600 text-dark">ETH</h2>
+                      <p className="m-0 fz:12 text-mute">Ethereum</p>
+                    </div>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-dark">139,09B</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-dark">139,09B</h2>
                     <p className="m-0 fz:12 text-mute">14,43%</p>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-green">20.892,56</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-green">20.892,56</h2>
                     <p className="m-0 fz:12 text-green">+2.09%</p>
                   </div>
                 </td>
@@ -101,19 +104,21 @@ const Dashboard = () => {
                 <td>
                   <div className="coin-group-flex">
                     <div className="coin-icon"></div>
-                    <h2 className="m-0 fz:14 fw-600 text-dark">USDT</h2>
-                    <p className="m-0 fz:12 text-mute">Tether</p>
+                    <div className="d-block">
+                      <h2 className="m-0 fz:13 fw-600 text-dark">USDT</h2>
+                      <p className="m-0 fz:12 text-mute">Tether</p>
+                    </div>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-dark">72,24B</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-dark">72,24B</h2>
                     <p className="m-0 fz:12 text-mute">7,49%</p>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-red">0,999</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-red">0,999</h2>
                     <p className="m-0 fz:12 text-red">-0.00%</p>
                   </div>
                 </td>
@@ -123,19 +128,21 @@ const Dashboard = () => {
                 <td>
                   <div className="coin-group-flex">
                     <div className="coin-icon"></div>
-                    <h2 className="m-0 fz:14 fw-600 text-dark">USDC</h2>
-                    <p className="m-0 fz:12 text-mute">USD Coin</p>
+                    <div className="d-block">
+                      <h2 className="m-0 fz:13 fw-600 text-dark">USDC</h2>
+                      <p className="m-0 fz:12 text-mute">USD Coin</p>
+                    </div>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-dark">54,31B,09B</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-dark">54,31B,09B</h2>
                     <p className="m-0 fz:12 text-mute">5,63%</p>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-green">20.892,56</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-green">20.892,56</h2>
                     <p className="m-0 fz:12 text-green">+2.09%</p>
                   </div>
                 </td>
@@ -145,19 +152,21 @@ const Dashboard = () => {
                 <td>
                   <div className="coin-group-flex">
                     <div className="coin-icon"></div>
-                    <h2 className="m-0 fz:14 fw-600 text-dark">USDC</h2>
-                    <p className="m-0 fz:12 text-mute">USD Coin</p>
+                    <div className="d-block">
+                      <h2 className="m-0 fz:13 fw-600 text-dark">USDC</h2>
+                      <p className="m-0 fz:12 text-mute">USD Coin</p>
+                    </div>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-dark">54,31B,09B</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-dark">54,31B,09B</h2>
                     <p className="m-0 fz:12 text-mute">5,63%</p>
                   </div>
                 </td>
                 <td>
                   <div className="coin-group-block">
-                    <h2 className="m-0 fz:14 fw-600 text-green">20.892,56</h2>
+                    <h2 className="m-0 fz:13 fw-600 text-green">20.892,56</h2>
                     <p className="m-0 fz:12 text-green">+2.09%</p>
                   </div>
                 </td>

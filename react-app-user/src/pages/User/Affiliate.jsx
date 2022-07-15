@@ -10,15 +10,17 @@ const Affiliate = () => {
         <button className="back-button me-auto" onClick={backHistory}>
           <i className="fa-solid fa-angle-left back-icon"></i>
         </button>
-        <span className=" me-auto">Affiliate</span>
+        <span className="text-uppercase fw-500 me-auto">Affiliate</span>
       </header>
       <div className="dbhs-content">
-        <div className="card mb-4">
+        <div className="card mb-4 border-none">
           <div className="card-height-lg"></div>
         </div>
 
         <div className="card py-2 card-elm-bordered mb-4">
-          <h2 className="text-card-absolute fz:15">Activate Profit</h2>
+          <h2 className="text-card-absolute fz:13 text-uppercase">
+            Activate Profit
+          </h2>
           <div className="card-body">
             <div className="box-grid:2 gap:2">
               <div className="card card-elm-bordered bg-light">
@@ -42,7 +44,9 @@ const Affiliate = () => {
         </div>
 
         <div className="card py-2 card-elm-bordered mb-4">
-          <h2 className="text-card-absolute fz:15">Direct Refferal</h2>
+          <h2 className="text-card-absolute fz:13 text-uppercase">
+            Direct Refferal
+          </h2>
           <div className="card-body">
             <div className="box-grid:2 gap:2">
               <div className="card card-elm-bordered bg-light">
@@ -64,7 +68,9 @@ const Affiliate = () => {
         </div>
 
         <div className="card py-2 card-elm-bordered mb-4">
-          <h2 className="text-card-absolute fz:15">Total Team</h2>
+          <h2 className="text-card-absolute fz:13 text-uppercase">
+            Total Team
+          </h2>
           <div className="card-body">
             <div className="box-grid:2 gap:2">
               <div className="card card-elm-bordered bg-light">
@@ -86,7 +92,9 @@ const Affiliate = () => {
         </div>
 
         <div className="card py-2 card-elm-bordered mb-4">
-          <h2 className="text-card-absolute fz:15">Direct Activation</h2>
+          <h2 className="text-card-absolute fz:13 text-uppercase">
+            Direct Activation
+          </h2>
           <div className="card-body">
             <div className="card card-elm-bordered bg-light">
               <div className="card-body p-2">

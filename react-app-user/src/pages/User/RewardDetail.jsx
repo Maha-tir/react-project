@@ -19,7 +19,7 @@ const RewardDetail = () => {
         <button className="back-button me-auto" onClick={backHistory}>
           <i className="fa-solid fa-angle-left back-icon"></i>
         </button>
-        <span className=" me-auto">Reward Detail</span>
+        <span className="text-uppercase fw-500 me-auto">Reward Detail</span>
         <HeaderDropdown
           btnIcon="fa-solid fa-ellipsis-vertical"
           renderContent={() => (
@@ -41,7 +41,7 @@ const RewardDetail = () => {
       </header>
       <div className="dbhs-content">
         <div className="card mb-2">
-          <div className="card-height-lg bg-primary">
+          <div className="card-height-lg bg-first">
             <div className="card-body row h:100">
               <div className="box-grid:2">
                 <div className="nav nav-column">

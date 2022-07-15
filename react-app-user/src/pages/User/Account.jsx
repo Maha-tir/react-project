@@ -13,7 +13,6 @@ const Account = () => {
               ID : example@gmail.com
             </p>
           </div>
-          <button className="ms-auto btn-logout">Logout</button>
         </div>
         <div className="card card-absolute">
           <div className="nav align-items-center justify-content-between">
@@ -21,7 +20,9 @@ const Account = () => {
               <h2 className="m-0 sttr-text-2 fz:15 fw-500">View Permission</h2>
               <p className="m-0 sttr-text fz:13">Expires on 06-06-2023</p>
             </div>
-            <button className="btn-activate">Activate</button>
+            <button className="btn-control py-1 px-4 fz:13 btn-control-first">
+              Activate
+            </button>
           </div>
         </div>
       </div>
@@ -70,9 +71,9 @@ const Account = () => {
             </Link>
           </li>
           <li className="list-item">
-            <Link to="/user/settings" className="list-link">
+            <Link to="/user/setting" className="list-link">
               <i className="fa-solid fa-gear list-icon"></i>
-              <span className="list-name">Settings</span>
+              <span className="list-name">Setting</span>
             </Link>
           </li>
           <li className="list-item">
@@ -88,6 +89,9 @@ const Account = () => {
             </Link>
           </li>
         </ul>
+        <div className="px-2 mb-2">
+          <button className="sc-sign-btn text-uppercase mt-3">Logout</button>
+        </div>
       </div>
     </>
   );

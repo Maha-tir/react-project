@@ -1,8 +1,13 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import E404 from "../../assets/img/404.png";
 const NotFound = () => {
   const backHistory = () => {
     window.history.back();
+  };
+  let history = useHistory();
+  const backHome = () => {
+    history.push("/user/dashboard");
   };
   return (
     <div className="sc-dbhs">
@@ -19,7 +24,7 @@ const NotFound = () => {
           <p className="mb-2 fz:14 text-center">
             This page is missing or you assembled the link incorrectly
           </p>
-          <button className="btn-back" onClick={backHistory}>
+          <button className="btn-back" onClick={backHome}>
             Back To Home
           </button>
         </div>

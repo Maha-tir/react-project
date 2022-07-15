@@ -11,7 +11,7 @@ const Withdraw = () => {
         <button className="back-button me-auto" onClick={backHistory}>
           <i className="fa-solid fa-angle-left back-icon"></i>
         </button>
-        <span className=" me-auto">Withdraw</span>
+        <span className="text-uppercase fw-500 me-auto">Withdraw</span>
       </header>
       <div className="dbhs-content">
         <form action="">
@@ -68,7 +68,7 @@ const Withdraw = () => {
           <div className="dbhs-p py-3">
             <div className="input-group">
               <label className="input-label">OTP Email</label>
-              <div className="input-field not-icon">
+              <div className="input-field not-icon w-btn">
                 <input
                   type="text"
                   id="otp-email"
@@ -76,6 +76,9 @@ const Withdraw = () => {
                   className="input-control"
                   required
                 />
+                <button className="input-btn-absolute get-otp text-uppercase">
+                  Get OTP
+                </button>
               </div>
             </div>
             <div className="input-group">
@@ -96,7 +99,9 @@ const Withdraw = () => {
               </div>
             </div>
 
-            <button className="sc-sign-btn">Confirm Withdrawal</button>
+            <button className="sc-sign-btn text-uppercase">
+              Confirm Withdrawal
+            </button>
           </div>
         </form>
         <div className="dbhs-p">

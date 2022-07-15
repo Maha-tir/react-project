@@ -16,6 +16,10 @@ import Withdraw from "../pages/User/Withdraw";
 import Transfer from "../pages/User/Transfer";
 import Trades from "../pages/User/Trades";
 import BotSetting from "../pages/User/BotSetting";
+import HelpSupport from "../pages/User/HelpSupport";
+import Profile from "../pages/User/Profile";
+import SecurityCenter from "../pages/User/SecurityCenter";
+import Setting from "../pages/User/Setting";
 
 import NotFound from "../pages/Error/NotFound";
 import { Redirect } from "react-router-dom";
@@ -39,6 +43,10 @@ const userRoutes = [
   { path: "/user/transfer", component: Transfer },
   { path: "/user/trades", component: Trades },
   { path: "/user/bot-setting", component: BotSetting },
+  { path: "/user/help-support", component: HelpSupport },
+  { path: "/user/profile", component: Profile },
+  { path: "/user/security", component: SecurityCenter },
+  { path: "/user/setting", component: Setting },
 ];
 
 const errorRoutes = [

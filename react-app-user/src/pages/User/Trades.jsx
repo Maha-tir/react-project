@@ -1,59 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 const Trades = () => {
+  const [active, setActive] = useState(1);
+  const connectExchange = (index) => {
+    setActive(index);
+  };
   return (
     <div className="sc-dbhs">
       <div className="dbcontent">
-        <div className="card mb-2">
+        <div className="card mb-2 border-none">
           <div className="card-height-lg"></div>
         </div>
 
-        <div className="card card-shadow:1 mb-2">
+        <div className="card card-shadow:1 mb-2 bg-first border-none">
           <div className="card-body">
-            <div className="box-grid:2 gap:2 mb-2">
+            <div className="box-grid:3 gap:2">
               <div className="nav flex-column">
                 <div className="nav aic">
-                  <p className="m-0 fz:13" style={{ width: "70px" }}>
+                  <p
+                    className="m-0 fz:13 text-white"
+                    style={{ width: "110px" }}
+                  >
                     First Buy :
                   </p>
-                  <p className="m-0 fz:13">15 USDT</p>
+                  <p className="m-0 fz:13 text-white">15 USDT</p>
                 </div>
                 <div className="nav aic">
-                  <p className="m-0 fz:13" style={{ width: "70px" }}>
-                    Pair :
+                  <p
+                    className="m-0 fz:13 text-white"
+                    style={{ width: "110px" }}
+                  >
+                    Signal Quantity :
                   </p>
-                  <p className="m-0 fz:13">1</p>
+                  <p className="m-0 fz:13 text-white">1</p>
                 </div>
               </div>
-              <div className="nav gap:2 aic jce">
-                <button className="btn-control btn-control-sm px-3">
-                  On/Off
-                </button>
-                <Link
-                  to="/user/transaction"
-                  className="nav flex-column aic jcc text-dark tdn"
-                >
-                  <i className="bx bx-book-reader fz:24"></i>
-                  <span className="fz:11 fw-600">Transaction</span>
-                </Link>
+              <div className="nav flex-column">
+                <div className="nav aic">
+                  <p className="m-0 fz:13 text-white">Signal :</p>
+                  <p className="m-0 fz:13 text-white">Expert</p>
+                </div>
+                <div className="nav aic">
+                  <p className="m-0 fz:13 text-white">Mode :</p>
+                  <p className="m-0 fz:13 text-white">Standart</p>
+                </div>
               </div>
-            </div>
-            <div className="box-grid:2 gap:2">
-              <div className="nav aic">
-                <p className="m-0 fz:13 fw-600 text-dark me-1">Mode :</p>
-                <p className="m-0 fz:13 fw-600 text-dark me-1">Standart</p>
-                <p className="m-0 fz:13 fw-600 text-green">Professional</p>
-              </div>
-              <div className="nav gap:2 jce">
-                <button className="btn-control px-3 btn-control-sm btn-control-primary-contained d-flex jcb is_active">
-                  <span className="fz:10">Binance</span>
-                  <span className="fz:10">On</span>
-                </button>
-                <button className="btn-control px-3 btn-control-sm btn-control-primary-contained d-flex jcb">
-                  <span className="fz:10">Tokocrypto</span>
-                  <span className="fz:10">Off</span>
-                </button>
-              </div>
+              <Link
+                to="/user/transaction"
+                className="nav flex-column aic jcc text-white tdn"
+              >
+                <i className="bx bx-book-reader fz:24"></i>
+                <span className="fz:11 fw-600">Transaction</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -61,10 +59,11 @@ const Trades = () => {
           <div className="card-body">
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb breadcrumb-2 mb-3">
-                <li className="breadcrumb-item fz:12 fw-600 link-btn">
+                <li className="fz:14 fw-600 text-red me-1">LIVE</li>
+                <li className="breadcrumb-item fz:12 fw-600 link-btn bg-first">
                   Binance
                 </li>
-                <li className="breadcrumb-item fz:12 fw-600 active">
+                <li className="breadcrumb-item fz:12 fw-600 active text-dark">
                   Tokocrypto
                 </li>
               </ol>
@@ -89,14 +88,16 @@ const Trades = () => {
                   </div>
                 </div>
                 <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500">Quantity: 0</h2>
+                  <h2 className="mb-1 fz:13 fw-500 text-dark">Quantity: 0</h2>
                   <div className="nav nav-column">
-                    <p className="m-0 fz:10 fw-600">Profit : 0.00 USDT</p>
+                    <p className="m-0 fz:10 fw-600 text-dark">
+                      Profit : 0.00 USDT
+                    </p>
                     <p className="m-0 fz:10 fw-600">Chg : 0 %</p>
                   </div>
                 </div>
                 <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500">Price: 0.8441</h2>
+                  <h2 className="mb-1 fz:13 fw-500 text-dark">Price: 0.8441</h2>
                 </div>
               </div>
             </div>
@@ -123,14 +124,20 @@ const Trades = () => {
                   </div>
                 </div>
                 <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500">Quantity: 41</h2>
+                  <h2 className="mb-1 fz:13 fw-500 text-dark text-dark">
+                    Quantity: 41
+                  </h2>
                   <div className="nav nav-column">
-                    <p className="m-0 fz:10 fw-600">Profit : 0.01 USDT</p>
+                    <p className="m-0 fz:10 fw-600 text-dark text-dark">
+                      Profit : 0.01 USDT
+                    </p>
                     <p className="m-0 fz:10 fw-600">Chg : -0.5 %</p>
                   </div>
                 </div>
                 <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500">Price: 0.6679</h2>
+                  <h2 className="mb-1 fz:13 fw-500 text-dark text-dark">
+                    Price: 0.6679
+                  </h2>
                 </div>
               </div>
             </div>
@@ -157,14 +164,16 @@ const Trades = () => {
                   </div>
                 </div>
                 <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500">Quantity: 41</h2>
+                  <h2 className="mb-1 fz:13 fw-500 text-dark">Quantity: 41</h2>
                   <div className="nav nav-column">
-                    <p className="m-0 fz:10 fw-600">Profit : 0.01 USDT</p>
+                    <p className="m-0 fz:10 fw-600 text-dark">
+                      Profit : 0.01 USDT
+                    </p>
                     <p className="m-0 fz:10 fw-600">Chg : +0.5 %</p>
                   </div>
                 </div>
                 <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500">Price: 0.8841</h2>
+                  <h2 className="mb-1 fz:13 fw-500 text-dark">Price: 0.8841</h2>
                 </div>
               </div>
             </div>

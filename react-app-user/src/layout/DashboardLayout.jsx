@@ -14,7 +14,11 @@ const DashboardLayout = (props) => {
         location.pathname == "/user/affiliate" ||
         location.pathname == "/user/withdraw" ||
         location.pathname == "/user/transfer" ||
-        location.pathname == "/user/deposit" ? null : (
+        location.pathname == "/user/deposit" ||
+        location.pathname == "/user/help-support" ||
+        location.pathname == "/user/setting" ||
+        location.pathname == "/user/profile" ||
+        location.pathname == "/user/security" ? null : (
           <Route render={(props) => <BottomBar {...props} />} />
         )}
       </div>

@@ -17,11 +17,11 @@ const Asset = () => {
         <button className="back-button me-auto" onClick={backHistory}>
           <i className="fa-solid fa-angle-left back-icon"></i>
         </button>
-        <span className=" me-auto">Asset</span>
+        <span className="text-uppercase fw-500 me-auto">Asset</span>
       </header>
       <div className="dbhs-content">
         <div className="card mb-2">
-          <div className="card-height-md bg-primary">
+          <div className="card-height-md bg-first">
             <div className="card-body row h:100">
               <div className="box-grid:2">
                 <div className="nav nav-column">
@@ -54,7 +54,7 @@ const Asset = () => {
                 className="nav nav-column nav-column-icon"
               >
                 <i className="fa-solid fa-wallet"></i>
-                <h2 className="m-0 fz:12 fw-600 text-dark">Withdrawal</h2>
+                <h2 className="m-0 fz:12 fw-600 text-dark">Withdrawl</h2>
               </Link>
               <Link
                 to="/user/transfer"
@@ -68,13 +68,17 @@ const Asset = () => {
         </div>
         <div className="card-overflow row h:100">
           <div className="nav justify-content-between mb-1">
-            <h2 className="m-0 fz:12 fw-600 text-dark">History Record</h2>
+            <h2 className="m-0 fz:12 fw-600 text-dark text-uppercase">
+              History Record
+            </h2>
             <p className="m-0 fz:12 fw-600 text-dark">Today</p>
           </div>
           <div className="box-grid:3 gap:2 mb-2">
             <button
               className={
-                toggle === 1 ? "btn-navs-tabs active" : "btn-navs-tabs"
+                toggle === 1
+                  ? "btn-navs-tabs text-uppercase fz:14 active"
+                  : "btn-navs-tabs text-uppercase fz:14"
               }
               onClick={() => toggleTabs(1)}
             >
@@ -82,15 +86,19 @@ const Asset = () => {
             </button>
             <button
               className={
-                toggle === 2 ? "btn-navs-tabs active" : "btn-navs-tabs"
+                toggle === 2
+                  ? "btn-navs-tabs text-uppercase fz:14 active"
+                  : "btn-navs-tabs text-uppercase fz:14"
               }
               onClick={() => toggleTabs(2)}
             >
-              Withdrawal
+              Withdrawl
             </button>
             <button
               className={
-                toggle === 3 ? "btn-navs-tabs active" : "btn-navs-tabs"
+                toggle === 3
+                  ? "btn-navs-tabs text-uppercase fz:14 active"
+                  : "btn-navs-tabs text-uppercase fz:14"
               }
               onClick={() => toggleTabs(3)}
             >
@@ -113,7 +121,7 @@ const Asset = () => {
             )}
             <div className="card-body">
               <div className="nav justify-content-between mb-1">
-                <h2 className="m-0 fz:11 fw-600 text-mute">Withdrawal</h2>
+                <h2 className="m-0 fz:11 fw-600 text-mute">Withdrawl</h2>
                 <p className="m-0 fz:11 fw-600 text-mute">2022-07-01 | 11:11</p>
               </div>
               <h2 className="mb-1 fz:17 text-dark">888 USDT</h2>
