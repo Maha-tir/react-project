@@ -18,6 +18,15 @@ const BotSetting = () => {
     setMode(index);
   };
 
+  const upgradeBot = () => {
+    const ubs = document.getElementById("select").value;
+    if (ubs == 2) {
+      alert("Bot signal is Advance");
+    } else if (ubs == 3) {
+      alert("Bot signal is Expert");
+    }
+  };
+
   return (
     <div className="sc-dbhs">
       <Header />
@@ -88,18 +97,25 @@ const BotSetting = () => {
           <div className="card-body">
             <h2 className="mb-2 fz:14 fw-600 text-dark">Upgrade Bot Signal</h2>
             <div className="box-grid:2 gap:2">
-              <select defaultValue="0" className="form-select form-select-sm">
-                <option value="1" className="text-dark">
+              <select
+                defaultValue="0"
+                id="select"
+                className="form-select form-select-sm"
+              >
+                <option value="1" className="text-dark" id="option-ubs">
                   Standart
                 </option>
-                <option value="2" className="text-dark">
+                <option value="2" className="text-dark" id="option-ubs">
                   Advance
                 </option>
-                <option value="3" className="text-dark">
+                <option value="3" className="text-dark" id="option-ubs">
                   Expert
                 </option>
               </select>
-              <button className="btn-control btn-control-sm btn-control-first">
+              <button
+                className="btn-control btn-control-sm btn-control-first"
+                onClick={upgradeBot}
+              >
                 Upgrade
               </button>
             </div>
