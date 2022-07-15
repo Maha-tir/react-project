@@ -1,0 +1,66 @@
+.toast-fix {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 85%;
+  top: 3%;
+  margin: 0 auto;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  backdrop-filter: blur(4px);
+}
+.toast-default {
+  background: #ffffff;
+  color: #000000;
+}
+.toast-success {
+  background: #11cf0a;
+  color: #ffffff;
+}
+
+.top {
+  top: 3% !important;
+  margin: 0;
+}
+.right {
+  right: 3% !important;
+  margin: 0;
+}
+.bottom {
+  top: inherit !important;
+  bottom: 3% !important;
+  margin: 0;
+}
+.left {
+  left: 3% !important;
+  margin: 0;
+}
+.middle-top {
+  bottom: inherit !important;
+  top: 3%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.middle-bottom {
+  top: inherit !important;
+  bottom: 3%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.toast-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.toast-icon i {
+  font-size: 14px;
+}

@@ -148,9 +148,12 @@ const Signup = () => {
           <button className="sc-sign-btn">Sign Up</button>
           <div className="my-2 text-center">
             <p className="fz:15 text-mute fw-500">
-              Already have an account ?
-              <Link to="/auth/signin" className="text-link fz:14 ms-1">
-                Sign In here
+              Already have account ?
+              <Link
+                to="/auth/signin"
+                className="text-link fz:14 ms-1 text-uppercase"
+              >
+                Login here
               </Link>
             </p>
           </div>

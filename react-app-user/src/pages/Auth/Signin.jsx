@@ -4,6 +4,7 @@ import Logo from "../../assets/img/BIDBOX-LOGO-NEW.png";
 import { Link } from "react-router-dom";
 
 import "../../styles/auth.css";
+import Taost from "../../components/ToastAlert/Taost";
 
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,8 +13,18 @@ const Signin = () => {
     setShowPassword(!showPassword);
   };
 
+  const ToastType = {
+    success: "success",
+    fail: "fail",
+  };
+
   return (
     <div className="sc-sign-in">
+      <Taost
+        message="Action Completed"
+        position="middle-top"
+        type={ToastType.success}
+      />
       <div className="sc-content-img">
         <img src={Logo} alt="_Bidobox-Logo" />
       </div>
@@ -67,9 +78,9 @@ const Signin = () => {
           <button className="sc-sign-btn round-lg py-2">Sign In</button>
           <div className="my-2 text-center">
             <p className="fz:14 text-mute fw-500">
-              Dont have an account?{" "}
+              No Account yet?
               <Link to="/auth/signup" className="text-link fz:14">
-                Sign Up
+                Register Now
               </Link>
             </p>
           </div>

@@ -20,7 +20,7 @@ const ForgotPassword = () => {
         <button className="back-button me-auto" onClick={backToLogin}>
           <i className="fa-solid fa-angle-left back-icon"></i>
         </button>
-        <span className=" me-auto">Verify your Email</span>
+        <span className="text-uppercase fw-500 me-auto">Verify your Email</span>
       </header>
       <div className="d-flex align-items-center justify-content-center flex-column mt-4">
         <h2 className="sttr-text fz:20 mb-2 text-center w:text-center">
@@ -31,12 +31,9 @@ const ForgotPassword = () => {
           instruction
         </p>
       </div>
-      <div className="sc-forgot-img">
-        <img src={sendImage} alt="_sendImage" />
-      </div>
       <form action="" className="form-validation">
         <div className="input-group">
-          <div className="input-field">
+          <div className="input-field not-icon">
             <input
               type="text"
               id="email"
@@ -44,7 +41,6 @@ const ForgotPassword = () => {
               className="input-control"
               required
             />
-            <i className="fa-regular fa-user input-icon"></i>
           </div>
         </div>
         <button className="sc-sign-btn" onClick={SetPassword}>

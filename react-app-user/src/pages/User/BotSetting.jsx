@@ -188,7 +188,9 @@ const BotSetting = () => {
 
         <div className="card mb-2">
           <div className="card-body">
-            <h2 className="mb-2 fz:14 fw-600 text-dark">Bot Setting Summary</h2>
+            <h2 className="mb-2 fz:14 fw-600 text-dark">
+              Detailed Bot Setting
+            </h2>
             <div className="box-grid:2 gap:2">
               <div className="card bg-first">
                 <div className="card-body">

@@ -4,12 +4,58 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import banner from "../../assets/img/banner.jpg";
 
+import ADA from "../../assets/img/KOIN/ADA-non.png";
+import ALGO from "../../assets/img/KOIN/ALGO-non.png";
+import ALICE from "../../assets/img/KOIN/ALICE-non.png";
+
 const slideImages = [
   {
     url: banner,
   },
   {
     url: banner,
+  },
+];
+
+const coinBinance = [
+  {
+    id: 1,
+    image: ADA,
+    title: "ADA",
+    subtitle: "USDT",
+    persent: "0.00%",
+    quantity: 0,
+    price: "0.8441",
+    profit: "0.00 USDT",
+    chg: "0%",
+    type: "mute",
+    button: "Cancel",
+  },
+  {
+    id: 2,
+    image: ALGO,
+    title: "ALGO",
+    subtitle: "USDT",
+    persent: "0.5%",
+    quantity: 41,
+    price: "0.6679",
+    profit: "0.01 USDT",
+    chg: "-0,5%",
+    type: "red",
+    button: "Sell",
+  },
+  {
+    id: 3,
+    image: ALICE,
+    title: "ALICE",
+    subtitle: "USDT",
+    persent: "0.0%",
+    quantity: 0,
+    price: "0.8441",
+    profit: "0.01 USDT",
+    chg: "+ 0.5%",
+    type: "green",
+    button: "Sell",
   },
 ];
 
@@ -87,45 +133,61 @@ const Trades = () => {
                 </li>
               </ol>
             </nav>
-            <div className="card card-trades mb-2">
-              <div className="card-body">
-                <div className="nav jcb nav-hr mb-2">
-                  <div className="nav aic">
-                    <div className="icon-coin"></div>
+            {coinBinance.map((coin, index) => (
+              <div className="card card-trades mb-2" key={index}>
+                <div className="card-body">
+                  <div className="nav jcb nav-hr mb-2">
                     <div className="nav aic">
-                      <h2 className="m-0 fz:16 fw-600 text-dark me-1">ADA /</h2>
-                      <p className="m-0 fz:12 fw-500 text-dark">USDT</p>
+                      <div className="icon-coin">
+                        <img src={coin.image} alt={coin.image} />
+                      </div>
+                      <div className="nav aic">
+                        <h2 className="m-0 fz:16 fw-600 text-dark me-1">
+                          {coin.title} /
+                        </h2>
+                        <p className="m-0 fz:12 fw-500 text-dark">
+                          {coin.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="range">
+                      <h2
+                        className={`mb-1 text-range text-range-${coin.type} fz:16`}
+                      >
+                        {coin.persent}
+                      </h2>
+                      <button className="btn-control btn-control-sm px-3">
+                        {coin.button}
+                      </button>
                     </div>
                   </div>
-                  <div className="range">
-                    <h2 className="mb-1 text-range text-range-mute fz:16">
-                      0.00%
-                    </h2>
-                    <button className="btn-control btn-control-sm px-3">
-                      Cancel
-                    </button>
-                  </div>
-                </div>
-                <div className="nav jcb">
-                  <div className="nav nav-column">
-                    <h2 className="mb-0 fz:13 fw-500 text-dark">Quantity: 0</h2>
-                    <h2 className="mb-1 fz:13 fw-500 text-dark">
-                      Price: 0.8441
-                    </h2>
-                  </div>
-                  <div className="nav nav-column">
-                    <p className="m-0 fz:10 fw-600 text-dark">
-                      Profit : <span className="text-dark">0.00 USDT</span>
-                    </p>
-                    <p className="m-0 fz:10 fw-600">
-                      Chg : <span className="text-dark">0 %</span>
-                    </p>
+                  <div className="nav jcb">
+                    <div className="nav nav-column">
+                      <h2 className="mb-0 fz:13 fw-500 text-dark">
+                        Quantity: {coin.quantity}
+                      </h2>
+                      <h2 className="mb-1 fz:13 fw-500 text-dark">
+                        Price: {coin.price}
+                      </h2>
+                    </div>
+                    <div className="nav nav-column">
+                      <p className="m-0 fz:10 fw-600 text-dark">
+                        Profit :{" "}
+                        <span className={`text-${coin.type}`}>
+                          {coin.profit}
+                        </span>
+                      </p>
+                      <p className="m-0 fz:10 fw-600">
+                        Chg :{" "}
+                        <span className={`text-${coin.type}`}>{coin.chg}</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
 
-            <div className="card card-trades mb-2">
+            {/* <div className="card card-trades mb-2">
               <div className="card-body">
                 <div className="nav jcb nav-hr mb-2">
                   <div className="nav aic">
@@ -205,7 +267,7 @@ const Trades = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
