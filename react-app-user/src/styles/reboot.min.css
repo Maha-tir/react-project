@@ -1319,6 +1319,7 @@ progress {
 }
 .table > tbody > tr > * {
   white-space: nowrap;
+  vertical-align: middle;
 }
 .table > thead {
   vertical-align: bottom;
@@ -1433,4 +1434,13 @@ thead > tr > * {
 .avatar-md-circle img,
 .avatar-lg-circle img {
   border-radius: 50%;
+}
+.round-sm {
+  border-radius: 4px !important;
+}
+.round-md {
+  border-radius: 8px !important;
+}
+.round-lg {
+  border-radius: 15px !important;
 }

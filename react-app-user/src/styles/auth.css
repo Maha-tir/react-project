@@ -128,6 +128,20 @@
   font-size: 1rem;
   transition: color 0.3s;
 }
+.icon-absolute-right {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  top: 0;
+  right: 0 !important;
+  display: grid !important;
+  place-content: center;
+  color: #a09f9f;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  transition: color 0.3s;
+}
 .bx-lock-alt {
   font-size: 1.2rem !important;
 }
@@ -143,6 +157,14 @@
   font-weight: 400;
   outline: none;
   transition: box-shadow 0.4s, border 0.1s;
+}
+.input-control-lg {
+  height: 45px !important;
+  border-radius: 10px !important;
+}
+.input-field.icon-right .input-control {
+  padding-left: 15px;
+  padding-right: 35px;
 }
 .input-field.not-icon .input-control {
   padding-left: 15px;

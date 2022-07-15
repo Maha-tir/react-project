@@ -73,10 +73,12 @@ const Dashboard = () => {
           <table className="table table-responsive mt-0">
             <tbody>
               <tr>
-                <th scope="row">1</th>
+                <th scope="row" className="fw-500 fz:14">
+                  1
+                </th>
                 <td>
                   <div className="coin-group-flex">
-                    <div className="coin-icon"></div>
+                    <div className="icon-coin icon-coin-lg"></div>
                     <div className="d-block">
                       <h2 className="m-0 fz:13 fw-600 text-dark">BTC</h2>
                       <p className="m-0 fz:12 text-mute">Bitcoin</p>
@@ -97,10 +99,12 @@ const Dashboard = () => {
                 </td>
               </tr>
               <tr>
-                <th scope="row">2</th>
+                <th scope="row" className="fw-500 fz:14">
+                  2
+                </th>
                 <td>
                   <div className="coin-group-flex">
-                    <div className="coin-icon"></div>
+                    <div className="icon-coin icon-coin-lg"></div>
                     <div className="d-block">
                       <h2 className="m-0 fz:13 fw-600 text-dark">ETH</h2>
                       <p className="m-0 fz:12 text-mute">Ethereum</p>
@@ -121,10 +125,12 @@ const Dashboard = () => {
                 </td>
               </tr>
               <tr>
-                <th scope="row">3</th>
+                <th scope="row" className="fw-500 fz:14">
+                  3
+                </th>
                 <td>
                   <div className="coin-group-flex">
-                    <div className="coin-icon"></div>
+                    <div className="icon-coin icon-coin-lg"></div>
                     <div className="d-block">
                       <h2 className="m-0 fz:13 fw-600 text-dark">USDT</h2>
                       <p className="m-0 fz:12 text-mute">Tether</p>
@@ -145,10 +151,12 @@ const Dashboard = () => {
                 </td>
               </tr>
               <tr>
-                <th scope="row">4</th>
+                <th scope="row" className="fw-500 fz:14">
+                  4
+                </th>
                 <td>
                   <div className="coin-group-flex">
-                    <div className="coin-icon"></div>
+                    <div className="icon-coin icon-coin-lg"></div>
                     <div className="d-block">
                       <h2 className="m-0 fz:13 fw-600 text-dark">USDC</h2>
                       <p className="m-0 fz:12 text-mute">USD Coin</p>
@@ -169,10 +177,12 @@ const Dashboard = () => {
                 </td>
               </tr>
               <tr>
-                <th scope="row">5</th>
+                <th scope="row" className="fw-500 fz:14">
+                  5
+                </th>
                 <td>
                   <div className="coin-group-flex">
-                    <div className="coin-icon"></div>
+                    <div className="icon-coin icon-coin-lg"></div>
                     <div className="d-block">
                       <h2 className="m-0 fz:13 fw-600 text-dark">USDC</h2>
                       <p className="m-0 fz:12 text-mute">USD Coin</p>
