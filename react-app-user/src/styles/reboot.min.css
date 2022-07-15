@@ -504,6 +504,12 @@ progress {
 .text-dark {
   color: #1b1b1b !important;
 }
+.text-dark-hover {
+  color: #1b1b1b !important;
+}
+.text-dark-hover:hover {
+  color: #444444 !important;
+}
 .text-white {
   color: #ffffff !important;
 }
@@ -644,6 +650,9 @@ progress {
 .form-check-input:disabled ~ .form-check-label,
 .form-check-input[disabled] ~ .form-check-label {
   opacity: 0.5;
+}
+.input-field-sm {
+  width: 100%;
 }
 .input-control {
   display: block;
@@ -927,7 +936,7 @@ progress {
 }
 .nav-card-all {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 10px;
 }
 .nav-card-all .card {
@@ -1039,6 +1048,17 @@ progress {
   width: 100%;
   height: 100px;
   background: #c4c2c2;
+  border-radius: 5px;
+}
+.card .card-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.card .card-image img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
   border-radius: 5px;
 }
 .card > .card-image > img {

@@ -15,12 +15,12 @@ const Signup = () => {
   return (
     <div className="sc-sign-up">
       <div className="sc-content-all">
-        <h2 className="sttr-text fz:22">Let's Get Started!</h2>
-        <p className="sttr-text fz:15">Create an account and be a part of us</p>
+        <h2 className="sttr-text fz:22 text-center">Welcome You To Join</h2>
         <form action="" className="form-validation">
           <div className="input-group">
+            <label className="input-label">Country</label>
             <select className="form-select">
-              <option selected disabled className="selected">
+              <option defaultValue="0" selected disabled className="selected">
                 Select your country
               </option>
               {country.map((country, index) => (
@@ -30,7 +30,27 @@ const Signup = () => {
                 //   </div>
                 //   {country.name_country}
                 // </option>
-                <option className="option">
+                <option className="option" key={index}>
+                  <img src={country.flag} alt="" />
+                  {country.name_country}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="input-group">
+            <label className="input-label">Time Zone</label>
+            <select className="form-select">
+              <option defaultValue="0" selected disabled className="selected">
+                Select your time zone
+              </option>
+              {country.map((country, index) => (
+                // <option value={index}>
+                //   <div className="icon">
+                //     <img src={country.flag} alt="" />
+                //   </div>
+                //   {country.name_country}
+                // </option>
+                <option className="option" key={index}>
                   <img src={country.flag} alt="" />
                   {country.name_country}
                 </option>
@@ -71,6 +91,7 @@ const Signup = () => {
             </div>
           </div>
           <div className="input-group mb-1">
+            <label className="input-label">Email</label>
             <div className="input-field not-icon">
               <input
                 type="text"
@@ -98,6 +119,7 @@ const Signup = () => {
             </div>
           </div>
           <div className="input-group">
+            <label className="input-label">Sponsor</label>
             <div className="input-field not-icon">
               <input
                 type="text"

@@ -1,17 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
+
 import Header from "../../components/Header/Header";
+import banner from "../../assets/img/banner.jpg";
+const slideImages = [
+  {
+    url: banner,
+  },
+  {
+    url: banner,
+  },
+];
+
 const News = () => {
   return (
     <>
       <div>
         <Header />
-        <div className="dbhs-content">
-          <div className="pb-0" style={{ padding: "1rem 0.5rem" }}>
-            <div className="card mb-2 border-none">
-              <div className="card-height-lg"></div>
-            </div>
-          </div>
+        <div className="dbhs-content-lg">
+          <Slide>
+            {slideImages.map((slideImage, index) => (
+              <div className="card mb-2 border-none" key={index}>
+                <div className="card-height-lg">
+                  <div className="card-image">
+                    <img src={slideImage.url} alt="_banner" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slide>
           <ul className="list-group">
             <li className="list-news-item">
               <Link to="/user/dashboard" className="list-link">

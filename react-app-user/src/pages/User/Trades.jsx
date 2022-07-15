@@ -1,5 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
+import banner from "../../assets/img/banner.jpg";
+
+const slideImages = [
+  {
+    url: banner,
+  },
+  {
+    url: banner,
+  },
+];
+
 const Trades = () => {
   const [active, setActive] = useState(1);
   const connectExchange = (index) => {
@@ -8,41 +21,43 @@ const Trades = () => {
   return (
     <div className="sc-dbhs">
       <div className="dbcontent">
-        <div className="card mb-2 border-none">
-          <div className="card-height-lg"></div>
-        </div>
+        <Slide>
+          {slideImages.map((slideImage, index) => (
+            <div className="card mb-2 border-none" key={index}>
+              <div className="card-height-lg">
+                <div className="card-image">
+                  <img src={slideImage.url} alt="_banner" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slide>
 
         <div className="card card-shadow:1 mb-2 bg-first border-none">
           <div className="card-body">
             <div className="box-grid:3 gap:2">
               <div className="nav flex-column">
                 <div className="nav aic">
-                  <p
-                    className="m-0 fz:13 text-white"
-                    style={{ width: "110px" }}
-                  >
+                  <p className="m-0 fz:13 text-white" style={{ width: "90px" }}>
                     First Buy :
                   </p>
-                  <p className="m-0 fz:13 text-white">15 USDT</p>
+                  <p className="m-0 fz:12 text-white">15 USDT</p>
                 </div>
                 <div className="nav aic">
-                  <p
-                    className="m-0 fz:13 text-white"
-                    style={{ width: "110px" }}
-                  >
+                  <p className="m-0 fz:12 text-white" style={{ width: "90px" }}>
                     Signal Quantity :
                   </p>
-                  <p className="m-0 fz:13 text-white">1</p>
+                  <p className="m-0 fz:12 text-white">1</p>
                 </div>
               </div>
               <div className="nav flex-column">
                 <div className="nav aic">
-                  <p className="m-0 fz:13 text-white">Signal :</p>
-                  <p className="m-0 fz:13 text-white">Expert</p>
+                  <p className="m-0 fz:12 text-white">Signal :</p>
+                  <p className="m-0 fz:12 text-white">Expert</p>
                 </div>
                 <div className="nav aic">
-                  <p className="m-0 fz:13 text-white">Mode :</p>
-                  <p className="m-0 fz:13 text-white">Standart</p>
+                  <p className="m-0 fz:12 text-white">Mode :</p>
+                  <p className="m-0 fz:12 text-white">Standart</p>
                 </div>
               </div>
               <Link

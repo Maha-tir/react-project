@@ -88,6 +88,12 @@ const Account = () => {
               <span className="list-name">User Guide</span>
             </Link>
           </li>
+          <li className="list-item">
+            <Link to="/user/profile" className="list-link">
+              <i className="fa-solid fa-user list-icon"></i>
+              <span className="list-name">Profile</span>
+            </Link>
+          </li>
         </ul>
         <div className="px-2 mb-2">
           <button className="sc-sign-btn text-uppercase mt-3">Logout</button>

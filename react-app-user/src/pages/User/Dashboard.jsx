@@ -1,14 +1,35 @@
 import React from "react";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
+
 import Header from "../../components/Header/Header";
+import banner from "../../assets/img/banner.jpg";
+
+const slideImages = [
+  {
+    url: banner,
+  },
+  {
+    url: banner,
+  },
+];
 
 const Dashboard = () => {
   return (
     <div className="sc-dbhs">
       <Header />
       <div className="dbhs-content">
-        <div className="card mb-2 border-none">
-          <div className="card-height-lg"></div>
-        </div>
+        <Slide>
+          {slideImages.map((slideImage, index) => (
+            <div className="card mb-2 border-none" key={index}>
+              <div className="card-height-lg">
+                <div className="card-image">
+                  <img src={slideImage.url} alt="_banner" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slide>
         <div className="card border-none">
           <div className="card-height-md bg-first">
             <div className="card-body row h:100">

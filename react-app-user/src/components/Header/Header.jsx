@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/img/BIDBOX-LOGO-NEW.png";
+import Logo from "../../assets/img/logo-horizont.png";
 import "../../styles/app.css";
 import Search from "../Search/Search";
 import Sidebar from "../Sidebar/Sidebar";
@@ -41,7 +41,7 @@ const Header = () => {
         className={header ? "sc-sticky-header sticky" : "sc-sticky-header"}
       >
         <div className="logo-app">
-          {/* <img src={Logo} alt="_Bidbox-logo" /> */}
+          <img src={Logo} alt="_Bidbox-logo" />
         </div>
         <nav className="navbar">
           <ul className="nav-menu m-0 p-0">

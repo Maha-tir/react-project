@@ -12,8 +12,7 @@ const Signin = () => {
         <img src={Logo} alt="_Bidobox-Logo" />
       </div>
       <div className="sc-content">
-        <h2 className="sttr-text fz:22">Welcome back!</h2>
-        <p className="sttr-text fz:15">Sign In to your account</p>
+        <h2 className="sttr-text fz:22">Sign In</h2>
         <form action="" className="form-validation">
           <div className="input-group">
             <label className="input-label">Email address</label>
@@ -42,13 +41,16 @@ const Signin = () => {
             </div>
           </div>
           <div className="d-flex justify-content-end mb-3 mt-2">
-            <Link to="/auth/forgot-password" className="text-link">
+            <Link
+              to="/auth/forgot-password"
+              className="text-link text-dark-hover fz:14 fw-500"
+            >
               Forgot Password?
             </Link>
           </div>
           <button className="sc-sign-btn">Sign In</button>
           <div className="my-2 text-center">
-            <p className="fz:15 text-mute fw-500">
+            <p className="fz:14 text-mute fw-500">
               Dont have an account?{" "}
               <Link to="/auth/signup" className="text-link fz:14">
                 Sign Up

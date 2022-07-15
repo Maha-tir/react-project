@@ -3,9 +3,20 @@ import Header from "../../components/Header/Header";
 
 import Binance from "../../assets/img/binance.png";
 import Tokocrypto from "../../assets/img/tko.png";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
 import "../../styles/auth.css";
+import banner from "../../assets/img/banner.jpg";
 
+const slideImages = [
+  {
+    url: banner,
+  },
+  {
+    url: banner,
+  },
+];
 const BotSetting = () => {
   const [active, setActive] = useState(1);
   const [mode, setMode] = useState(2);
@@ -31,9 +42,17 @@ const BotSetting = () => {
     <div className="sc-dbhs">
       <Header />
       <div className="dbhs-content">
-        <div className="card mb-2 border-none">
-          <div className="card-height-lg"></div>
-        </div>
+        <Slide>
+          {slideImages.map((slideImage, index) => (
+            <div className="card mb-2 border-none" key={index}>
+              <div className="card-height-lg">
+                <div className="card-image">
+                  <img src={slideImage.url} alt="_banner" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slide>
 
         <div className="card mb-2">
           <div className="card-body">
