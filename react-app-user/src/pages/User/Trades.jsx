@@ -90,7 +90,7 @@ const Trades = () => {
             <div className="card card-trades mb-2">
               <div className="card-body">
                 <div className="nav jcb nav-hr mb-2">
-                  <div className="nav">
+                  <div className="nav aic">
                     <div className="icon-coin"></div>
                     <div className="nav aic">
                       <h2 className="m-0 fz:16 fw-600 text-dark me-1">ADA /</h2>
@@ -128,7 +128,7 @@ const Trades = () => {
             <div className="card card-trades mb-2">
               <div className="card-body">
                 <div className="nav jcb nav-hr mb-2">
-                  <div className="nav">
+                  <div className="nav aic">
                     <div className="icon-coin"></div>
                     <div className="nav aic">
                       <h2 className="m-0 fz:16 fw-600 text-dark me-1">
@@ -170,7 +170,7 @@ const Trades = () => {
             <div className="card card-trades mb-2">
               <div className="card-body">
                 <div className="nav jcb nav-hr mb-2">
-                  <div className="nav">
+                  <div className="nav aic">
                     <div className="icon-coin"></div>
                     <div className="nav aic">
                       <h2 className="m-0 fz:16 fw-600 text-dark me-1">

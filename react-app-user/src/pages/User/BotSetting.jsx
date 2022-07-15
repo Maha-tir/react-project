@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { Slide } from "react-slideshow-image";
 import Header from "../../components/Header/Header";
+import Modal from "../../components/Modal/Modal";
 
 import Binance from "../../assets/img/binance.png";
 import Tokocrypto from "../../assets/img/tko.png";
-import { Slide } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
-
-import "../../styles/auth.css";
 import banner from "../../assets/img/banner.jpg";
+
+import "react-slideshow-image/dist/styles.css";
+import "../../styles/auth.css";
 
 const slideImages = [
   {
@@ -20,13 +21,48 @@ const slideImages = [
 const BotSetting = () => {
   const [active, setActive] = useState(1);
   const [mode, setMode] = useState(2);
+  const [botSignal, setBotSignal] = useState(1);
+  const [modal, setModal] = useState({
+    message: "",
+    isLoading: false,
+  });
+  const idMode = useRef();
 
   const connectExchange = (index) => {
     setActive(index);
   };
-
+  const handleModal = (message, isLoading) => {
+    setModal({
+      message,
+      isLoading,
+    });
+  };
   const modeChange = (index) => {
-    setMode(index);
+    var message1 =
+      "User who opt for the STANDART MODE, will receive masters coin signals";
+    var message2 =
+      "Users who opt for the PROFESSIONAL MODE, will receive Utility and Meme coin signals";
+    var idm = (idMode.current = index);
+    if (idm == 1) {
+      handleModal(message1, true);
+    } else {
+      handleModal(message2, true);
+    }
+  };
+
+  const exchange = (choose) => {
+    if (choose) {
+      setMode(idMode.current);
+      handleModal("", false);
+      alert("Berhasil mengganti mode");
+    } else {
+      handleModal("", false);
+    }
+  };
+
+  const upgradeBotSignal = (index) => {
+    console.log(index);
+    setBotSignal(index);
   };
 
   const upgradeBot = () => {
@@ -116,25 +152,34 @@ const BotSetting = () => {
           <div className="card-body">
             <h2 className="mb-2 fz:14 fw-600 text-dark">Upgrade Bot Signal</h2>
             <div className="box-grid:2 gap:2">
-              <select
-                defaultValue="0"
-                id="select"
-                className="form-select form-select-sm"
-              >
-                <option value="1" className="text-dark" id="option-ubs">
-                  Standart
+              <select id="select" className="form-select form-select-sm">
+                <option
+                  value="1"
+                  selected
+                  disabled
+                  className="text-dark"
+                  id="option-ubs"
+                >
+                  Upgrade
                 </option>
-                <option value="2" className="text-dark" id="option-ubs">
+                <option
+                  value="2"
+                  onSelect={() => upgradeBotSignal(1)}
+                  className="text-dark"
+                  id="option-ubs"
+                >
                   Advance
                 </option>
-                <option value="3" className="text-dark" id="option-ubs">
+                <option
+                  value="3"
+                  onSelect={() => upgradeBotSignal(2)}
+                  className="text-dark"
+                  id="option-ubs"
+                >
                   Expert
                 </option>
               </select>
-              <button
-                className="btn-control btn-control-sm btn-control-first"
-                onClick={upgradeBot}
-              >
+              <button className="btn-control btn-control-sm btn-control-first">
                 Upgrade
               </button>
             </div>
@@ -168,18 +213,6 @@ const BotSetting = () => {
                       </tr>
                     </tbody>
                   </table>
-                  {/* <div className="nav jcb">
-                    <p className="m-0 fz:12 text-dark">First Buy :</p>
-                    <p className="m-0 fz:14 fw-600 text-dark">100 USDT</p>
-                  </div>
-                  <div className="nav jcb">
-                    <p className="m-0 fz:12 text-dark">Mode :</p>
-                    <p className="m-0 fz:14 fw-600 text-dark">Professional</p>
-                  </div>
-                  <div className="nav jcb">
-                    <p className="m-0 fz:12 text-dark">Pair Trading :</p>
-                    <p className="m-0 fz:14 fw-600 text-dark">6</p>
-                  </div> */}
                 </div>
               </div>
               <div className="card bg-first">
@@ -253,6 +286,16 @@ const BotSetting = () => {
           </div>
         </div>
       </div>
+
+      {modal.isLoading && (
+        <Modal
+          className="Modal"
+          buttonText="Confirm"
+          modalFooter="jcc pb-0"
+          message={modal.message}
+          onModal={exchange}
+        />
+      )}
     </div>
   );
 };
