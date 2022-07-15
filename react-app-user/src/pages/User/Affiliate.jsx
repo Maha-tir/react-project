@@ -1,5 +1,17 @@
 import React from "react";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
+import banner from "../../assets/img/banner.jpg";
+
+const slideImages = [
+  {
+    url: banner,
+  },
+  {
+    url: banner,
+  },
+];
 const Affiliate = () => {
   const backHistory = () => {
     window.history.back();
@@ -13,9 +25,17 @@ const Affiliate = () => {
         <span className="text-uppercase fw-500 me-auto">Affiliate</span>
       </header>
       <div className="dbhs-content">
-        <div className="card mb-4 border-none">
-          <div className="card-height-lg"></div>
-        </div>
+        <Slide>
+          {slideImages.map((slideImage, index) => (
+            <div className="card mb-4 border-none" key={index}>
+              <div className="card-height-lg">
+                <div className="card-image">
+                  <img src={slideImage.url} alt="_banner" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slide>
 
         <div className="card py-2 card-elm-bordered mb-4">
           <h2 className="text-card-absolute fz:13 text-uppercase">

@@ -36,30 +36,34 @@ const Trades = () => {
         <div className="card card-shadow:1 mb-2 bg-first border-none">
           <div className="card-body">
             <div className="box-grid:3 gap:2">
-              <div className="nav flex-column">
-                <div className="nav aic">
-                  <p className="m-0 fz:13 text-white" style={{ width: "90px" }}>
-                    First Buy :
-                  </p>
-                  <p className="m-0 fz:12 text-white">15 USDT</p>
-                </div>
-                <div className="nav aic">
-                  <p className="m-0 fz:12 text-white" style={{ width: "90px" }}>
-                    Signal Quantity :
-                  </p>
-                  <p className="m-0 fz:12 text-white">1</p>
-                </div>
-              </div>
-              <div className="nav flex-column">
-                <div className="nav aic">
-                  <p className="m-0 fz:12 text-white">Signal :</p>
-                  <p className="m-0 fz:12 text-white">Expert</p>
-                </div>
-                <div className="nav aic">
-                  <p className="m-0 fz:12 text-white">Mode :</p>
-                  <p className="m-0 fz:12 text-white">Standart</p>
-                </div>
-              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td className="fz:11 text-white">First Buy</td>
+                    <td className="fz:11 text-white">:</td>
+                    <td className="fz:11 text-white">15 USDT</td>
+                  </tr>
+                  <tr>
+                    <td className="fz:11 text-white">Signal Quantity</td>
+                    <td className="fz:11 text-white">:</td>
+                    <td className="fz:11 text-white">1</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <tbody>
+                  <tr>
+                    <td className="fz:11 text-white">Signal</td>
+                    <td className="fz:11 text-white">:</td>
+                    <td className="fz:11 text-white">Expert</td>
+                  </tr>
+                  <tr>
+                    <td className="fz:11 text-white">Mode</td>
+                    <td className="fz:11 text-white">:</td>
+                    <td className="fz:11 text-white">Standart</td>
+                  </tr>
+                </tbody>
+              </table>
               <Link
                 to="/user/transaction"
                 className="nav flex-column aic jcc text-white tdn"
@@ -103,16 +107,20 @@ const Trades = () => {
                   </div>
                 </div>
                 <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500 text-dark">Quantity: 0</h2>
+                  <div className="nav nav-column">
+                    <h2 className="mb-0 fz:13 fw-500 text-dark">Quantity: 0</h2>
+                    <h2 className="mb-1 fz:13 fw-500 text-dark">
+                      Price: 0.8441
+                    </h2>
+                  </div>
                   <div className="nav nav-column">
                     <p className="m-0 fz:10 fw-600 text-dark">
-                      Profit : 0.00 USDT
+                      Profit : <span className="text-dark">0.00 USDT</span>
                     </p>
-                    <p className="m-0 fz:10 fw-600">Chg : 0 %</p>
+                    <p className="m-0 fz:10 fw-600">
+                      Chg : <span className="text-dark">0 %</span>
+                    </p>
                   </div>
-                </div>
-                <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500 text-dark">Price: 0.8441</h2>
                 </div>
               </div>
             </div>
@@ -139,20 +147,22 @@ const Trades = () => {
                   </div>
                 </div>
                 <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500 text-dark text-dark">
-                    Quantity: 41
-                  </h2>
                   <div className="nav nav-column">
-                    <p className="m-0 fz:10 fw-600 text-dark text-dark">
-                      Profit : 0.01 USDT
-                    </p>
-                    <p className="m-0 fz:10 fw-600">Chg : -0.5 %</p>
+                    <h2 className="mb-0 fz:13 fw-500 text-dark">
+                      Quantity: 41
+                    </h2>
+                    <h2 className="mb-1 fz:13 fw-500 text-dark">
+                      Price: 0.6679
+                    </h2>
                   </div>
-                </div>
-                <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500 text-dark text-dark">
-                    Price: 0.6679
-                  </h2>
+                  <div className="nav nav-column">
+                    <p className="m-0 fz:10 fw-600 text-dark">
+                      Profit : <span className="text-red">0.01 USDT</span>
+                    </p>
+                    <p className="m-0 fz:10 fw-600">
+                      Chg : <span className="text-red">-0,5 %</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,16 +189,20 @@ const Trades = () => {
                   </div>
                 </div>
                 <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500 text-dark">Quantity: 41</h2>
+                  <div className="nav nav-column">
+                    <h2 className="mb-0 fz:13 fw-500 text-dark">Quantity: 0</h2>
+                    <h2 className="mb-1 fz:13 fw-500 text-dark">
+                      Price: 0.8441
+                    </h2>
+                  </div>
                   <div className="nav nav-column">
                     <p className="m-0 fz:10 fw-600 text-dark">
-                      Profit : 0.01 USDT
+                      Profit : <span className="text-green">0.01 USDT</span>
                     </p>
-                    <p className="m-0 fz:10 fw-600">Chg : +0.5 %</p>
+                    <p className="m-0 fz:10 fw-600">
+                      Chg : <span className="text-green">+ 0,5 %</span>
+                    </p>
                   </div>
-                </div>
-                <div className="nav jcb">
-                  <h2 className="mb-1 fz:13 fw-500 text-dark">Price: 0.8841</h2>
                 </div>
               </div>
             </div>

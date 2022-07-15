@@ -147,7 +147,28 @@ const BotSetting = () => {
             <div className="box-grid:2 gap:2">
               <div className="card bg-first">
                 <div className="card-body">
-                  <div className="nav jcb">
+                  <table style={{ width: "100%" }}>
+                    <tbody>
+                      <tr>
+                        <td className="fz:11 text-dark">First Buy</td>
+                        <td className="fz:11 text-dark">:</td>
+                        <td className="fz:11 text-dark text-end">100 USDT</td>
+                      </tr>
+                      <tr>
+                        <td className="fz:11 text-dark">Mode</td>
+                        <td className="fz:11 text-dark">:</td>
+                        <td className="fz:11 text-dark text-end">
+                          Professional
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="fz:11 text-dark">Pair Trading</td>
+                        <td className="fz:11 text-dark">:</td>
+                        <td className="fz:11 text-dark text-end">6</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  {/* <div className="nav jcb">
                     <p className="m-0 fz:12 text-dark">First Buy :</p>
                     <p className="m-0 fz:14 fw-600 text-dark">100 USDT</p>
                   </div>
@@ -158,7 +179,7 @@ const BotSetting = () => {
                   <div className="nav jcb">
                     <p className="m-0 fz:12 text-dark">Pair Trading :</p>
                     <p className="m-0 fz:14 fw-600 text-dark">6</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="card bg-first">

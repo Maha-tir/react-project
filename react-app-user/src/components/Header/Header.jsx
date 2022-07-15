@@ -51,6 +51,11 @@ const Header = () => {
               </button>
             </li>
             <li className="list-menu">
+              <button className="nvcs-btn">
+                <i className="bx bx-scan text-dark"></i>
+              </button>
+            </li>
+            <li className="list-menu">
               <button className="nvcs-btn" onClick={toggleSidebar}>
                 <i className="fa-regular fa-bell text-dark"></i>
               </button>

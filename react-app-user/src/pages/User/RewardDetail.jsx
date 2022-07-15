@@ -39,7 +39,7 @@ const RewardDetail = () => {
           )}
         />
       </header>
-      <div className="dbhs-content">
+      <div className="dbhs-content-lg">
         <div className="card mb-2">
           <div className="card-height-lg bg-first">
             <div className="card-body row h:100">
