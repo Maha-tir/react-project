@@ -824,9 +824,10 @@ progress {
   background: var(--first-color-active);
 }
 .btn-control-first-contained {
-  background: #cfcfcf;
-  border: 1px solid #a3a3a3;
-  color: #474747;
+  background: transparent;
+  border: 1px solid var(--first-color);
+  color: #161616;
+  font-weight: 600;
   transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out,
     background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -1013,6 +1014,9 @@ progress {
 .card-elm-bordered {
   border: 1px solid rgba(32, 92, 255, 0.363);
   background-color: #f0f5ff;
+}
+.card-bot-setting {
+  background: #f8f8f8;
 }
 .card-trades {
   border: none;

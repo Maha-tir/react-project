@@ -90,9 +90,11 @@ const BotSetting = () => {
           ))}
         </Slide>
 
-        <div className="card mb-2">
+        <div className="card mb-2 card-bot-setting">
           <div className="card-body">
-            <h2 className="mb-2 fz:14 fw-600 text-dark">Request Trade</h2>
+            <h2 className="mb-2 fz:13 fw-600 text-dark text-uppercase">
+              Request Trade
+            </h2>
             <form action="" id="form-validation">
               <div className="row">
                 <div className="box-grid:2 gap:2 mb-2">
@@ -101,7 +103,7 @@ const BotSetting = () => {
                     placeholder="First buy in ammount"
                     className="input-control input-control-sm"
                   />
-                  <button className="btn-control btn-control-sm btn-control-first">
+                  <button className="btn-control btn-control-sm btn-control-first-contained">
                     Save
                   </button>
                 </div>
@@ -111,7 +113,7 @@ const BotSetting = () => {
                     placeholder="Signal Quantity"
                     className="input-control input-control-sm"
                   />
-                  <button className="btn-control btn-control-sm btn-control-first">
+                  <button className="btn-control btn-control-sm btn-control-first-contained">
                     Save
                   </button>
                 </div>
@@ -120,15 +122,15 @@ const BotSetting = () => {
           </div>
         </div>
 
-        <div className="card mb-2">
+        <div className="card mb-2 card-bot-setting">
           <div className="card-body">
-            <h2 className="mb-2 fz:14 fw-600 text-dark">Mode</h2>
+            <h2 className="mb-2 fz:13 fw-600 text-dark text-uppercase">Mode</h2>
             <div className="box-grid:2 gap:2">
               <button
                 className={
                   mode === 1
-                    ? "btn-control btn-control-sm btn-control-first-contained is_active"
-                    : "btn-control btn-control-sm btn-control-first-contained"
+                    ? "text-uppercase fw-600 btn-control btn-control-sm btn-control-first-contained is_active"
+                    : "text-uppercase fw-600 btn-control btn-control-sm btn-control-first-contained"
                 }
                 onClick={() => modeChange(1)}
               >
@@ -137,8 +139,8 @@ const BotSetting = () => {
               <button
                 className={
                   mode === 2
-                    ? "btn-control btn-control-sm btn-control-first-contained is_active"
-                    : "btn-control btn-control-sm btn-control-first-contained"
+                    ? "text-uppercase fw-600 btn-control btn-control-sm btn-control-first-contained is_active"
+                    : "text-uppercase fw-600 btn-control btn-control-sm btn-control-first-contained"
                 }
                 onClick={() => modeChange(2)}
               >
@@ -148,9 +150,11 @@ const BotSetting = () => {
           </div>
         </div>
 
-        <div className="card mb-2">
+        <div className="card mb-2 card-bot-setting">
           <div className="card-body">
-            <h2 className="mb-2 fz:14 fw-600 text-dark">Upgrade Bot Signal</h2>
+            <h2 className="mb-2 fz:13 fw-600 text-dark text-uppercase">
+              Upgrade Bot Signal
+            </h2>
             <div className="box-grid:2 gap:2">
               <select id="select" className="form-select form-select-sm">
                 <option
@@ -186,9 +190,9 @@ const BotSetting = () => {
           </div>
         </div>
 
-        <div className="card mb-2">
+        <div className="card mb-2 card-bot-setting">
           <div className="card-body">
-            <h2 className="mb-2 fz:14 fw-600 text-dark">
+            <h2 className="mb-2 fz:13 fw-600 text-dark text-uppercase">
               Detailed Bot Setting
             </h2>
             <div className="box-grid:2 gap:2">
@@ -197,21 +201,37 @@ const BotSetting = () => {
                   <table style={{ width: "100%" }}>
                     <tbody>
                       <tr>
-                        <td className="fz:11 text-dark">First Buy</td>
-                        <td className="fz:11 text-dark">:</td>
-                        <td className="fz:11 text-dark text-end">100 USDT</td>
+                        <td className="fz:11 text-dark text-uppercase fw-500">
+                          First Buy
+                        </td>
+                        <td className="fz:11 text-dark text-uppercase fw-500">
+                          :
+                        </td>
+                        <td className="fz:11 text-dark text-uppercase fw-600 text-end">
+                          100 USDT
+                        </td>
                       </tr>
                       <tr>
-                        <td className="fz:11 text-dark">Mode</td>
-                        <td className="fz:11 text-dark">:</td>
-                        <td className="fz:11 text-dark text-end">
+                        <td className="fz:11 text-dark text-uppercase fw-500">
+                          Mode
+                        </td>
+                        <td className="fz:11 text-dark text-uppercase fw-500">
+                          :
+                        </td>
+                        <td className="fz:11 text-dark text-uppercase fw-600 text-end">
                           Professional
                         </td>
                       </tr>
                       <tr>
-                        <td className="fz:11 text-dark">Pair Trading</td>
-                        <td className="fz:11 text-dark">:</td>
-                        <td className="fz:11 text-dark text-end">6</td>
+                        <td className="fz:11 text-dark text-uppercase fw-500">
+                          Pair Trading
+                        </td>
+                        <td className="fz:11 text-dark text-uppercase fw-500">
+                          :
+                        </td>
+                        <td className="fz:11 text-dark text-uppercase fw-600 text-end">
+                          6
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -220,8 +240,12 @@ const BotSetting = () => {
               <div className="card bg-first">
                 <div className="card-body nav aic jcc">
                   <div className="nav aic jcc flex-column">
-                    <p className="m-0 fz:13 text-dark">Bot Used:</p>
-                    <p className="m-0 fz:14 fw-600 text-dark">Expert</p>
+                    <p className="m-0 fz:13 text-dark text-uppercase">
+                      Bot Used:
+                    </p>
+                    <p className="m-0 fz:14 fw-600 text-dark text-uppercase">
+                      Expert
+                    </p>
                   </div>
                 </div>
               </div>
@@ -229,17 +253,23 @@ const BotSetting = () => {
           </div>
         </div>
 
-        <div className="card mb-2">
+        <div className="card mb-2 card-bot-setting">
           <div className="card-body">
-            <h2 className="mb-2 fz:14 fw-600 text-dark">API Binding</h2>
+            <h2 className="mb-2 fz:13 fw-600 text-dark text-uppercase">
+              API Binding
+            </h2>
             <div className="box-grid:2 gap:2">
               <div className="coin-group-flex bg-first radius-card py-1 px-2">
                 <div className="coin-icon">
                   <img src={Binance} alt="_coin-binance" />
                 </div>
                 <div className="d-block">
-                  <h2 className="m-0 fz:13 fw-600 text-white">Binance</h2>
-                  <p className="m-0 fz:15 fw-500 text-green">Bound</p>
+                  <h2 className="m-0 fz:13 fw-600 text-white text-uppercase">
+                    Binance
+                  </h2>
+                  <p className="m-0 fz:15 fw-500 text-green text-uppercase">
+                    Bound
+                  </p>
                 </div>
               </div>
               <div className="coin-group-flex bg-first radius-card py-1 px-2">
@@ -247,17 +277,23 @@ const BotSetting = () => {
                   <img src={Tokocrypto} alt="_coin-tokocrypto" />
                 </div>
                 <div className="d-block">
-                  <h2 className="m-0 fz:13 fw-600 text-white">Tokocrypto</h2>
-                  <p className="m-0 fz:15 fw-500 text-red">Unbound</p>
+                  <h2 className="m-0 fz:13 fw-600 text-white text-uppercase">
+                    Tokocrypto
+                  </h2>
+                  <p className="m-0 fz:15 fw-500 text-red text-uppercase">
+                    Unbound
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="card mb-2">
+        <div className="card mb-2 card-bot-setting">
           <div className="card-body">
-            <h2 className="mb-2 fz:14 fw-600 text-dark">Connected Exchange</h2>
+            <h2 className="mb-2 fz:13 fw-600 text-dark text-uppercase">
+              Connected Exchange
+            </h2>
             <div className="box-grid:2 gap:2">
               <button
                 className={
@@ -267,8 +303,16 @@ const BotSetting = () => {
                 }
                 onClick={() => connectExchange(1)}
               >
-                <span>Binance</span>
-                <span>{active === 1 ? "On" : "Off"}</span>
+                <span className="text-uppercase text-dark fw-600">Binance</span>
+                <span
+                  className={
+                    active === 1
+                      ? "text-uppercase text-green fw-600"
+                      : "text-uppercase text-dark fw-600"
+                  }
+                >
+                  {active === 1 ? "On" : "Off"}
+                </span>
               </button>
               <button
                 className={
@@ -278,12 +322,22 @@ const BotSetting = () => {
                 }
                 onClick={() => connectExchange(2)}
               >
-                <span>Tokocrypto</span>
-                <span>{active === 2 ? "On" : "Off"}</span>
+                <span className="text-uppercase text-dark fw-600">
+                  Tokocrypto
+                </span>
+                <span
+                  className={
+                    active === 2
+                      ? "text-uppercase text-green fw-600"
+                      : "text-uppercase text-dark fw-600"
+                  }
+                >
+                  {active === 2 ? "On" : "Off"}
+                </span>
               </button>
             </div>
             <p className="mt-1 mb-0 fz:12 fw-600 text-mute">
-              Available Balance : 31,000 USDT
+              Total Balance : 31,000 USDT
             </p>
           </div>
         </div>

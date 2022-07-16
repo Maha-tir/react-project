@@ -36,7 +36,7 @@ const Signin = () => {
               <input
                 type="text"
                 id="email"
-                placeholder="example@gmail.com"
+                placeholder="Email"
                 className="input-control input-control-lg"
                 required
               />

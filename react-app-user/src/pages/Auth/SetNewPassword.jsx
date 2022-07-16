@@ -8,18 +8,9 @@ const SetNewPassword = () => {
         <a href="/forgot-password" className="back-button me-auto">
           <i className="fa-solid fa-angle-left back-icon"></i>
         </a>
-        <span className="text-uppercase fw-500 me-auto">
-          Create New Password
-        </span>
-      </header>
-      <div className="d-flex align-items-center justify-content-center flex-column mt-5">
-        <div className="icon-lg mb-3">
-          <i className="fa-solid fa-lock"></i>
-          <i className="fa-solid fa-circle-check"></i>
-        </div>
-        <p className="fz:14 text-center w:text-center text-mute">
-          Your new password must be different from previously used password
-        </p>
+      </header>{" "}
+      <div className="d-flex align-items-center flex-column mt-4">
+        <h2 className="sttr-text fz:20">Set New Password</h2>
       </div>
       <form className="form-validation pt-1">
         <div className="input-group mb-1">
@@ -44,7 +35,7 @@ const SetNewPassword = () => {
             />
           </div>
         </div>
-        <button className="sc-sign-btn">Set New Password</button>
+        <button className="sc-sign-btn text-uppercase">Set New Password</button>
       </form>
     </div>
   );
