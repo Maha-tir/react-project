@@ -9,6 +9,7 @@ import banner from "../../assets/img/banner.jpg";
 
 import "react-slideshow-image/dist/styles.css";
 import "../../styles/auth.css";
+import FullModal from "../../components/Modal/FullModal";
 
 const slideImages = [
   {
@@ -21,22 +22,34 @@ const slideImages = [
 const BotSetting = () => {
   const [active, setActive] = useState(1);
   const [mode, setMode] = useState(2);
-  const [botSignal, setBotSignal] = useState(1);
+  const [apiBinding, setApiBinding] = useState(1);
+
   const [modal, setModal] = useState({
     message: "",
     isLoading: false,
   });
-  const idMode = useRef();
+  const [fullModal, setFullModal] = useState({
+    message: "",
+    isLoading: false,
+  });
 
-  const connectExchange = (index) => {
-    setActive(index);
+  const idMode = useRef();
+  const idapiBinding = useRef();
+
+  const handleFullModal = (message, isLoading) => {
+    setFullModal({
+      message,
+      isLoading,
+    });
   };
+
   const handleModal = (message, isLoading) => {
     setModal({
       message,
       isLoading,
     });
   };
+
   const modeChange = (index) => {
     var message1 =
       "User who opt for the STANDART MODE, will receive masters coin signals";
@@ -60,18 +73,23 @@ const BotSetting = () => {
     }
   };
 
-  const upgradeBotSignal = (index) => {
-    console.log(index);
-    setBotSignal(index);
+  const apibindChange = (index) => {
+    idapiBinding.current = index;
+    handleFullModal(index, true);
   };
 
-  const upgradeBot = () => {
-    const ubs = document.getElementById("select").value;
-    if (ubs == 2) {
-      alert("Bot signal is Advance");
-    } else if (ubs == 3) {
-      alert("Bot signal is Expert");
+  const apiBind = (choose) => {
+    if (choose) {
+      setApiBinding(idapiBinding.current);
+      handleFullModal("", false);
+      alert("Berhasil Bind");
+    } else {
+      handleFullModal("", false);
     }
+  };
+
+  const connectExchange = (index) => {
+    setActive(index);
   };
 
   return (
@@ -166,20 +184,10 @@ const BotSetting = () => {
                 >
                   Upgrade
                 </option>
-                <option
-                  value="2"
-                  onSelect={() => upgradeBotSignal(1)}
-                  className="text-dark"
-                  id="option-ubs"
-                >
+                <option value="2" className="text-dark" id="option-ubs">
                   Advance
                 </option>
-                <option
-                  value="3"
-                  onSelect={() => upgradeBotSignal(2)}
-                  className="text-dark"
-                  id="option-ubs"
-                >
+                <option value="3" className="text-dark" id="option-ubs">
                   Expert
                 </option>
               </select>
@@ -259,32 +267,54 @@ const BotSetting = () => {
               API Binding
             </h2>
             <div className="box-grid:2 gap:2">
-              <div className="coin-group-flex bg-first radius-card py-1 px-2">
+              <button
+                type="button"
+                onClick={() => apibindChange(1)}
+                className="coin-group-flex bg-first radius-card py-1 px-2"
+                style={{ border: "none" }}
+              >
                 <div className="coin-icon">
                   <img src={Binance} alt="_coin-binance" />
                 </div>
                 <div className="d-block">
-                  <h2 className="m-0 fz:13 fw-600 text-white text-uppercase">
+                  <h2 className="m-0 fz:13 fw-600 text-dark text-uppercase">
                     Binance
                   </h2>
-                  <p className="m-0 fz:15 fw-500 text-green text-uppercase">
-                    Bound
+                  <p
+                    className={
+                      apiBinding === 1
+                        ? "m-0 fz:14 fw-500 text-green text-uppercase"
+                        : "m-0 fz:14 fw-500 text-red text-uppercase"
+                    }
+                  >
+                    {apiBinding === 1 ? "Bound" : "Unbound"}
                   </p>
                 </div>
-              </div>
-              <div className="coin-group-flex bg-first radius-card py-1 px-2">
+              </button>
+              <button
+                type="button"
+                onClick={() => apibindChange(2)}
+                className="coin-group-flex bg-first radius-card py-1 px-2"
+                style={{ border: "none" }}
+              >
                 <div className="coin-icon">
                   <img src={Tokocrypto} alt="_coin-tokocrypto" />
                 </div>
                 <div className="d-block">
-                  <h2 className="m-0 fz:13 fw-600 text-white text-uppercase">
+                  <h2 className="m-0 fz:13 fw-600 text-dark text-uppercase">
                     Tokocrypto
                   </h2>
-                  <p className="m-0 fz:15 fw-500 text-red text-uppercase">
-                    Unbound
+                  <p
+                    className={
+                      apiBinding === 2
+                        ? "m-0 fz:14 fw-500 text-green text-uppercase"
+                        : "m-0 fz:14 fw-500 text-red text-uppercase"
+                    }
+                  >
+                    {apiBinding === 2 ? "Bound" : "Unbound"}
                   </p>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -350,6 +380,15 @@ const BotSetting = () => {
           modalFooter="jcc pb-0"
           message={modal.message}
           onModal={exchange}
+        />
+      )}
+
+      {fullModal.isLoading && (
+        <FullModal
+          className="full-height"
+          buttonText="Bind"
+          onModal={apiBind}
+          message
         />
       )}
     </div>

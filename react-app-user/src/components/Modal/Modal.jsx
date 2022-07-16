@@ -4,6 +4,7 @@ const Modal = ({
   className,
   onModal,
   message,
+  message2,
   inputText,
   buttonText,
   modalFooter,
@@ -16,9 +17,22 @@ const Modal = ({
           <div className="modal-body">
             {message ? (
               <p className="fz:13 fw-500 text-center mb-0">{message}</p>
-            ) : (
-              "Tambahkan Teks"
-            )}
+            ) : null}
+            {message2 ? (
+              <textarea
+                className="fz:12 fw-500 text-dark"
+                style={{
+                  width: "100%",
+                  resize: "none",
+                  border: "none",
+                  outline: "none",
+                  pointerEvents: "none",
+                  minHeight: "300px",
+                }}
+              >
+                {message2}
+              </textarea>
+            ) : null}
             {inputText ? (
               <input
                 type="text"

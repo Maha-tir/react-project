@@ -498,6 +498,9 @@ progress {
   text-decoration: none;
   font-size: 15px;
 }
+.text-first {
+  color: var(--first-color);
+}
 .text-mute {
   color: #757575;
 }
@@ -653,6 +656,28 @@ progress {
 }
 .input-field-sm {
   width: 100%;
+}
+.input-copy {
+  position: relative;
+  padding: 0.4rem 0.6rem;
+  padding-right: 40px;
+  border: 1px solid var(--first-color);
+  border-radius: 6px;
+}
+.input-copy .cpy-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.25rem 0.4rem;
+  background: transparent;
+  border: none;
+  color: var(--first-color);
+}
+.input-copy .cpy-btn:hover {
+  color: var(--first-color-hover);
+}
+.input-copy .cpy-btn:active {
+  color: var(--first-color-active);
 }
 .input-control {
   display: block;
@@ -855,6 +880,19 @@ progress {
 .btn-control-primary-contained.is_active {
   background: #0f72e2;
   color: #ffffff;
+}
+.btn-input-absolute {
+  position: absolute;
+  background-color: #e7e7e7;
+  border: 1px solid var(--first-color);
+  color: var(--first-color);
+  border-radius: 6px;
+  right: 2px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  font-weight: 600;
+  height: 20px;
 }
 .btn-navs-tabs {
   display: inline-block;
