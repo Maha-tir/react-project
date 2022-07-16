@@ -23,8 +23,14 @@ const BotSetting = () => {
   const [active, setActive] = useState(1);
   const [mode, setMode] = useState(2);
   const [apiBinding, setApiBinding] = useState(1);
+  const [botSignal, setBotSignal] = useState(1);
 
   const [modal, setModal] = useState({
+    message: "",
+    isLoading: false,
+  });
+  const [modal2, setModal2] = useState({
+    title: "",
     message: "",
     isLoading: false,
   });
@@ -35,6 +41,7 @@ const BotSetting = () => {
 
   const idMode = useRef();
   const idapiBinding = useRef();
+  const idBotSignal = useRef();
 
   const handleFullModal = (message, isLoading) => {
     setFullModal({
@@ -45,6 +52,14 @@ const BotSetting = () => {
 
   const handleModal = (message, isLoading) => {
     setModal({
+      message,
+      isLoading,
+    });
+  };
+
+  const handleModal2 = (title, message, isLoading) => {
+    setModal2({
+      title,
       message,
       isLoading,
     });
@@ -85,6 +100,41 @@ const BotSetting = () => {
       alert("Berhasil Bind");
     } else {
       handleFullModal("", false);
+    }
+  };
+
+  const changeBotSignal = (e) => {
+    var selectBot = document.getElementById("select").value;
+    setBotSignal(selectBot);
+  };
+
+  const changeHandle = (index) => {
+    var title1 =
+      "For Upgrade To This Signal, It Takes 10 USDT Which Will Cut Your Asset Balance Directly";
+    var title2 =
+      "For Upgrade To This Signal, It Takes 20 USDT Which Will Cut Your Asset Balance Directly";
+    var message1 =
+      "User who opt for the ADVANCE will receive 10 signals every day, containing entry points, stop loss levels, and take profit levels";
+    var message2 =
+      "User who opt for the EXPERT will receive 25 signals every day, containing entry points, stop loss levels, and take profit levels";
+
+    var idBot = (idBotSignal.current = index);
+    if (botSignal == 1) {
+      alert("Pilih Bot Signal terlebih dahulu");
+    } else if (botSignal == 2) {
+      handleModal2(title1, message1, true);
+    } else if (botSignal == 3) {
+      handleModal2(title2, message1, true);
+    }
+  };
+
+  const upgradeBotSignal = (choose) => {
+    if (choose) {
+      setApiBinding(idBotSignal.current);
+      handleModal2("", false);
+      alert("Berhasil Upgrade");
+    } else {
+      handleModal2("", false);
     }
   };
 
@@ -174,7 +224,11 @@ const BotSetting = () => {
               Upgrade Bot Signal
             </h2>
             <div className="box-grid:2 gap:2">
-              <select id="select" className="form-select form-select-sm">
+              <select
+                id="select"
+                className="form-select form-select-sm"
+                onChange={changeBotSignal}
+              >
                 <option
                   value="1"
                   selected
@@ -191,7 +245,10 @@ const BotSetting = () => {
                   Expert
                 </option>
               </select>
-              <button className="btn-control btn-control-sm btn-control-first">
+              <button
+                className="btn-control btn-control-sm btn-control-first"
+                onClick={changeHandle}
+              >
                 Upgrade
               </button>
             </div>
@@ -380,6 +437,17 @@ const BotSetting = () => {
           modalFooter="jcc pb-0"
           message={modal.message}
           onModal={exchange}
+        />
+      )}
+
+      {modal2.isLoading && (
+        <Modal
+          className="Modal"
+          buttonText="Confirm"
+          modalFooter="jcc pb-0"
+          message={modal2.message}
+          title={modal2.title}
+          onModal={upgradeBotSignal}
         />
       )}
 

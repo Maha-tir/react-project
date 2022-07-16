@@ -3,6 +3,7 @@ import "../../styles/modal.css";
 const Modal = ({
   className,
   onModal,
+  title,
   message,
   message2,
   inputText,
@@ -15,6 +16,9 @@ const Modal = ({
         <div className="modal-content">
           <div className="modal-header"></div>
           <div className="modal-body">
+            {title ? (
+              <p className="fz:15 fw-600 text-center mb-0">{title}</p>
+            ) : null}
             {message ? (
               <p className="fz:13 fw-500 text-center mb-0">{message}</p>
             ) : null}
