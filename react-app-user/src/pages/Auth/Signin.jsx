@@ -13,18 +13,18 @@ const Signin = () => {
     setShowPassword(!showPassword);
   };
 
-  const ToastType = {
-    success: "success",
-    fail: "fail",
-  };
+  // const ToastType = {
+  //   success: "success",
+  //   fail: "fail",
+  // };
 
   return (
     <div className="sc-sign-in">
-      <Taost
+      {/* <Taost
         message="Action Completed"
         position="middle-top"
         type={ToastType.success}
-      />
+      /> */}
       <div className="sc-content-img">
         <img src={Logo} alt="_Bidobox-Logo" />
       </div>

@@ -8,7 +8,17 @@ const Signup = () => {
   const country = [
     {
       id: 1,
-      name_country: "indonesia",
+      name_country: "Indonesia",
+      flag: Indonesia,
+    },
+    {
+      id: 2,
+      name_country: "Saudi Arabia",
+      flag: Indonesia,
+    },
+    {
+      id: 3,
+      name_country: "English",
       flag: Indonesia,
     },
   ];
