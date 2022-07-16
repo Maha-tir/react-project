@@ -292,7 +292,7 @@ const BotSetting = () => {
         <div className="card mb-2 card-bot-setting">
           <div className="card-body">
             <h2 className="mb-2 fz:13 fw-600 text-dark text-uppercase">
-              Connected Exchange
+              Exchange Setting For Use
             </h2>
             <div className="box-grid:2 gap:2">
               <button
@@ -308,7 +308,7 @@ const BotSetting = () => {
                   className={
                     active === 1
                       ? "text-uppercase text-green fw-600"
-                      : "text-uppercase text-dark fw-600"
+                      : "text-uppercase text-red fw-600"
                   }
                 >
                   {active === 1 ? "On" : "Off"}
@@ -329,7 +329,7 @@ const BotSetting = () => {
                   className={
                     active === 2
                       ? "text-uppercase text-green fw-600"
-                      : "text-uppercase text-dark fw-600"
+                      : "text-uppercase text-red fw-600"
                   }
                 >
                   {active === 2 ? "On" : "Off"}
