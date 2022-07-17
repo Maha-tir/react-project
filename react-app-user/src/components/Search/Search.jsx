@@ -29,7 +29,7 @@ const Search = ({ className, onSearch }) => {
               setSearch(e.target.value);
             }}
           />
-          <button className="cancel-btn fz:13" onClick={onSearch}>
+          <button className="cancel-btn fz:13 text-dark" onClick={onSearch}>
             Cancel
           </button>
         </div>

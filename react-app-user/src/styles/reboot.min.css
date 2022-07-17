@@ -1051,7 +1051,7 @@ progress {
 }
 .card-elm-bordered {
   border: 1px solid rgba(32, 92, 255, 0.363);
-  background-color: #f0f5ff;
+  background-color: #e6e6e6;
 }
 .card-bot-setting {
   background: #f8f8f8;
@@ -1088,7 +1088,7 @@ progress {
 }
 .card > .card-height-md {
   width: 100%;
-  height: 100px;
+  height: 80px;
   background: #c4c2c2;
   border-radius: 5px;
 }
@@ -1312,12 +1312,12 @@ progress {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #e3eeff;
+  background: #e8fbff;
   margin-right: 15px;
 }
 .list-news-item .list-link .list-link-icon .list-icon {
   font-size: 1.5rem;
-  color: #0b6cfd;
+  color: var(--first-color);
 }
 .notification-details {
   position: relative;
@@ -1439,6 +1439,9 @@ thead > tr > * {
 .bg-dark {
   background-color: #212529 !important;
 }
+.bg-vw-permission {
+  background: #969899;
+}
 .border-none {
   border: none;
 }
@@ -1485,4 +1488,7 @@ thead > tr > * {
 }
 .round-lg {
   border-radius: 15px !important;
+}
+.w-auto {
+  width: auto !important;
 }

@@ -10,6 +10,7 @@ import banner from "../../assets/img/banner.jpg";
 import "react-slideshow-image/dist/styles.css";
 import "../../styles/auth.css";
 import FullModal from "../../components/Modal/FullModal";
+import { Link, useHistory } from "react-router-dom";
 
 const slideImages = [
   {
@@ -19,8 +20,16 @@ const slideImages = [
     url: banner,
   },
 ];
-const BotSetting = () => {
+
+const BotSetting = (props) => {
+  const uri = [
+    { id: 1, name: "binding-binance" },
+    { id: 2, name: "binding-tokocrypto" },
+  ];
+
   const [active, setActive] = useState(1);
+  const [binance, setBinance] = useState(true);
+  const [tokocrypto, setTokocrypto] = useState(false);
   const [mode, setMode] = useState(2);
   const [apiBinding, setApiBinding] = useState(1);
   const [botSignal, setBotSignal] = useState(1);
@@ -34,21 +43,9 @@ const BotSetting = () => {
     message: "",
     isLoading: false,
   });
-  const [fullModal, setFullModal] = useState({
-    message: "",
-    isLoading: false,
-  });
 
   const idMode = useRef();
-  const idapiBinding = useRef();
   const idBotSignal = useRef();
-
-  const handleFullModal = (message, isLoading) => {
-    setFullModal({
-      message,
-      isLoading,
-    });
-  };
 
   const handleModal = (message, isLoading) => {
     setModal({
@@ -88,21 +85,6 @@ const BotSetting = () => {
     }
   };
 
-  const apibindChange = (index) => {
-    idapiBinding.current = index;
-    handleFullModal(index, true);
-  };
-
-  const apiBind = (choose) => {
-    if (choose) {
-      setApiBinding(idapiBinding.current);
-      handleFullModal("", false);
-      alert("Berhasil Bind");
-    } else {
-      handleFullModal("", false);
-    }
-  };
-
   const changeBotSignal = (e) => {
     var selectBot = document.getElementById("select").value;
     setBotSignal(selectBot);
@@ -138,6 +120,17 @@ const BotSetting = () => {
     }
   };
 
+  const goApiBinding = (id) => {
+    props.history.push(`/user/api-binding/${id}`);
+  };
+
+  const toggleBinance = () => {
+    setBinance(!binance);
+  };
+  const toggleTokocrypto = () => {
+    setTokocrypto(!tokocrypto);
+  };
+
   const connectExchange = (index) => {
     setActive(index);
   };
@@ -171,7 +164,7 @@ const BotSetting = () => {
                     placeholder="First buy in ammount"
                     className="input-control input-control-sm"
                   />
-                  <button className="btn-control btn-control-sm btn-control-first-contained">
+                  <button className="btn-control btn-control-sm btn-control-first">
                     Save
                   </button>
                 </div>
@@ -181,7 +174,7 @@ const BotSetting = () => {
                     placeholder="Signal Quantity"
                     className="input-control input-control-sm"
                   />
-                  <button className="btn-control btn-control-sm btn-control-first-contained">
+                  <button className="btn-control btn-control-sm btn-control-first">
                     Save
                   </button>
                 </div>
@@ -232,11 +225,10 @@ const BotSetting = () => {
                 <option
                   value="1"
                   selected
-                  disabled
                   className="text-dark"
                   id="option-ubs"
                 >
-                  Upgrade
+                  Standart
                 </option>
                 <option value="2" className="text-dark" id="option-ubs">
                   Advance
@@ -325,10 +317,9 @@ const BotSetting = () => {
             </h2>
             <div className="box-grid:2 gap:2">
               <button
-                type="button"
-                onClick={() => apibindChange(1)}
                 className="coin-group-flex bg-first radius-card py-1 px-2"
-                style={{ border: "none" }}
+                key={uri[0].id}
+                onClick={() => goApiBinding(uri[0].name)}
               >
                 <div className="coin-icon">
                   <img src={Binance} alt="_coin-binance" />
@@ -337,22 +328,15 @@ const BotSetting = () => {
                   <h2 className="m-0 fz:13 fw-600 text-dark text-uppercase">
                     Binance
                   </h2>
-                  <p
-                    className={
-                      apiBinding === 1
-                        ? "m-0 fz:14 fw-500 text-green text-uppercase"
-                        : "m-0 fz:14 fw-500 text-red text-uppercase"
-                    }
-                  >
-                    {apiBinding === 1 ? "Bound" : "Unbound"}
+                  <p className="m-0 fz:14 fw-500 text-green text-uppercase">
+                    Bound
                   </p>
                 </div>
               </button>
               <button
-                type="button"
-                onClick={() => apibindChange(2)}
                 className="coin-group-flex bg-first radius-card py-1 px-2"
-                style={{ border: "none" }}
+                key={uri[1].id}
+                onClick={() => goApiBinding(uri[1].name)}
               >
                 <div className="coin-icon">
                   <img src={Tokocrypto} alt="_coin-tokocrypto" />
@@ -361,14 +345,8 @@ const BotSetting = () => {
                   <h2 className="m-0 fz:13 fw-600 text-dark text-uppercase">
                     Tokocrypto
                   </h2>
-                  <p
-                    className={
-                      apiBinding === 2
-                        ? "m-0 fz:14 fw-500 text-green text-uppercase"
-                        : "m-0 fz:14 fw-500 text-red text-uppercase"
-                    }
-                  >
-                    {apiBinding === 2 ? "Bound" : "Unbound"}
+                  <p className="m-0 fz:14 fw-500 text-red text-uppercase">
+                    Unbound
                   </p>
                 </div>
               </button>
@@ -384,47 +362,47 @@ const BotSetting = () => {
             <div className="box-grid:2 gap:2">
               <button
                 className={
-                  active === 1
+                  binance
                     ? "btn-control btn-control-sm btn-control-first-contained d-flex jcb is_active"
                     : "btn-control btn-control-sm btn-control-first-contained d-flex jcb"
                 }
-                onClick={() => connectExchange(1)}
+                onClick={toggleBinance}
               >
                 <span className="text-uppercase text-dark fw-600">Binance</span>
                 <span
                   className={
-                    active === 1
+                    binance
                       ? "text-uppercase text-green fw-600"
                       : "text-uppercase text-red fw-600"
                   }
                 >
-                  {active === 1 ? "On" : "Off"}
+                  {binance ? "On" : "Off"}
                 </span>
               </button>
               <button
                 className={
-                  active === 2
+                  tokocrypto
                     ? "btn-control btn-control-sm btn-control-first-contained d-flex jcb is_active"
                     : "btn-control btn-control-sm btn-control-first-contained d-flex jcb"
                 }
-                onClick={() => connectExchange(2)}
+                onClick={toggleTokocrypto}
               >
                 <span className="text-uppercase text-dark fw-600">
                   Tokocrypto
                 </span>
                 <span
                   className={
-                    active === 2
+                    tokocrypto
                       ? "text-uppercase text-green fw-600"
                       : "text-uppercase text-red fw-600"
                   }
                 >
-                  {active === 2 ? "On" : "Off"}
+                  {tokocrypto ? "On" : "Off"}
                 </span>
               </button>
             </div>
             <p className="mt-1 mb-0 fz:12 fw-600 text-mute">
-              Total Balance : 31,000 USDT
+              Available Balance : 31,000 USDT
             </p>
           </div>
         </div>
@@ -448,15 +426,6 @@ const BotSetting = () => {
           message={modal2.message}
           title={modal2.title}
           onModal={upgradeBotSignal}
-        />
-      )}
-
-      {fullModal.isLoading && (
-        <FullModal
-          className="full-height"
-          buttonText="Bind"
-          onModal={apiBind}
-          message
         />
       )}
     </div>

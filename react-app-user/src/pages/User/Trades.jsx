@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+
+import Header from "../../components/Header/Header";
 import banner from "../../assets/img/banner.jpg";
 
 import ADA from "../../assets/img/KOIN/ADA-non.png";
@@ -66,7 +68,8 @@ const Trades = () => {
   };
   return (
     <div className="sc-dbhs">
-      <div className="dbcontent">
+      <Header />
+      <div className="dbhs-content">
         <Slide>
           {slideImages.map((slideImage, index) => (
             <div className="card mb-2 border-none" key={index}>
@@ -99,7 +102,7 @@ const Trades = () => {
               <table>
                 <tbody>
                   <tr>
-                    <td className="fz:11 text-white">Signal</td>
+                    <td className="fz:11 text-white">Signal Used</td>
                     <td className="fz:11 text-white">:</td>
                     <td className="fz:11 text-white">Expert</td>
                   </tr>
@@ -114,25 +117,27 @@ const Trades = () => {
                 to="/user/transaction"
                 className="nav flex-column aic jcc text-white tdn"
               >
-                <i className="bx bx-book-reader fz:24"></i>
-                <span className="fz:11 fw-600">Transaction</span>
+                <i className="bx bx-book-reader fz:22"></i>
+                <span className="fz:10 fw-600">Transaction</span>
               </Link>
             </div>
           </div>
         </div>
         <div className="card card-elm">
-          <div className="card-body">
-            <nav aria-label="breadcrumb">
-              <ol className="breadcrumb breadcrumb-2 mb-3">
-                <li className="fz:14 fw-600 text-red me-1">LIVE</li>
-                <li className="breadcrumb-item fz:12 fw-600 link-btn bg-first">
-                  Binance
-                </li>
-                <li className="breadcrumb-item fz:12 fw-600 active text-dark">
-                  Tokocrypto
-                </li>
-              </ol>
-            </nav>
+          <div className="card-body p-2">
+            <div className="p-1 pb-0">
+              <nav aria-label="breadcrumb">
+                <ol className="breadcrumb breadcrumb-2 mb-3">
+                  <li className="fz:14 fw-600 text-red me-1">LIVE</li>
+                  <li className="breadcrumb-item fz:12 fw-600 link-btn bg-first">
+                    Binance
+                  </li>
+                  <li className="breadcrumb-item fz:12 fw-600 active text-dark">
+                    Tokocrypto
+                  </li>
+                </ol>
+              </nav>
+            </div>
             {coinBinance.map((coin, index) => (
               <div className="card card-trades mb-2" key={index}>
                 <div className="card-body">

@@ -20,6 +20,7 @@ import HelpSupport from "../pages/User/HelpSupport";
 import Profile from "../pages/User/Profile";
 import SecurityCenter from "../pages/User/SecurityCenter";
 import Setting from "../pages/User/Setting";
+import APIBinding from "../pages/User/APIBinding";
 
 import NotFound from "../pages/Error/NotFound";
 import { Redirect } from "react-router-dom";
@@ -47,6 +48,7 @@ const userRoutes = [
   { path: "/user/profile", component: Profile },
   { path: "/user/security", component: SecurityCenter },
   { path: "/user/setting", component: Setting },
+  { path: "/user/api-binding/:bind", component: APIBinding },
 ];
 
 const errorRoutes = [

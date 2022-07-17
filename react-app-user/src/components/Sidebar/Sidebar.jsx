@@ -13,7 +13,7 @@ const Sidebar = ({ className, onSidebar }) => {
           >
             Close
           </span>
-          <i className="fa-solid fa-angle-right"></i>
+          <i className="fa-solid fa-angle-right text-dark"></i>
         </button>
       </div>
       <div className="sidebar-content">

@@ -14,11 +14,15 @@ const Account = () => {
             </p>
           </div>
         </div>
-        <div className="card card-absolute">
+        <div className="card card-absolute bg-vw-permission">
           <div className="nav align-items-center justify-content-between">
             <div className="nav flex-column">
-              <h2 className="m-0 sttr-text-2 fz:15 fw-500">View Permission</h2>
-              <p className="m-0 sttr-text fz:13">Expires on 06-06-2023</p>
+              <h2 className="m-0 sttr-text-2 fz:15 fw-400 text-white">
+                View Permission
+              </h2>
+              <p className="m-0 sttr-text fz:13 text-white">
+                Expires on 06-06-2023
+              </p>
             </div>
             <button className="btn-control py-1 px-4 fz:13 btn-control-first">
               Activate
@@ -28,6 +32,12 @@ const Account = () => {
       </div>
       <div className="profile-content">
         <ul className="list-group">
+          <li className="list-item">
+            <Link to="/user/profile" className="list-link">
+              <i className="fa-solid fa-user list-icon"></i>
+              <span className="list-name">Profile</span>
+            </Link>
+          </li>
           <li className="list-item">
             <Link to="/user/member-centre" className="list-link">
               <i className="fa-solid fa-users-rectangle list-icon"></i>
@@ -86,12 +96,6 @@ const Account = () => {
             <Link to="/user/user-guide" className="list-link">
               <i className="fa-solid fa-clipboard-list list-icon"></i>
               <span className="list-name">User Guide</span>
-            </Link>
-          </li>
-          <li className="list-item">
-            <Link to="/user/profile" className="list-link">
-              <i className="fa-solid fa-user list-icon"></i>
-              <span className="list-name">Profile</span>
             </Link>
           </li>
         </ul>
