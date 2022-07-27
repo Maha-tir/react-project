@@ -110,9 +110,14 @@ const Dashboard = (props) => {
           return num; // if value < 1000, nothing to do
       }
   }
+  const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   useEffect(() => {
     if (lastMessage !== null) {
       let data = JSON.parse(lastMessage['data'])
+      console.log(data);
       data.forEach(elUpdate => {
         coinData.forEach(el => {
           if (`${el.base_asset}${el.quote_asset}` === elUpdate['s']){
@@ -120,7 +125,7 @@ const Dashboard = (props) => {
             // o: open price
             let profit_percent = 0
             let vol = numFormatter(Number.parseFloat(elUpdate['v']).toFixed(2))
-            let price = numFormatter(Number.parseFloat(elUpdate['c']).toFixed(2))
+            let price = numberWithCommas(Number.parseFloat(elUpdate['c']).toFixed(2))
             el.coinCap = vol
             el.price = price
             if (elUpdate['c'] > elUpdate['o']){
