@@ -99,7 +99,7 @@ const Dashboard = (props) => {
   }
 
 
-  const [socketUrl] = useState('wss://testnet.binance.vision/ws/!miniTicker@arr');
+  const [socketUrl] = useState('wss://stream.binance.com:9443/ws/!miniTicker@arr');
   const {lastMessage, readyState } = useWebSocket(socketUrl,{ share: true, onMessage: onMessage });
   const numFormatter = (num) => {
       if(num > 999 && num < 1000000){
