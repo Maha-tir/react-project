@@ -4,6 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 import Header from "../../components/Header/Header";
 
 const APIBinding = (props) => {
+  const backHistory = () => {
+    window.history.back();
+  };
   console.log(props);
   const location = useLocation();
 
@@ -21,13 +24,17 @@ const APIBinding = (props) => {
 
   return (
     <div className="sc-dbhs">
-      <Header />
-      <div className="dbhs-content">
-        <h2 className="mb-2 text-center fz:19 fw-600 text-dark text-uppercase">
+      <header className="or-header">
+        <button className="back-button me-auto" onClick={backHistory}>
+          <i className="fa-solid fa-angle-left back-icon"></i>
+        </button>
+        <span className="text-uppercase fw-500 me-auto">
           {location.pathname == "/user/api-binding/binding-binance"
             ? "Binding Binance"
             : "Binding Tokocrypto"}
-        </h2>
+        </span>
+      </header>
+      <div className="dbhs-content">
         <div className="card card-elm-bordered mb-2 round-md">
           <div className="card-body pt-2 pb-2">
             <p className="mb-1 fz:14 fw-700 text-dark">Precautions</p>
@@ -58,7 +65,7 @@ const APIBinding = (props) => {
               >
                 560.332.861.730.318.120.226.990.217.283
               </h2>
-              <button className="cpy-btn fz:15" onClick={copyText}>
+              <button className="cpy-btn fz:17" onClick={copyText}>
                 <i className="bx bx-copy"></i>
               </button>
             </div>

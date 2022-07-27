@@ -38,7 +38,7 @@ const HelpSupport = () => {
           </div>
 
           <div className="card">
-            <Link to="/user/trading-problem" className="card-body tdn">
+            <Link to="/user/account-problem" className="card-body tdn">
               <div className="nav flex-column">
                 <div className="icon-help-center">
                   <img src={AccountProblem} alt="_account-problem" />
@@ -51,7 +51,7 @@ const HelpSupport = () => {
           </div>
 
           <div className="card">
-            <Link to="/user/trading-problem" className="card-body tdn">
+            <Link to="/user/money-flow-problem" className="card-body tdn">
               <div className="nav flex-column">
                 <div className="icon-help-center">
                   <img src={MoneyFlowProblem} alt="_money-flow-problem" />
@@ -64,7 +64,7 @@ const HelpSupport = () => {
           </div>
 
           <div className="card">
-            <Link to="/user/trading-problem" className="card-body tdn">
+            <Link to="/user/bug-problem" className="card-body tdn">
               <div className="nav flex-column">
                 <div className="icon-help-center">
                   <img src={BUGProblem} alt="_bug-problem" />
@@ -77,7 +77,7 @@ const HelpSupport = () => {
           </div>
 
           <div className="card">
-            <Link to="/user/trading-problem" className="card-body tdn">
+            <Link to="/user/suggestions-options" className="card-body tdn">
               <div className="nav flex-column">
                 <div className="icon-help-center">
                   <img
@@ -93,7 +93,7 @@ const HelpSupport = () => {
           </div>
 
           <div className="card">
-            <Link to="/user/trading-problem" className="card-body tdn">
+            <Link to="/user/api-binding-issues" className="card-body tdn">
               <div className="nav flex-column">
                 <div className="icon-help-center">
                   <img src={APIBinding} alt="_api-binding-isues" />
@@ -106,7 +106,7 @@ const HelpSupport = () => {
           </div>
 
           <div className="card">
-            <Link to="/user/trading-problem" className="card-body tdn">
+            <Link to="/user/report-violations" className="card-body tdn">
               <div className="nav flex-column">
                 <div className="icon-help-center">
                   <img src={ReportViolations} alt="_report-violations" />
@@ -119,7 +119,7 @@ const HelpSupport = () => {
           </div>
 
           <div className="card">
-            <Link to="/user/trading-problem" className="card-body tdn">
+            <Link to="/user/other" className="card-body tdn">
               <div className="nav flex-column">
                 <div className="icon-help-center">
                   <img src={Other} alt="_other" />

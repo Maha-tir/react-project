@@ -1,36 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../../features/authSlice";
+import { connect } from "react-redux";
+
+import axios from "axios";
+
+import Taost from "../../components/ToastAlert/Taost";
 import Logo from "../../assets/img/BIDBOX-LOGO-NEW.png";
 
-import { Link } from "react-router-dom";
-
 import "../../styles/auth.css";
-import Taost from "../../components/ToastAlert/Taost";
 
-const Signin = () => {
+const Signin = (props) => {
+  const [email, setEmail] = useState("");
+  const [pwd, setPwd] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const history = useHistory();
+
+  const [loginState, setLoginState] = useState({});
+
+  const dispatch = useDispatch();
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
 
-  // const ToastType = {
-  //   success: "success",
-  //   fail: "fail",
-  // };
+  const loginSubmit = async (e) => {
+    e.preventDefault();
+
+    dispatch(
+      login({
+        email: email,
+        jwt_token: "Success",
+        loggedIn: true,
+      })
+    );
+    history.push("/user/dashboard");
+    setEmail("");
+    setPwd("");
+  };
 
   return (
     <div className="sc-sign-in">
-      {/* <Taost
-        message="Action Completed"
-        position="middle-top"
-        type={ToastType.success}
-      /> */}
       <div className="sc-content-img">
-        <img src={Logo} alt="_Bidobox-Logo" />
+        {/* <img src={Logo} alt="_Bidobox-Logo" /> */}
       </div>
       <div className="sc-content">
         <h2 className="sttr-text fz:22">Sign In</h2>
-        <form action="" className="form-validation pt-2">
+        <form onSubmit={loginSubmit} className="form-validation pt-2">
           <div className="input-group">
             <div className="input-field icon-right">
               <input
@@ -38,6 +55,8 @@ const Signin = () => {
                 id="email"
                 placeholder="Email"
                 className="input-control input-control-lg"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <i className="fa-solid fa-user icon-absolute-right"></i>
@@ -50,6 +69,7 @@ const Signin = () => {
                 id="password"
                 placeholder="Your password"
                 className="input-control input-control-lg"
+                onChange={(e) => setPwd(e.target.value)}
                 required
               />
               <button
@@ -89,5 +109,4 @@ const Signin = () => {
     </div>
   );
 };
-
 export default Signin;

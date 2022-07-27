@@ -1,43 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HeaderDropdown from "../../components/Dropdown/HeaderDropdown";
-const RewardDetail = () => {
+
+const ProfitTrading = () => {
   const backHistory = () => {
     window.history.back();
   };
 
-  const renderUserMenu = (item, index) => (
-    <Link to="/" key={index} className="list-item-sm">
-      {/* <i className={item.icon}></i> */}
-      {/* <span>{item.content}</span> */}
-      <span>ClassName</span>
-    </Link>
-  );
+  const profitList = [
+    {
+      id: 1,
+      date: "01-07-2022",
+      total: "0.12345 USDT",
+    },
+    {
+      id: 2,
+      date: "01-07-2022",
+      total: "0.12345 USDT",
+    },
+  ];
+
   return (
     <div className="sc-dbhs">
       <header className="or-header">
         <button className="back-button me-auto" onClick={backHistory}>
           <i className="fa-solid fa-angle-left back-icon"></i>
         </button>
-        <span className="text-uppercase fw-500 me-auto">Reward Detail</span>
-        <HeaderDropdown
-          btnIcon="fa-solid fa-ellipsis-vertical"
-          renderContent={() => (
-            <div className="dropdown-list">
-              <button className="list-btn active">All</button>
-              <button className="list-btn">Dirrect Activation</button>
-              <button className="list-btn">Team Activation</button>
-              <button className="list-btn">Peer Activation</button>
-              <button className="list-btn">Dirrect Profit Sharing</button>
-              <button className="list-btn">Team Profit Sharing</button>
-              <button className="list-btn">Peer Profit Sharing</button>
-              <button className="list-btn">Global Deviden Activation</button>
-              <button className="list-btn">
-                Global Deviden Profit Sharing
-              </button>
-            </div>
-          )}
-        />
+        <span className="text-uppercase fw-500 me-auto">Profit Trading</span>
       </header>
       <div className="dbhs-content-lg">
         <div className="card mb-2">
@@ -70,14 +58,21 @@ const RewardDetail = () => {
             </div>
           </div>
         </div>
-        <button className="list-btn jcb py-2 fz:14">
-          <span className="fw-500 text-dark fz:11">01-07-2022</span>
-          <span className="fw-600 text-dark fz:12">10 USDT</span>
-          <i className="fa-solid fa-angle-down"></i>
-        </button>
+        <ul className="list-group">
+          {profitList.map((profit, index) => (
+            <button className="list-btn jcb py-2 fz:14" key={index}>
+              <span className="fw-500 text-dark fz:11">{profit.date}</span>
+              <div className="nav nav-column jcc aic">
+                <span className="fw-600 text-dark fz:12">{profit.total}</span>
+                <span className="fz:11 fw-500 text-dark">Profit</span>
+              </div>
+              <i className="fa-solid fa-angle-down"></i>
+            </button>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
-export default RewardDetail;
+export default ProfitTrading;

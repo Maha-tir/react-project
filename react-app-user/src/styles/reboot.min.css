@@ -672,6 +672,7 @@ progress {
   background: transparent;
   border: none;
   color: var(--first-color);
+  z-index: 50;
 }
 .input-copy .cpy-btn:hover {
   color: var(--first-color-hover);
@@ -1296,7 +1297,7 @@ progress {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   cursor: pointer;
   color: #55595f;
@@ -1304,6 +1305,9 @@ progress {
 }
 .list-news-item .list-link:hover {
   background: #f5f5f5;
+}
+.list-news-item .list-link:active {
+  background: #f1f1f1;
 }
 .list-news-item .list-link .list-link-icon {
   display: flex;

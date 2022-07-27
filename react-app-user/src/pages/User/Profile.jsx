@@ -13,7 +13,7 @@ const Profile = () => {
         <span className="text-uppercase fw-500 me-auto">Profile</span>
       </header>
       <div className="dbhs-content">
-        <div className="card">
+        <div className="card card-overflow">
           <div className="box-grid:2 gap:2 card-profile">
             <div className="d-flex flex-column aic jcc">
               <div className="profile-image">
@@ -30,11 +30,10 @@ const Profile = () => {
                 </label>
                 <div className="input-field-sm not-icon">
                   <input
-                    type="password"
-                    id="password"
-                    placeholder="New Password"
+                    type="text"
                     className="input-control input-control-sm"
-                    required
+                    value="Sponsor name"
+                    readOnly
                   />
                 </div>
               </div>
