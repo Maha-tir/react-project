@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useCallback, useEffect } from "react";
+import useWebSocket, { ReadyState } from 'react-use-websocket';
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
@@ -20,65 +21,133 @@ const slideImages = [
   },
 ];
 
-const coinData = [
+let coinData = [
   {
     id: 1,
     image: BTC,
+    base_asset: "BTC",
+    quote_asset: "USDT",
     title: "BTC",
     subTitle: "Bitcoin",
-    coinCap: "398,35B",
-    subCoinCap: "41.35%",
-    price: "20.892,56",
-    subPrice: "+2.09%",
+    coinCap: "0",
+    subCoinCap: "0%",
+    price: "0",
+    subPrice: "0%",
     type: "green",
   },
   {
     id: 2,
     image: ETH,
+    base_asset: "ETH",
+    quote_asset: "USDT",
     title: "ETH",
     subTitle: "Ethereum",
-    coinCap: "139,09B",
-    subCoinCap: "14.43%",
-    price: "20.892,56",
-    subPrice: "+2.09%",
+    coinCap: "0",
+    subCoinCap: "0%",
+    price: "0",
+    subPrice: "0%",
     type: "green",
   },
   {
     id: 3,
     image: TTH,
     title: "USDT",
+    base_asset: "USDT",
+    quote_asset: "USDT",
     subTitle: "Tether",
-    coinCap: "72,23B",
-    subCoinCap: "7.49%",
-    price: "0,999",
-    subPrice: "-0.00%",
-    type: "red",
+    coinCap: "0",
+    subCoinCap: "0%",
+    price: "0",
+    subPrice: "0%",
+    type: "green",
   },
   {
     id: 4,
     image: USDC,
+    base_asset: "USDC",
+    quote_asset: "USDT",
     title: "USDC",
     subTitle: "USD Coin",
-    coinCap: "54,31B",
-    subCoinCap: "5.63%",
-    price: "1,0004",
-    subPrice: "-0.02%",
-    type: "red",
+    coinCap: "0",
+    subCoinCap: "0%",
+    price: "0",
+    subPrice: "0%",
+    type: "green",
   },
   {
     id: 5,
     image: BNB,
+    base_asset: "BNB",
+    quote_asset: "USDT",
     title: "BNB",
     subTitle: "BNB",
-    coinCap: "37,73B",
-    subCoinCap: "3.91%",
-    price: "231,10",
-    subPrice: "+3.98%",
+    coinCap: "0",
+    subCoinCap: "0%",
+    price: "0",
+    subPrice: "0%",
     type: "green",
   },
 ];
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+
+  let onMessage = (data) => {
+    data = JSON.parse(data['data'])
+    // console.log(data);
+    // console.log(`Connection Status : ${connectionStatus}`);
+    
+  }
+
+
+  const [socketUrl] = useState('wss://testnet.binance.vision/ws/!miniTicker@arr');
+  const {lastMessage, readyState } = useWebSocket(socketUrl,{ share: true, onMessage: onMessage });
+  const numFormatter = (num) => {
+      if(num > 999 && num < 1000000){
+          return (num/1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
+      }else if(num > 1000000){
+          return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
+      }else if(num < 900){
+          return num; // if value < 1000, nothing to do
+      }
+  }
+  useEffect(() => {
+    if (lastMessage !== null) {
+      let data = JSON.parse(lastMessage['data'])
+      data.forEach(elUpdate => {
+        coinData.forEach(el => {
+          if (`${el.base_asset}${el.quote_asset}` === elUpdate['s']){
+            // c: close price
+            // o: open price
+            let profit_percent = 0
+            let vol = numFormatter(Number.parseFloat(elUpdate['v']).toFixed(2))
+            let price = numFormatter(Number.parseFloat(elUpdate['c']).toFixed(2))
+            el.coinCap = vol
+            el.price = price
+            if (elUpdate['c'] > elUpdate['o']){
+              el.type = 'green'
+              profit_percent = Math.round(((elUpdate['c'] - elUpdate['o']) / elUpdate['o']) * 100,2)
+              profit_percent = `+${profit_percent}%`
+            }else{
+              el.type = 'red'
+              profit_percent = Math.round(((elUpdate['o'] - elUpdate['c']) / elUpdate['c']) * 100,2)
+              profit_percent = `-${profit_percent}%`
+            }
+            el.subPrice = profit_percent
+
+          }
+        });    
+      });
+      
+    };
+  },[lastMessage]);
+
+  const connectionStatus = {
+    [ReadyState.CONNECTING]: 'Connecting',
+    [ReadyState.OPEN]: 'Open',
+    [ReadyState.CLOSING]: 'Closing',
+    [ReadyState.CLOSED]: 'Closed',
+    [ReadyState.UNINSTANTIATED]: 'Uninstantiated',
+  }[readyState];
   return (
     <div className="sc-dbhs">
       <Header />
@@ -103,7 +172,7 @@ const Dashboard = () => {
                   <h2 className="m-0 fz:17 fw-600 text-white">6969.69 B</h2>
                 </div>
                 <div className="nav flex-column justify-content-center">
-                  <p className="m-0 fz:12 text-white">24H</p>
+                  <p id="h24" className="m-0 fz:12 text-white">24H</p>
                   <h2 className="m-0 fz:17 fw-600 text-white">+6.9%</h2>
                 </div>
                 <div className="nav flex-column justify-content-center">
@@ -156,7 +225,7 @@ const Dashboard = () => {
                   </td>
                   <td>
                     <div className="coin-group-block">
-                      <h2 className="m-0 fz:13 fw-600 text-dark">
+                      <h2 id={`coinCap ${coin.title}`} className="m-0 fz:13 fw-600 text-dark">
                         {coin.coinCap}
                       </h2>
                       <p className="m-0 fz:12 text-mute">{coin.subCoinCap}</p>
