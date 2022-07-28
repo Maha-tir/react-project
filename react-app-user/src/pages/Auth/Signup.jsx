@@ -347,20 +347,6 @@ const Signup = (props) => {
               />
             </div>
           </div>
-          <div className="input-group mb-1">
-            <label className="input-label">Phone</label>
-            <div className="input-field not-icon">
-              <input
-                type="number"
-                id="phone"
-                placeholder="Phone Number"
-                className="input-control"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
-            </div>
-          </div>
           <div className="flex-input-group">
             <div className="input-group">
               <div className="input-field not-icon">
