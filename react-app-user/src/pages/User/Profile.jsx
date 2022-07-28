@@ -4,6 +4,7 @@ import { connect, useDispatch, useSelector } from "react-redux";
 const Profile = () => {
   // const dispatch = useDispatch()
   const account = useSelector(state=>state.account)
+  const rank = useSelector(state=>state.rank)
 
   const backHistory = () => {
     window.history.back();
@@ -74,7 +75,7 @@ const Profile = () => {
                         <td className="fz:11 text-dark fw-500">Rank</td>
                         <td className="fz:11 text-dark fw-500">:</td>
                         <td className="fz:11 text-dark fw-500 text-uppercase">
-                          bid6
+                          {rank.name}
                         </td>
                       </tr>
                       <tr>

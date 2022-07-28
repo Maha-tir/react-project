@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/toast.css";
 const Taost = ({ position, type, message }) => {
   return (
-    <div
+    <div style={{zIndex:999}}
       className={
         `toast-fix toast-${type} ${position}`
       }
