@@ -1,6 +1,10 @@
 import React from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
 
 const Profile = () => {
+  // const dispatch = useDispatch()
+  const account = useSelector(state=>state.account)
+
   const backHistory = () => {
     window.history.back();
   };
@@ -48,23 +52,23 @@ const Profile = () => {
                       <tr>
                         <td className="fz:11 text-dark fw-500">Country</td>
                         <td className="fz:11 text-dark fw-500">:</td>
-                        <td className="fz:11 text-dark fw-500">Srilanka</td>
+                        <td className="fz:11 text-dark fw-500">{account.country_name}</td>
                       </tr>
                       <tr>
                         <td className="fz:11 text-dark fw-500">Name</td>
                         <td className="fz:11 text-dark fw-500">:</td>
-                        <td className="fz:11 text-dark fw-500">lorem Ipsum</td>
+                        <td className="fz:11 text-dark fw-500">{account.full_name}</td>
                       </tr>
                       <tr>
                         <td className="fz:11 text-dark fw-500">Username</td>
                         <td className="fz:11 text-dark fw-500">:</td>
-                        <td className="fz:11 text-dark fw-500">lorem Ipsum</td>
+                        <td className="fz:11 text-dark fw-500">{account.username}</td>
                       </tr>
                       <tr>
                         <td className="fz:11 text-dark fw-500">Email</td>
                         <td className="fz:11 text-dark fw-500">:</td>
                         <td className="fz:11 text-dark fw-500">
-                          email@gmail.com
+                          {account.email}
                         </td>
                       </tr>
                       <tr>

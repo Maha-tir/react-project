@@ -1,16 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React,{ useState } from "react";
+
+import { Link} from "react-router-dom";
+import { connect, useDispatch, useSelector } from "react-redux";
 
 const Account = () => {
+  const dispatch = useDispatch()
+  const account = useSelector(state=>state.account)
+
+  const activate_bot = () => {
+    
+  }
+  const doLogout = () => {
+    localStorage.removeItem('bidbox_auth_info')
+    dispatch({
+      type:'auth/SET_STATE',
+      payload:{
+        token: null,
+        refresh_token:null
+      }
+    })
+  }
   return (
     <>
       <div className="header-profile">
         <div className="profile-info">
           <div className="avatar avatar-md-circle me-2"></div>
           <div className="nav flex-column">
-            <h2 className="sttr-text m-0 fz:16 text-white">Name Of Member</h2>
+            <h2 className="sttr-text m-0 fz:16 text-white">{account.full_name}</h2>
             <p className="sttr-text m-0 fz:13 text-white">
-              ID : example@gmail.com
+              ID : {account.email}
             </p>
           </div>
         </div>
@@ -100,11 +118,11 @@ const Account = () => {
           </li>
         </ul>
         <div className="px-2 mb-2">
-          <button className="sc-sign-btn text-uppercase mt-3">Logout</button>
+          <button className="sc-sign-btn text-uppercase mt-3" onClick={doLogout}>Logout</button>
         </div>
       </div>
     </>
   );
 };
 
-export default Account;
+export default connect()(Account);

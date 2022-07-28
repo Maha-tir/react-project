@@ -4,9 +4,7 @@ const Taost = ({ position, type, message }) => {
   return (
     <div
       className={
-        type === "success"
-          ? `toast-fix toast-success ${position}`
-          : `toast-fix toast-default ${position}`
+        `toast-fix toast-${type} ${position}`
       }
     >
       <div className="toast-icon">

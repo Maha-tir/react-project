@@ -29,7 +29,7 @@ const authRoutes = [
   { path: "/auth/signin", component: Signin },
   { path: "/auth/signup", component: Signup },
   { path: "/auth/forgot-password", component: ForgotPassword },
-  { path: "/auth/set-new-password", component: SetNewPassword },
+  { path: "/auth/set-new-password/*", component: SetNewPassword },
 ];
 
 const userRoutes = [
