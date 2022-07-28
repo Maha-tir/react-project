@@ -703,8 +703,13 @@ progress {
   }
 }
 .input-control-sm {
-  padding: 0.175rem 0.75rem;
-  font-size: 0.8rem;
+  padding: 0.175rem 0.75rem !important;
+  font-size: 0.8rem !important;
+}
+.input-control-md {
+  padding: 0.195rem 0.75rem !important;
+  font-size: 0.8rem !important;
+  height: 33px !important;
 }
 .input-control[type="file"] {
   overflow: hidden;
@@ -806,6 +811,37 @@ progress {
 }
 .input-btn-absolute:active {
   background: var(--first-color-active);
+}
+.textarea-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  outline: none;
+  resize: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .textarea-control {
+    transition: none;
+  }
+}
+.textarea-control-md {
+  height: 100px !important;
+  font-size: 0.9rem;
+}
+.textarea-control-md::placeholder {
+  font-size: 0.8rem;
 }
 .btn-control {
   display: inline-block;
@@ -1422,6 +1458,12 @@ thead > tr > * {
 .bg-primary\:50 {
   background-color: #edf7fd !important;
 }
+.bg-primary\:30 {
+  background-color: #ebf6ff !important;
+}
+.bg-primary\:20 {
+  background-color: #f5fafd !important;
+}
 .bg-secondary {
   background-color: #6c757d !important;
 }
@@ -1443,8 +1485,14 @@ thead > tr > * {
 .bg-dark {
   background-color: #212529 !important;
 }
+.bg-gray {
+  background: #c2c4c5;
+}
 .bg-vw-permission {
   background: #969899;
+}
+.border-primary\:70 {
+  border-color: #bed7e6 !important;
 }
 .border-none {
   border: none;
