@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const SecurityCenter = () => {
   const backHistory = () => {
     window.history.back();
@@ -14,32 +14,35 @@ const SecurityCenter = () => {
       </header>
       <div className="dbhs-content">
         <ul className="list-group">
-          <button className="list-btn py-2 fz:14">
+          <Link to="/user/change-password" className="list-btn py-2 fz:14">
             <span className="fw-500 text-dark">Change Password</span>
-          </button>
-          <button className="list-btn py-2 fz:14">
+          </Link>
+          <Link to="/user/modify-email" className="list-btn py-2 fz:14">
             <span className="fw-500 text-dark">Modify Email</span>
-          </button>
-          <button className="list-btn py-2 fz:14">
+          </Link>
+          <Link to="/user/security-pin" className="list-btn py-2 fz:14">
             <span className="fw-500 text-dark">Security PIN</span>
             <span id="method" className="text-mute fz:12">
               Not Yet Set
             </span>
-          </button>
-          <button className="list-btn py-2 fz:14">
+          </Link>
+          <Link
+            to="/user/google-verification-binding"
+            className="list-btn py-2 fz:14"
+          >
             <span className="fw-500 text-dark">Google Verification Code</span>
             <span id="method" className="text-mute fz:12">
               Not Yet Set
             </span>
-          </button>
-          <button className="list-btn py-2 fz:14">
+          </Link>
+          <Link to="/user/withdrawal-address" className="list-btn py-2 fz:14">
             <span className="fw-500 text-dark">
               Withdrawal Address Management
             </span>
-          </button>
-          <button className="list-btn py-2 fz:14">
+          </Link>
+          <Link to="/user/biometrics-pin" className="list-btn py-2 fz:14">
             <span className="fw-500 text-dark">Biometrics & PIN</span>
-          </button>
+          </Link>
         </ul>
       </div>
     </div>

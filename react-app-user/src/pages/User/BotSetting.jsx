@@ -317,7 +317,7 @@ const BotSetting = (props) => {
             </h2>
             <div className="box-grid:2 gap:2">
               <button
-                className="coin-group-flex bg-first radius-card py-1 px-2"
+                className="coin-group-flex bg-first radius-card py-1 px-2 border-none"
                 key={uri[0].id}
                 onClick={() => goApiBinding(uri[0].name)}
               >
@@ -334,7 +334,7 @@ const BotSetting = (props) => {
                 </div>
               </button>
               <button
-                className="coin-group-flex bg-first radius-card py-1 px-2"
+                className="coin-group-flex bg-first radius-card py-1 px-2 border-none"
                 key={uri[1].id}
                 onClick={() => goApiBinding(uri[1].name)}
               >

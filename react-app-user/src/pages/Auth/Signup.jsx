@@ -264,12 +264,14 @@ const Signup = (props) => {
                 type="text"
                 id="username"
                 placeholder="Username"
+                autoComplete="off"
                 className="input-control"
                 onChange={evt => setUsername(evt.target.value)}
                 required
               />
             </div>
           </div>
+
           <div className="input-group mb-1">
             <div className="input-field not-icon">
               <input
@@ -282,6 +284,7 @@ const Signup = (props) => {
               />
             </div>
           </div>
+
           <div className="input-group">
             <div className="input-field not-icon">
               <input
@@ -339,6 +342,21 @@ const Signup = (props) => {
                 onChange={evt => setEmail(evt.target.value)}
                 placeholder="example@gmail.com"
                 className="input-control"
+                value={email}
+                required
+              />
+            </div>
+          </div>
+          <div className="input-group mb-1">
+            <label className="input-label">Phone</label>
+            <div className="input-field not-icon">
+              <input
+                type="number"
+                id="phone"
+                placeholder="Phone Number"
+                className="input-control"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 required
               />
             </div>
@@ -370,7 +388,6 @@ const Signup = (props) => {
                 onChange={evt => setSponsor(evt.target.value)}
                 placeholder="Sponsor Username"
                 className="input-control"
-                required
               />
             </div>
           </div>

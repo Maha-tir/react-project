@@ -82,34 +82,38 @@ const Trades = () => {
           ))}
         </Slide>
 
-        <div className="card card-shadow:1 mb-2 bg-first border-none">
+        <div className="card card-shadow:1 mb-2 bg-first border-none card-overflow">
           <div className="card-body">
             <div className="box-grid:3 gap:2">
               <table>
                 <tbody>
                   <tr>
-                    <td className="fz:11 text-white">First Buy</td>
+                    <td className="fz:11 text-white text-nowrap">First Buy</td>
                     <td className="fz:11 text-white">:</td>
-                    <td className="fz:11 text-white">15 USDT</td>
+                    <td className="fz:11 text-white text-nowrap">15 USDT</td>
                   </tr>
                   <tr>
-                    <td className="fz:11 text-white">Signal Quantity</td>
+                    <td className="fz:11 text-white text-nowrap">
+                      Signal Quantity
+                    </td>
                     <td className="fz:11 text-white">:</td>
-                    <td className="fz:11 text-white">1</td>
+                    <td className="fz:11 text-white text-nowrap">1</td>
                   </tr>
                 </tbody>
               </table>
               <table>
                 <tbody>
                   <tr>
-                    <td className="fz:11 text-white">Signal Used</td>
+                    <td className="fz:11 text-white text-nowrap">
+                      Signal Used
+                    </td>
                     <td className="fz:11 text-white">:</td>
-                    <td className="fz:11 text-white">Expert</td>
+                    <td className="fz:11 text-white text-nowrap">Expert</td>
                   </tr>
                   <tr>
-                    <td className="fz:11 text-white">Mode</td>
+                    <td className="fz:11 text-white text-nowrap">Mode</td>
                     <td className="fz:11 text-white">:</td>
-                    <td className="fz:11 text-white">Standart</td>
+                    <td className="fz:11 text-white text-nowrap">Standart</td>
                   </tr>
                 </tbody>
               </table>

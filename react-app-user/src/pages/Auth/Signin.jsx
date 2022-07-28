@@ -4,7 +4,6 @@ import Logo from "../../assets/img/BIDBOX-LOGO-NEW.png";
 import { Link } from "react-router-dom";
 import { connect, useDispatch, useSelector } from "react-redux";
 
-import "../../styles/auth.css";
 import Taost from "../../components/ToastAlert/Taost";
 import axios from "axios";
 
