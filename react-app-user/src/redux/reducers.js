@@ -4,6 +4,7 @@ import auth from "./auth/reducers";
 import account from "./account/reducers";
 import bot from "./bot/reducers";
 import rank from "./rank/reducers";
+import wallet from "./wallet/reducers";
 
 const reducers = (history) => {
   return combineReducers({
@@ -11,7 +12,8 @@ const reducers = (history) => {
     auth,
     account,
     bot,
-    rank
+    rank,
+    wallet
   })
 } 
 export default reducers
