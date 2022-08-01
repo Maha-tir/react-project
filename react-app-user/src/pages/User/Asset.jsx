@@ -2,10 +2,35 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect, useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import refresh_icon from "../../assets/img/refresh.png";
+import Taost from "../../components/ToastAlert/Taost";
 const Asset = () => {
+    const dispatch = useDispatch()
     const auth = useSelector((state) => state.auth);
+    const wallet = useSelector((state) => state.wallet);
     const [toggle, setToggle] = useState(1);
+    const [alert, setAlert] = useState(null);
+    const generate_address = () => {
+      var config = {
+          method: "get",
+          url: "http://159.223.94.86:3000/strict/wallet/generate-address",
+          headers: {
+              Authorization: `Bearer ${auth.token}`,
+          },
+      };
 
+      axios(config)
+          .then(function (response) {
+              const data = response.data;
+              dispatch({
+                type:'wallet/SET_STATE',
+                payload:data
+              })
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+  };
     const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     };
@@ -13,8 +38,53 @@ const Asset = () => {
         active_balance: 0,
         currency_id: "USDT",
         locked_balance: 0,
-        active_balance_idr:0
+        active_balance_idr: 0,
     });
+    const showAlert = () => {
+        if (alert !== null) {
+            return (
+                <Taost
+                    message={alert.message}
+                    position="middle-top"
+                    type={alert.type}
+                />
+            );
+        }
+    };
+    const handleRefresh = () => {
+        setAlert({
+            type: "default",
+            message: "Refreshing...",
+        });
+        let data = JSON.stringify({
+            address: wallet.address,
+        });
+        let config = {
+            method: "post",
+            url: "http://159.223.94.86:3000/strict/wallet/validate-deposit",
+            headers: {
+                Authorization: `Bearer ${auth.token}`,
+                'Content-type' : 'application/json'
+            },
+            data: data,
+        };
+
+        axios(config)
+            .then(function (response) {
+                setAlert({
+                    type: "success",
+                    message: "Refresh done",
+                });
+                get_balance();
+            })
+            .catch(function (error) {
+                setAlert({
+                    type: "danger",
+                    message: error.message,
+                });
+                console.log(error);
+            });
+    };
     const get_balance = () => {
         let config = {
             method: "get",
@@ -27,8 +97,8 @@ const Asset = () => {
         axios(config)
             .then(function (response) {
                 let data = response.data;
-                if (data.active_balance_idr === undefined){
-                  data.active_balance_idr = 0
+                if (data.active_balance_idr === undefined) {
+                    data.active_balance_idr = 0;
                 }
                 setBalance(data);
             })
@@ -45,9 +115,11 @@ const Asset = () => {
     };
     useEffect(() => {
         get_balance();
+        generate_address();
     }, []);
     return (
         <div className="sc-dbhs">
+            {showAlert()}
             <header className="or-header">
                 <button className="back-button me-auto" onClick={backHistory}>
                     <i className="fa-solid fa-angle-left back-icon"></i>
@@ -64,10 +136,16 @@ const Asset = () => {
                                         Total Asset Converted (USDT)
                                     </p>
                                     <h2 className="m-0 fz:17 fw-600 text-white">
-                                        {numberWithCommas(balance.active_balance)}
+                                        {numberWithCommas(
+                                            balance.active_balance
+                                        )}
                                     </h2>
                                     <p className="m-0 fz:11 text-white">
-                                        = {numberWithCommas(balance.active_balance_idr)} IDR
+                                        ={" "}
+                                        {numberWithCommas(
+                                            balance.active_balance_idr
+                                        )}{" "}
+                                        IDR
                                     </p>
                                 </div>
                                 <div className="nav nav-column">
@@ -118,7 +196,17 @@ const Asset = () => {
                         <h2 className="m-0 fz:12 fw-600 text-dark text-uppercase">
                             History Record
                         </h2>
-                        <p className="m-0 fz:12 fw-600 text-dark">Today</p>
+
+                        <p className="m-0 fz:12 fw-600 text-dark">
+                            <img
+                                src={refresh_icon}
+                                alt="refresh"
+                                width="20px"
+                                style={{cursor: "pointer"}}
+                                onClick={handleRefresh}
+                            />{" "}
+                            Today
+                        </p>
                     </div>
                     <div className="box-grid:3 gap:2 mb-2">
                         <button
